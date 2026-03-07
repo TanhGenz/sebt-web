@@ -3,10 +3,24 @@ export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      // thống nhất một layout cụ thể về phương ngang =>
+      container: {
+        center: true,
+        padding: "2rem", // = px-8
+        screens: {
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1440px", // max container 1440px in large screen
+        },
+      },
       colors: {
-        frame1: "#935050",
-        frame2: "#520000",
-        frame3: "#E8E3DD",
+        primary: "#935050",
+        secondary: "#520000",
+        beige: "#E8E3DD",
+        primaryText: "#82152C",
+        secondaryText: "#C18989",
+        thirdText: "#ECE0D0",
       },
       fontFamily: {
         gilroy: ["Gilroy", "sans-serif"],
