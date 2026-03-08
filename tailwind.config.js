@@ -27,6 +27,7 @@ export default {
         lamoric: ["Lamoric", "serif"],
         qalogre: ["Qalogre", "sans-serif"],
         bladeRush: ["BladeRush", "sans-serif"],
+        kamilla: ["Karmila", "sans-serif"],
       },
     },
   },

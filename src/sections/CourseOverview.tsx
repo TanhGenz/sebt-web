@@ -5,7 +5,7 @@
  * bg-frame3, text-primaryText: custom theme từ tailwind.config.
  */
 
-export default function MainContent() {
+export default function CourseOverview() {
   return (
     <section className="relative w-full bg-beige">
       <div className="container relative">

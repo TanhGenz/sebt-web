@@ -7,14 +7,17 @@
  */
 
 import Hero from "./sections/Hero";
-import MainContent from "./sections/MainContent";
+import CourseOverview from "./sections/CourseOverview";
 import MainLayout from "./Layouts/MainLayout";
-
+import HeroHeadline from "./sections/HeroHeadline";
+import Intro from "./sections/Intro";
 export default function App() {
   return (
     <MainLayout>
       <Hero />
-      <MainContent />
+      <CourseOverview />
+      <HeroHeadline />
+      <Intro />
     </MainLayout>
   );
 }
