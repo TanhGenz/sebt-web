@@ -8,7 +8,7 @@
 
 import Hero from "./sections/Hero";
 import MainContent from "./sections/MainContent";
-import MainLayout from "./Layouuts/MainLayout";
+import MainLayout from "./Layouts/MainLayout";
 
 export default function App() {
   return (
