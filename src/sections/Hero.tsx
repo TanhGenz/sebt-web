@@ -1,36 +1,20 @@
-/**
- * Hero.tsx - Section hero (banner chính) đầu trang
- *
- * - Import component Header để dùng bên trong
- * - style={{ backgroundImage: "..." }}: object inline style; TypeScript
- *   kiểm tra đúng kiểu CSSProperties
- * - Ảnh nền lấy từ public: /images/...
- */
-
 import Header from "../components/Header";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative min-h-[145dvh] w-full">
-      {/* Background image - lớp nền full màn hình */}
-      <div
-        className="absolute inset-0 bg-cover"
-        style={{
-          backgroundImage: "url(/images/banner-hero-section.svg)",
-        }}
-      />
-      {/* Overlay tối để chữ trắng nổi bật */}
-      <div className="absolute inset-0 " />
+    <section id="top" className="relative w-full">
+      <div className="w-full h-dvh">
+        <img
+          src="/images/test/test-1.png"
+          alt="banner-hero-section"
+          className="w-full h-full object-cover object-center"
+        />
 
-      <Header />
-
-      {/* Nội dung chính - z-10 để nằm trên overlay và background */}
-      <div className="relative z-10 flex min-h-[100dvh] items-center justify-center text-center text-white">
-        <div className="px-6">
-          <h1 className="font-lamoric text-[93.48px] leading-[100%]">
+        <div className="absolute inset-0 z-10 w-full h-full flex flex-col items-center justify-center text-center text-white">
+          <h1 className="font-lamoric text-[6.5dvw] leading-none">
             LẦN ĐẦU
           </h1>
-          <p className="font-qalogre mt-4 text-[36px]">
+          <p className="font-qalogre text-[2.5dvw] leading-none">
             KHÔNG CẦN PHẢI ĐÁNG SỢ
           </p>
 
@@ -39,6 +23,7 @@ export default function Hero() {
           </p>
         </div>
       </div>
+      <Header />
     </section>
   );
 }
