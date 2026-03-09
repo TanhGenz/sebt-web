@@ -1,16 +1,7 @@
-/**
- * Header.tsx - Thanh điều hướng đầu trang
- *
- * TSX: Component không nhận props nên không cần type cho tham số.
- * Nếu sau này có props (vd: links), dùng:
- *   interface HeaderProps { links: { href: string; label: string }[] }
- *   export default function Header({ links }: HeaderProps) { ... }
- */
-
 export default function Header() {
   return (
     <header className="absolute top-0 w-full">
-      <div className="container mx-auto px-10">
+      <div className="mx-auto px-10">
         <div className="flex h-20 items-center justify-between">
           {/* Logo - dùng đường dẫn từ thư mục public (/) */}
           <a href="#top" className="text-white/90 font-semibold">
