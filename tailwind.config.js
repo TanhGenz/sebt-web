@@ -18,6 +18,7 @@ export default {
         primary: "#935050",
         secondary: "#520000",
         beige: "#E8E3DD",
+        lightBeige : "#D8C6AF",
         primaryText: "#82152C",
         secondaryText: "#C18989",
         thirdText: "#ECE0D0",

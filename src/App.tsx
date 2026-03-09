@@ -11,6 +11,8 @@ import CourseOverview from "./sections/CourseOverview";
 import MainLayout from "./Layouts/MainLayout";
 import HeroHeadline from "./sections/HeroHeadline";
 import Intro from "./sections/Intro";
+import Question from "./sections/Question";
+import Outcome from "./sections/Outcome";
 export default function App() {
   return (
     <MainLayout>
@@ -18,6 +20,8 @@ export default function App() {
       <CourseOverview />
       <HeroHeadline />
       <Intro />
+      <Question />
+      <Outcome />
     </MainLayout>
   );
 }

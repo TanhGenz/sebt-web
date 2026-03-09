@@ -8,7 +8,7 @@
 export default function CourseOverview() {
   return (
     <section className="relative w-full bg-beige">
-      <div className="container relative">
+      <div className="container ">
         {/* Main heading */}
         <div className="pt-24 text-center">
           <h2 className="font-qalogre text-[64px] leading-[1.2] tracking-widest text-primaryText">
@@ -51,6 +51,7 @@ export default function CourseOverview() {
               CHỈ TRONG 7 PHẦN HỌC
             </p>
           </div>
+          
         </div>
 
         {/* Sub heading */}
