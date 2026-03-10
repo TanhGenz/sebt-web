@@ -27,7 +27,7 @@ const contentList = [
               SAU KHÓA HỌC BẠN SẼ
             </h2>
   
-            <div className="flex w-[60.2dvw] flex-col gap-3ss">
+            <div className="flex w-[60.2dvw] flex-col gap-3">
               {titleList.map((item, index) => (
                 <div
                   key={index}
@@ -42,7 +42,7 @@ const contentList = [
                     alt="button"
                     className="h-auto w-[16dvw]"
                   />
-                  <p className ="pl-10"> {contentList[index]}</p>
+                  <p className ="pl-10 font-gilroy text-[1.4 dvw]"> {contentList[index]}</p>
                 </div>
               ))}
             </div>

@@ -12,7 +12,7 @@
 
 export default function Intro() {
   return (
-    <section className="relative w-full">
+    <section className="relative w-full bg-beige">
       <div className=" flex items-center justify-center pt-7">
         <img
           src="/images/intro.svg"
