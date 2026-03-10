@@ -12,50 +12,62 @@
 
 export default function Intro() {
   return (
-    <section className="w-full bg-beige py-16 ">
-      <div className="container flex justify-center">
-        <div className="relative w-full max-w-[860px]">
-          <img
-            src="/images/introduction.svg"
-            alt="Introduction frame"
-            className="block h-auto w-full"
-          />
+    <section className="relative w-full">
+      <div className=" flex items-center justify-center pt-7">
+        <img
+          src="/images/intro.svg"
+          alt="banner-hero-section"
+          className=" w-[45dvw] h-auto object-cover object-center"
+        />
 
-          <div className="absolute inset-0">
-            <div className="mx-auto flex h-full w-full flex-col px-[7%] pt-[8%] pb-[10%]">
-              <h2 className="text-center font-karmila text-[40px] leading-none text-primaryText sm:text-[52px] md:text-[72px]">
-                Gửi bạn,
-              </h2>
-
-              <div className="mx-auto mt-[10%] w-full max-w-[78%] text-left font-gilroy text-[14px] leading-[1.45] text-primaryText sm:text-[15px] md:text-[16px] md:leading-[1.55]">
-                <div className="space-y-4 md:space-y-5">
-                  <p>
-                    Nếu bạn đang đọc những dòng này, có thể bạn đang chuẩn bị cho
-                    một điều gì đó rất quan trọng – lần đầu tiên trong đời bạn bước
-                    vào một trải nghiệm mới.
-                  </p>
-
-                  <p>Và Trang hiểu. Vì Trang cũng từng ở đó.</p>
-
-                  <p>
-                    Mình từng là người không biết hỏi ai. Mình từng lo lắng đến mất
-                    ngủ. Mình từng nghĩ rằng đâu là chuyện bình thường, là “phải
-                    chịu” hay mình không chảy máu sau lần đầu là mình bị hỏng chăng?
-                  </p>
-
-                  <p>
-                    Và mình ước, giá như ngày đó có ai đó nói cho mình biết:
-                  </p>
-                </div>
-
-                <p className="mt-10 font-karmila text-[34px] leading-none sm:text-[42px] md:text-[56px]">
-                  Trang
-                </p>
-              </div>
-            </div>
+        <div className="absolute  w-[45dvw] h-full flex flex-col  px-10">
+          <div className = " w-full flex flex-end">
+            <h1 className="font-kamilla text-[6.7dvw] text-primaryText leading-none"> Gửi Bạn, </h1>
           </div>
+          <p className="font-gilroy text-[1.1dvw] text-primaryText leading-none">
+            Nếu bạn đang đọc những dòng này, có thể bạn đang chuẩn bị cho một điều gì đó rất quan trọng — lần đầu tiên trong đời bạn bước vào một trải nghiệm thân mật.
+            <br />
+            <br />
+            Và Trang hiểu. Vì Trang  cũng từng ở đó.
+            <br />
+            <br />
+            Mình từng là người không biết hỏi ai. Mình từng lo lắng đến mất ngủ. Mình từng nghĩ rằng đau là chuyện bình thường, là "phải chịu" hay mình không chảy máu sau lần đầu là mình bị hỏng chăng? Mình từng tin vào những lời đồn mà sau này mình mới biết — hoàn toàn sai.
+            <br />
+            <br />
+            Và mình ước, giá như ngày đó có ai đó nói cho mình biết:
+          </p>
+          <br />
+
+          <p className="font-gilroy text-[1.1dvw] text-secondary leading-none">
+            "Lần đầu không nhất thiết phải đau, phải ra máu. Bạn có
+            <br />
+            quyền được chuẩn bị. Bạn có quyền hiểu cơ thể mình."
+          </p>
+          <p className="font-gilroy text-[1.1dvw] text-primaryText leading-none">
+            Đó là lý do Trang tạo ra khóa học này.
+            <br />
+            <br />
+            Không phải để chỉ dạy bạn "kỹ thuật". Mà để giúp bạn hiểu — hiểu cơ thể mình, hiểu tâm lý mình, hiểu cách để lần đầu trở thành một trải nghiệm kết nối thay vì ám ảnh.
+            <br />
+            <br />
+            Khóa học này không dài. Không phức tạp. Chỉ 7 phần, mỗi phần vài video ngắn. Bạn có thể học theo tốc độ của mình, ở nơi riêng tư, với nickname nếu muốn.
+            <br />
+            <br />
+            Mình không hứa nó sẽ hoàn hảo. Nhưng mình hứa — bạn sẽ không còn phải "thử vận may" nữa.
+            <br />
+            <br />
+            Nếu bạn sẵn sàng, mình ở đây.
+            <br />
+            <br />
+            Cùng nhau cố gắng nhé,
+          </p>
+
         </div>
       </div>
+
+
+
+
     </section>
   );
 }
