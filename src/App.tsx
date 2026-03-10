@@ -9,19 +9,21 @@
 import Hero from "./sections/Hero";
 import CourseOverview from "./sections/CourseOverview";
 import MainLayout from "./Layouts/MainLayout";
-import HeroHeadline from "./sections/HeroHeadline";
+// import HeroHeadline from "./sections/HeroHeadline";
 import Intro from "./sections/Intro";
 import Question from "./sections/Question";
 import Outcome from "./sections/Outcome";
+import Journey from "./sections/Journey"
 export default function App() {
   return (
     <MainLayout>
       <Hero />
       <CourseOverview />
-      <HeroHeadline />
+      
       <Intro />
       <Question />
       <Outcome />
+      <Journey />
     </MainLayout>
   );
 }
