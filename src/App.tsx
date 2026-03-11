@@ -13,17 +13,18 @@ import MainLayout from "./Layouts/MainLayout";
 import Intro from "./sections/Intro";
 import Question from "./sections/Question";
 import Outcome from "./sections/Outcome";
-import Journey from "./sections/Journey"
+import Journey from "./sections/Journey";
+import AboutMe from "./sections/AboutMe";
 export default function App() {
   return (
     <MainLayout>
       <Hero />
       <CourseOverview />
-      
       <Intro />
       <Question />
       <Outcome />
       <Journey />
+      <AboutMe />
     </MainLayout>
   );
 }

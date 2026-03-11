@@ -1,6 +1,6 @@
 export default function Intro() {
   return (
-    <section className="w-full">
+    <section className="w-full bg-beige">
       <div className="relative w-max flex items-center justify-center mx-auto">
         {/* Paper */}
         <img

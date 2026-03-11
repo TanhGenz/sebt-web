@@ -2,7 +2,12 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { cn } from "../ultils/string";
 
-type CardTransform = { i: number; x: string | number; y: string | number; rotate: number };
+type CardTransform = {
+  i: number;
+  x: string | number;
+  y: string | number;
+  rotate: number;
+};
 
 const fadeInUp = {
   hidden: (t: CardTransform) => ({
@@ -30,8 +35,19 @@ type PhotoCardProps = {
   custom?: CardTransform;
 };
 
-const PhotoCard = ({ image, title, className, variants, initial, animate, custom }: PhotoCardProps) => {
-  const baseClass = cn('w-[22.5%] flex flex-col items-center bg-white rounded-[6px] shadow-[4px_4px_4px_0px_#00000040]', className);
+const PhotoCard = ({
+  image,
+  title,
+  className,
+  variants,
+  initial,
+  animate,
+  custom,
+}: PhotoCardProps) => {
+  const baseClass = cn(
+    "w-[22.5%] flex flex-col items-center bg-white rounded-[6px] shadow-[4px_4px_4px_0px_#00000040]",
+    className,
+  );
   const content = (
     <>
       <div className="w-[85%] my-[7.5%]">
@@ -44,7 +60,13 @@ const PhotoCard = ({ image, title, className, variants, initial, animate, custom
   );
   if (variants != null && initial != null && animate != null) {
     return (
-      <motion.div className={baseClass} variants={variants} initial={initial} animate={animate} custom={custom}>
+      <motion.div
+        className={baseClass}
+        variants={variants}
+        initial={initial}
+        animate={animate}
+        custom={custom}
+      >
         {content}
       </motion.div>
     );
@@ -56,14 +78,36 @@ const PhotoCardsRow = () => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
 
-  const cards: { image: string; title: string; className?: string; transform: CardTransform }[] = [
-    { image: "/images/demo-imgs.svg", title: "ĐAU ? KHÔNG PHẢI SỢ", className: "relative", transform: { i: 0, x: "-15%", y: "-5%", rotate: 5.5 } },
-    { image: "/images/demo-imgs.svg", title: "PETER CHỐNG ĐỐI ?", transform: { i: 1, x: 0, y: 0, rotate: 0 } },
-    { image: "/images/demo-imgs.svg", title: "CHỈ TRONG 7 PHẦN HỌC", className: "relative", transform: { i: 2, x: "15%", y: "-5%", rotate: -5.5 } },
+  const cards: {
+    image: string;
+    title: string;
+    className?: string;
+    transform: CardTransform;
+  }[] = [
+    {
+      image: "/images/demo-imgs.svg",
+      title: "ĐAU ? KHÔNG PHẢI SỢ",
+      className: "relative",
+      transform: { i: 0, x: "-15%", y: "-5%", rotate: 5.5 },
+    },
+    {
+      image: "/images/demo-imgs.svg",
+      title: "PETER CHỐNG ĐỐI ?",
+      transform: { i: 1, x: 0, y: 0, rotate: 0 },
+    },
+    {
+      image: "/images/demo-imgs.svg",
+      title: "CHỈ TRONG 7 PHẦN HỌC",
+      className: "relative",
+      transform: { i: 2, x: "15%", y: "-5%", rotate: -5.5 },
+    },
   ];
 
   return (
-    <div ref={ref} className="w-full relative translate-y-[-5%] flex justify-center">
+    <div
+      ref={ref}
+      className="w-full relative translate-y-[-5%] flex justify-center"
+    >
       {cards.map((card) => (
         <PhotoCard
           key={card.title}
@@ -78,7 +122,7 @@ const PhotoCardsRow = () => {
       ))}
     </div>
   );
-}
+};
 
 export default function CourseOverview() {
   const imagesDemo = [
@@ -89,18 +133,18 @@ export default function CourseOverview() {
     "/images/demo-imgs.svg",
     "/images/demo-imgs.svg",
     "/images/demo-imgs.svg",
-  ]
+  ];
 
   return (
     <section className="relative w-full bg-beige">
       <div className="relative">
         {/* Main heading */}
         <div className="text-center pt-[5.6dvw]">
-          <h2 className="font-qalogre text-[4.45dvw] leading-none text-primaryText">
+          <h1 className="font-qalogre text-[4.45dvw] leading-none text-primaryText">
             LẦN ĐẦU CHUẨN BỊ
             <br />
             KHÔNG CẦN LO TOAN
-          </h2>
+          </h1>
         </div>
 
         {/* Polaroid cards */}
@@ -118,14 +162,18 @@ export default function CourseOverview() {
           <h3 className="font-qalogre text-[3.9dvw] leading-none text-primaryText">
             NỘI DUNG CÁC PHẦN
           </h3>
-          <img src="src\assets\icons\lines.svg" alt="content-section-line" className="w-[28.6dvw] h-auto object-contain" />
+          <img
+            src="src\assets\icons\lines.svg"
+            alt="content-section-line"
+            className="w-[28.6dvw] h-auto object-contain"
+          />
         </div>
 
         {/* Content grid */}
         <div className="w-full mt-[2dvw]">
           <div className="w-[70.28dvw] flex flex-wrap justify-center gap-[1.2dvw] mx-auto">
             {imagesDemo.map((image) => (
-              <div className="w-[16.67dvw] h-auto object-cover" >
+              <div className="w-[16.67dvw] h-auto object-cover">
                 <img src={image} alt="peter" />
               </div>
             ))}
