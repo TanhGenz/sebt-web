@@ -15,6 +15,8 @@ import Question from "./sections/Question";
 import Outcome from "./sections/Outcome";
 import Journey from "./sections/Journey";
 import AboutMe from "./sections/AboutMe";
+import Pricing from "./sections/Pricing";
+
 export default function App() {
   return (
     <MainLayout>
@@ -25,6 +27,7 @@ export default function App() {
       <Outcome />
       <Journey />
       <AboutMe />
+      <Pricing />
     </MainLayout>
   );
 }

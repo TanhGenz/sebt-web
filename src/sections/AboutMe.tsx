@@ -1,12 +1,23 @@
 export default function AboutMe() {
   return (
     <section className="w-full bg-beige">
-      <div className="w-full h-full relative flex flex-col items-center">
+      <div className="w-full h-full  flex flex-col items-center">
         <h1 className="font-lamoric text-primaryText text-[4.4dvw] ">
           VỀ MINH TRANG
         </h1>
 
-        <div className=" w-[36.8dvw] h-[120dvh] bg-secondary rounded-b-full px-[2.1dvw] py-[1.5dvh]">
+        <div className="relative mt-[25dvh] w-[36.8dvw] h-[120dvh] bg-secondary rounded-b-full px-[2.1dvw] py-[1.5dvh]">
+          {/* AVATAR */}
+          <div className="absolute left-1/2 top-[-12dvw] z-20 h-[17dvw] w-[17dvw] -translate-x-1/2 overflow-hidden rounded-full border-[0.5dvw] border-white bg-white">
+            <img
+              src="images/avt.png"
+              alt="Minh Trang"
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+
+          {/*card content */}
           <div className="pt-[18.7%] px-[10%] border border-white rounded-b-full flex flex-col ">
             <p className=" font-gilroy text-creamBeige text-[1.1dvw] font-normal tracking-[0.05em]">
               Minh Trang là nhà hoạt động giới tính và khoái cảm, người sáng lập
