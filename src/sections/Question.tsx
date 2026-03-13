@@ -11,8 +11,8 @@ export default function Question() {
   return (
     <section className=" w-full  bg-secondary">
       <div className="relative z-10 mx-auto">
-        <div className="absolute top-0 right-0">
-          <img src="images/decor/flower-decor.png" alt="flower-right-top" />
+        <div className="absolute top-[-11.9dvw] right-0">
+          <img src="images/decor/flower-decor.png" alt="flower-right-top" className="w-[39dvw] rotate-[-152.2deg]" />
         </div>
       </div>
 
@@ -21,7 +21,7 @@ export default function Question() {
           CÓ PHẢI BẠN...
         </h1>
         <div className="w-[48.9dvw] h-auto  bg-beige relative z-10 mx-auto">
-          <div className="absolute top-0 left-0 size-4  bg-secondary rounded-full"></div>
+          <div className="absolute top-0 left-0 size-4 -translate-y-1/2 -translate-x-1/2 bg-secondary rounded-full"></div>
           <div className="absolute bottom-0 left-0 size-4 bg-secondary rounded-full"></div>
           <div className="absolute top-0 right-0 size-4 bg-secondary rounded-full"></div>
           <div className="absolute bottom-0 right-0 size-4 bg-secondary rounded-full"></div>
@@ -29,12 +29,10 @@ export default function Question() {
             {questionItems.map((item, index) => (
               <div
                 key={index}
-                className="border-b-2 border-dotted border-primaryText/60 py-5"
+                className="border-b-2 border-dashed border-primaryText/60 py-5"
               >
-                <div className="flex flex-row items-start gap-5">
-                  <span className="text-[2dvw] mt-[0.4em]  leading-none text-primaryText">
-                    •
-                  </span>
+                <div className="flex items-start gap-5">
+                  <div className="flex-shrink-0 w-2 aspect-square bg-primaryText rounded-full translate-y-[16px]" />
                   <h1 className="font-gilroy font-medium text-[2dvw] text-secondary ">
                     {item}
                   </h1>

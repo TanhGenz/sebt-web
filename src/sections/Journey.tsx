@@ -60,47 +60,21 @@ export default function Journey() {
           </h1>
 
           <div className="w-[63dvw] border border-beige px-[6%] py-[4.5%]">
-            <div className="grid grid-cols-[9.5dvw_1px_1fr] gap-x-[5dvw]">
-              <div className="flex flex-col">
-                {lessonList.map((lesson, index) => (
-                  <div
-                    key={lesson.number}
-                    className={`flex items-start justify-start ${
-                      index === lessonList.length - 1 ? "" : "pb-[4.5dvw]"
-                    }`}
-                  >
-                    <span className="font-lamoric text-beige text-[4.6dvw] leading-none italic">
-                      {lesson.number}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="h-full w-px bg-beige"></div>
-
-              <div className="flex flex-col ">
-                {lessonList.map((lesson, index) => (
-                  <div
-                    key={lesson.number}
-                    className={
-                      index === lessonList.length - 1 ? "" : "pb-[4.5dvw]"
-                    }
-                  >
-                    <h3 className="font-lamoric text-[2.05dvw] leading-none text-beige uppercase">
-                      {lesson.title}
-                    </h3>
-
-                    <p className="mt-[0.8dvw] font-lamoric text-[2dvw] leading-none text-beige">
-                      {lesson.subtitle}
-                    </p>
-
-                    <p className="mt-[1dvw] max-w-[31dvw] font-gilroy text-[1.18dvw] leading-[1.25] text-beige">
-                      {lesson.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            {lessonList.map((lesson) => (
+              <div className="w-full flex" key={lesson.number}>
+                <div className="w-[200px] aspect-square border-r boder-solid border-beige flex items-center justify-center font-lamoric text-beige text-[4.6dvw] leading-none italic">{lesson.number}</div>
+                <div className="flex flex-col pl-[100px]">
+                  <h3 className="font-lamoric text-[2.05dvw] leading-none text-beige uppercase">
+                    {lesson.title}
+                  </h3>
+                  <p className="mt-[0.8dvw] font-lamoric text-[2dvw] leading-none text-beige">
+                    {lesson.subtitle}
+                  </p>
+                  <p className="mt-[1dvw] max-w-[31dvw] font-gilroy text-[1.18dvw] leading-[1.25] text-beige">
+                    {lesson.description}
+                  </p>
+                </div>
+              </div>))}
           </div>
         </div>
       </div>

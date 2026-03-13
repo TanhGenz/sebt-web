@@ -34,13 +34,13 @@ export default function Outcome() {
                 className="flex flex-col pb-3"
               >
                 <div className="relative w-max">
-                  <h3 className="font-gilroy text-[2dvw] leading-none text-primaryText">
+                  <h3 className="font-gilroy text-[24px] leading-none text-primaryText">
                     {item}
                   </h3>
                   <div className="absolute bottom-[-1px] left-[-6px] right-0 h-[2px] bg-primaryText rounded-full" />
                   <div className="absolute top-[5px] left-[-45px] w-[40px] aspect-square border-[2px] border-primaryText rounded-full" />
                 </div>
-                <p className=""> {contentList[index]}</p>
+                <p className="">{contentList[index]}</p>
               </div>
             ))}
           </div>
