@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Tránh khoảng trắng / scroll ngang do phần tử tràn viewport */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+#root {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 @font-face {
   font-family: "Gilroy";
   src: url("../assets/fonts/gilroy/SVN-Gilroy Regular.otf") format("opentype");

@@ -22,7 +22,7 @@ export default function Outcome() {
   return (
     <section className="relative w-full bg-beige">
       <div className="w-full h-full">
-        <div className="flex flex-col items-center gap-5 pt-8">
+        <div className="flex flex-col items-center gap-5 pt-8 pb-[225px]">
           <h2 className="font-lamoric text-[4.4dvw] text-primaryText">
             SAU KHÓA HỌC BẠN SẼ
           </h2>
@@ -40,10 +40,13 @@ export default function Outcome() {
                   <div className="absolute bottom-[-1px] left-[-6px] right-0 h-[2px] bg-primaryText rounded-full" />
                   <div className="absolute top-[5px] left-[-45px] w-[40px] aspect-square border-[2px] border-primaryText rounded-full" />
                 </div>
-                <p className="">{contentList[index]}</p>
+                <p className="text-[20px]">{contentList[index]}</p>
               </div>
             ))}
           </div>
+        </div>
+        <div className="absolute bottom-[1.4dvw] w-max left-1/2 ">
+          <img src="images/decor/lip-stick.png" alt="flower-right-top" className="w-[16.3dvw] rotate-[24.69deg]" />
         </div>
       </div>
     </section>
