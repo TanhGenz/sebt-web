@@ -46,7 +46,7 @@ export default function Outcome() {
           </div>
         </div>
         <div className="absolute bottom-[1.4dvw] w-max left-1/2 ">
-          <img src="images/decor/lip-stick.png" alt="flower-right-top" className="w-[16.3dvw] rotate-[24.69deg]" />
+          <img src="images/decor/lip-stick.png" alt="lip-stick" className="w-[16.3dvw] rotate-[24.69deg]" />
         </div>
       </div>
     </section>
