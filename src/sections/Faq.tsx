@@ -1,3 +1,5 @@
+import { cn } from "../ultils/string";
+
 const faqList = [
     {
         title: "Mình chưa có kinh nghiệm gì, có học được không?",
@@ -31,10 +33,10 @@ export default function Faq() {
                 </h1>
 
                 {/* layout faq */}
-                <div className="w-full grid grid-cols-[25%_1fr] gap-6 pl-[350px] pr-[200px] ">
+                <div className="w-max flex gap-6 pt-[120px] pb-[279px] mx-auto">
 
                     {/* FAQ IMAGE */}
-                    <div className="flex items-start justify-start  pt-[180px]">
+                    <div className="flex items-start justify-start pt-[76px]">
                         <img
                             src="/images/faq.png"
                             alt="faq"
@@ -43,31 +45,39 @@ export default function Faq() {
                     </div>
 
                     {/* CONTENT */}
-                    <div className="flex flex-col gap-[21px] pt-[120px] pb-[279px] ">
-                        {faqList.map((item, index) => (
-                            <div key={index} className="flex gap-[18px]">
+                    <div className="flex flex-col">
+                        {faqList.map((item, index) => {
+                            const isFirst = index === 0;
+                            const isLast = index === faqList.length - 1;
+                            const isNextLast = index === faqList.length - 2;
 
-                                {/* STAR */}
-                                <div className="flex-shrink-0 flex items-start">
-                                    <img
-                                        src="src/assets/icons/star.svg"
-                                        alt="star"
-                                        className="w-[50px] h-[70px] object-contain"
-                                    />
+                            return (
+                                <div key={index} className="relative flex gap-[18px]">
+                                    {/* LINE */}
+                                    <div className={cn("absolute bottom-0 left-[25px] w-[1px] -translate-x-1/2 bg-beige", isFirst ? "top-[16px]" : "top-0", isLast && "hidden")} />
+                                    <div className={cn("absolute top-0 left-[25px] w-[1px] h-[10px] -translate-x-1/2 bg-beige", isLast ? "block" : "hidden")} />
+
+                                    {/* STAR */}
+                                    <div className={cn("flex-shrink-0 flex items-start", isFirst && "pt-[16px]")}>
+                                        <img
+                                            src="src/assets/icons/star.svg"
+                                            alt="star"
+                                            className="w-[50px] h-[70px] object-contain"
+                                        />
+                                    </div>
+
+                                    {/* TEXT */}
+                                    <div className={cn("max-w-[359px]", (isFirst || isLast) ? "pt-0" : "pt-[20px]", isNextLast ? "pb-[48px]" : "pb-[28px]")}>
+                                        <h3 className="font-gilroy font-medium text-beige text-[24px] leading-none tracking-[0.05em] inline-block border-b border-beige pb-2">
+                                            {item.title}
+                                        </h3>
+                                        <p className="pt-[10px] font-gilroy text-[18px] leading-none text-beige/85">
+                                            {item.desc}
+                                        </p>
+                                    </div>
                                 </div>
-
-                                {/* TEXT */}
-                                <div className="max-w-[359px]">
-                                    <h3 className="font-gilroy font-medium text-[24px] text-beige leading-none tracking-[0.05em] inline-block border-b border-beige pb-2">
-                                        {item.title}
-                                    </h3>
-
-                                    <p className="pt-[10px] font-gilroy text-[18px] leading-none text-beige/85">
-                                        {item.desc}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
+                            )
+                        })}
                     </div>
 
                 </div>
