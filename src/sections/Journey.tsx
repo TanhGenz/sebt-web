@@ -63,9 +63,9 @@ export default function Journey() {
           <div className="w-[63dvw] border border-beige px-[6%] py-[4.5%]">
             {lessonList.map((lesson) => (
               <div className=" w-full flex" key={lesson.number}>
-                <div className=" w-[200px] aspect-square border-r boder-solid border-beige flex items-center justify-start font-lamoric text-beige text-[100px] leading-none italic">{lesson.number}</div>
+                <div className="w-[200px] aspect-square flex-shrink-0 border-r boder-solid border-beige flex items-center justify-start font-lamoric text-beige text-[100px] leading-none italic">{lesson.number}</div>
                 <div className="flex flex-col pl-[100px]">
-                  <h3 className="font-lamoric text-[36px] leading-none text-beige uppercase">
+                  <h3 className="font-lamoric xl:text-[36px] leading-none text-beige uppercase">
                     {lesson.title}
                   </h3>
                   <p className="mt-[0.8dvw] font-bladeRush text-[32px] leading-none text-beige">
