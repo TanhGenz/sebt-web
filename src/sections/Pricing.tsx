@@ -56,7 +56,7 @@ export default function Pricing() {
         {/* big voucher ele */}
         <div className="relative w-[71.5dvw]  mt-[7.6dvw]"> 
        {/* calc w-[71.5dvw] => not wrap all content , up to 80dvw*/}
-          <img src="/images/ticket.png" className="w-full  h-auto object-contain" />
+          <img src="images/ticket.png" className="w-full  h-auto object-contain" />
           <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[4%] pl-[2%] pr-[15%] gap-[1.5dvw]">
             <h3 className="font-qalogre font-normal text-[3.3dvw] text-primaryText leading-none tracking-[0.05em]">FOUNDING CIRCLE </h3>
             <h3 className="font-qalogre font-normal text-[3.3dvw] text-primaryText leading-none tracking-[0.05em]">CHỈ 50 HỌC VIÊN ĐẦU</h3>

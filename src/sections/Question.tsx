@@ -10,52 +10,80 @@ const questionItems = [
 export default function Question() {
   return (
     <section className=" w-full  bg-secondary">
+
+      {/* decor */}
       <div className="relative z-10 mx-auto">
         <div className="absolute top-[-11.9dvw] right-0">
           <img src="images/decor/flower-decor.png" alt="flower-right-top" className="w-[39dvw] rotate-[-152.2deg]" />
         </div>
-        <div className="absolute bottom-[-65.9dvw] left-[7dvw]">
+
+        <div className="absolute bottom-[-65.9dvw] left-0">
           <img src="images/decor/flower-decor.png" alt="flower-right-top" className="w-[39dvw] rotate-[-35deg]" />
         </div>
+
       </div>
 
-      <div className="w-full flex flex-col items-center gap-10 pt-5 pb-5">
+
+
+      {/* full layout */}
+      <div className="flex flex-col items-center gap-[68px] pt-[22px] pb-[167px]">
+        {/* title */}
         <h1 className="font-lamoric text-[4.4dvw] text-beige leading-none">
           CÓ PHẢI BẠN...
         </h1>
-        <div className="w-[705px] bg-beige relative z-10 mx-auto">
+
+        {/* layout question */}
+        <div className="relative mx-auto w-[500px] z-10 bg-beige">
+
+          {/* dots 4  */}
           <div className="absolute top-0 left-0 size-8 -translate-y-1/2 -translate-x-1/2 bg-secondary rounded-full"></div>
           <div className="absolute bottom-0 left-0 size-8 translate-y-1/2 -translate-x-1/2 bg-secondary rounded-full"></div>
           <div className="absolute top-0 right-0 size-8 -translate-y-1/2 translate-x-1/2 bg-secondary rounded-full"></div>
           <div className="absolute bottom-0 right-0 size-8 translate-y-1/2 translate-x-1/2 bg-secondary rounded-full"></div>
-          <div className=" py-[28px] pl-[48px] pr-[60px] flex flex-col gap-[14px]">
+
+
+          {/* contents layout */}
+          <div className="px-[65px] py-[28px] flex flex-col gap-[14px]">
             {questionItems.map((item, index) => (
-              <div
-                key={index}
-                className="border-t-2 border-dashed border-primaryText/60 py-3"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-2 aspect-square bg-secondary rounded-full translate-y-[16px]" />
-                  <h1 className="font-gilroy font-medium text-[28px] text-secondary ">
+              <div key={index} className="border-t-2 border-dashed border-primaryText/60">
+                <br />
+                <div className="flex items-start gap-[14px]">
+                  {/* dots and content */}
+                  <div className="flex-shrink-0 w-1 aspect-square bg-secondary rounded-full translate-y-[16px]" />
+                  <p className="font-gilroy font-medium text-[20px] text-secondary ">
                     {item}
-                  </h1>
+                  </p>
                 </div>
               </div>
-
             ))}
-
           </div>
-          <div className="pt-[14px] pb-[41px]  px-[27px]">
-            <p className=" font-gilroy text-[28px] font-bold leading-none text-secondary tracking-[0.05em]">
-              Nếu bạn thấy mình trong ít nhất 1 dòng trên
-            </p>
-            <br />
-            <p className=" px-[37px] font-gilroy text-[28px] font-bold leading-none text-secondary tracking-[0.05em]">
-              Khóa học này được thiết kế cho bạn.
+
+        </div>
+
+        {/* box */}
+        <div className="relative mx-auto">
+          <img
+            src="/images/decor/box-quest.png"
+            alt="box question"
+            className="block w-[74.2dvw]"
+          />
+
+          <div className="absolute inset-0 flex items-center justify-center px-[37px] py-[13px]">
+            <p className="font-lamoric text-center text-[3.3dvw] leading-[1.35] text-[#D8C6AF]">
+              NẾU BẠN THẤY MÌNH ÍT NHẤT MỘT DÒNG TRÊN
+              KHOÁ HỌC NÀY DÀNH CHO BẠN
             </p>
           </div>
         </div>
       </div>
+      
+      {/* decor paper */}
+      <div className="relative z-10">
+        <div className="absolute bottom-[-1dvw] right-0 left-0">
+          <img src="images/decor/questionDecor/paper-bottom.png" alt="flower-right-top" className="w-full "/>
+        </div> 
+      </div>
+
     </section>
   );
 }
