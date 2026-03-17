@@ -23,7 +23,7 @@ export default function Question() {
         <h1 className="font-lamoric text-[4.4dvw] text-beige leading-none">
           CÓ PHẢI BẠN...
         </h1>
-        <div className="w-[35dvw]   bg-beige relative z-10 mx-auto">
+        <div className="w-[705px] bg-beige relative z-10 mx-auto">
           <div className="absolute top-0 left-0 size-8 -translate-y-1/2 -translate-x-1/2 bg-secondary rounded-full"></div>
           <div className="absolute bottom-0 left-0 size-8 translate-y-1/2 -translate-x-1/2 bg-secondary rounded-full"></div>
           <div className="absolute top-0 right-0 size-8 -translate-y-1/2 translate-x-1/2 bg-secondary rounded-full"></div>
