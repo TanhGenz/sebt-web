@@ -30,6 +30,7 @@ export default {
         qalogre: ["Qalogre", "sans-serif"],
         bladeRush: ["BladeRush", "sans-serif"],
         kamilla: ["Karmila", "sans-serif"],
+        morgan: ["Morgan", "sans-serif"]
       },
     },
   },

@@ -61,3 +61,10 @@ body {
   font-weight: 700;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Morgan";
+  src: url("../assets/fonts/1FTV-VIP-Morgan.ttf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}

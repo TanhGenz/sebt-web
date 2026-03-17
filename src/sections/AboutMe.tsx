@@ -10,7 +10,7 @@ export default function AboutMe() {
         <div className="relative mx-auto mb-[100px] w-[531px] h-auto bg-secondary rounded-b-full p-[11px]">
 
           {/* AVATAR */}
-          <div className="absolute left-1/2 top-0 z-20 h-[253px] w-[253px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-[0.5dvw] border-white bg-white">
+          <div className="absolute left-1/2 top-0 z-10 h-[253px] w-[253px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-[0.5dvw] border-white bg-white">
             <img
               src="images/avt.png"
               alt="Minh Trang"

@@ -53,31 +53,38 @@ const lessonList = [
 export default function Journey() {
   return (
     <section className="w-full bg-secondary">
-      <div className="w-full h-full pb-[6.7dvh]">
-        <div className="flex flex-col items-center gap-5 pt-8">
-          <h1 className="font-lamoric text-beige text-[4.4dvw]">
+      <div className="flex flex-col py-[53px] gap-[68px]">
+          <h1 className="text-center font-lamoric text-beige text-[4.4dvw]">
             HÀNH TRÌNH 7 PHẦN
           </h1>
-
-          {/* khung bọc */}
-          <div className="w-[63dvw] border border-beige px-[6%] py-[4.5%]">
+          
+          {/* board layout */}
+          <div className="w-[908px] border border-white mx-auto  py-[62px] pl-[58px] pr-[15px]">
             {lessonList.map((lesson) => (
-              <div className=" w-full flex" key={lesson.number}>
-                <div className="w-[200px] aspect-square flex-shrink-0 border-r boder-solid border-beige flex items-center justify-start font-lamoric text-beige text-[100px] leading-none italic">{lesson.number}</div>
-                <div className="flex flex-col pl-[100px]">
-                  <h3 className="font-lamoric xl:text-[36px] leading-none text-beige uppercase">
+              <div className="flex gap-[190px]" key={lesson.number}>
+              
+                {/* Number in left layout */}
+                <div className= "text-[100px]  text-beige border-r boder-solid">
+                  <span>{lesson.number}</span> 
+                </div>
+
+                {/* content text layouts */}
+                <div className="flex flex-col gap-[15px] pb-[23px]">
+                  <h3 className="font-lamoric text-[36px] leading-none text-beige uppercase">
                     {lesson.title}
                   </h3>
-                  <p className="mt-[0.8dvw] font-bladeRush text-[32px] leading-none text-beige">
+                  <p className="font-bladeRush text-[32px] leading-none text-beige">
                     {lesson.subtitle}
                   </p>
-                  <p className="mt-[1dvw] max-w-[552px] font-gilroy text-[20px] leading-[1.25] text-beige">
+                  <p className="font-gilroy text-[20px]  text-beige">
                     {lesson.description}
                   </p>
                 </div>
-              </div>))}
+              </div>
+
+            
+            ))}
           </div>
-        </div>
       </div>
     </section>
   );
