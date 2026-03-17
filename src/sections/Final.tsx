@@ -1,7 +1,7 @@
 export default function Final() {
     return (
         <section className="w-full bg-beige">
-            <div className="w-full h-full gap-[62px] flex flex-col items-center  py-[60px]">
+            <div className="w-full  gap-[62px] flex flex-col items-center  py-[60px]">
                 <h1 className="font-lamoric text-primaryText text-[4.4dvw]">
                     BẠN ĐÃ SẴN SÀNG ?
                 </h1>
@@ -20,7 +20,7 @@ export default function Final() {
                     <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2">
                         <p className="font-lamoric font-normal text-[2.2dvw] text-secondary leading-none ">
                             BẮT ĐẦU HÀNH TRÌNH
-                        </p>
+                        </p> 
                     </div>
                 </div>
             </div>

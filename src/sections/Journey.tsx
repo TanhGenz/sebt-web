@@ -59,12 +59,12 @@ export default function Journey() {
           </h1>
           
           {/* board layout */}
-          <div className="w-[908px] border border-white mx-auto  py-[62px] pl-[58px] pr-[15px]">
+          <div className="w-[908px] border border-white mx-auto  py-[62px] pl-[55px] pr-[15px]">
             {lessonList.map((lesson) => (
-              <div className="flex gap-[190px]" key={lesson.number}>
+              <div className="flex gap-[100px]" key={lesson.number}>
               
                 {/* Number in left layout */}
-                <div className= "text-[100px]  text-beige border-r boder-solid">
+                <div className= "text-[100px]  text-beige border-r pr-[91px] boder-solid">
                   <span>{lesson.number}</span> 
                 </div>
 

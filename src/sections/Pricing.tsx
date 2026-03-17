@@ -54,12 +54,15 @@ export default function Pricing() {
         </div>
 
         {/* big voucher ele */}
-        <div className="relative w-[88dvw]  mt-[7.6dvw]"> 
+        <div className="relative w-[70.5dvw] mt-[7.6dvw]"> 
        {/* calc w-[71.5dvw] => not wrap all content , up to 80dvw*/}
-          <img src="images/ticket.png" className="w-full  h-auto object-contain" />
-          <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[4%] pl-[2%] pr-[15%] gap-[1.5dvw]">
-            <h3 className="font-qalogre font-normal text-[3.3dvw] text-primaryText leading-none tracking-[0.05em]">FOUNDING CIRCLE </h3>
-            <h3 className="font-qalogre font-normal text-[3.3dvw] text-primaryText leading-none tracking-[0.05em]">CHỈ 50 HỌC VIÊN ĐẦU</h3>
+          <img src="images/pricing/ticket.png" className="w-full h-auto  object-contain" />
+          <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[2.3%] pl-[2.2%] pr-[16.5%] gap-[1dvw]">
+            <div className="font-morgan font-normal text-[3.3dvw] text-primaryText leading-none tracking-[0.05em] text-center">
+              <h3 >FOUNDING CIRCLE </h3>
+              <h3>CHỈ 50 HỌC VIÊN ĐẦU</h3>
+            </div>
+           
             <p className="font-gilroy font-medium text-[2dvw] text-secondary leading-none tracking-[0.05em]">Only for you</p>
             <p className="font-gilroy font-normal text-[2dvw] text-[#C18989] leading-none tracking-[0.05em]">+Tặng 1 Love Box tri ân (chỉ dành cho founding members)</p>
             {/* <h2 className="font-lamoric text-[5.3dvw] text-[#767676] font-normal leading-none tracking-[0.05em]">2.199.000đ</h2> */}
@@ -74,11 +77,11 @@ export default function Pricing() {
         </div>
 
         {/* 2 ticket small */}
-        <div className="w-[71.5dvw] flex flex-row gap-[11dvw]  mt-[7.6dvw]">
-          <div className="relative w-[32.5dvw]">
-            <img src="/images/ticket-small.png" className="w-full  h-auto object-contain" />
-            <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[4%] pl-[2%] pr-[15%] gap-[1.5dvw]">
-              <h3 className="font-qalogre font-normal text-[1.8dvw] text-primaryText leading-none tracking-[0.05em]">CORE VERSION</h3>
+        <div className="w-[71.5dvw] flex flex-row gap-[7.4dvw]  mt-[7.6dvw]">
+          <div className="relative w-[42.5dvw]">
+            <img src="/images/pricing/ticket-small.png" className="w-full  h-auto object-contain" />
+            <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[3.5%] pl-[4.4%] pr-[21.5%] gap-[1dvw]">
+              <h3 className="font-morgan font-normal text-[2.3dvw] text-primaryText leading-none tracking-[0.05em]">CORE VERSION</h3>
               <p className="font-gilroy font-normal text-[1.15dvw] text-secondary leading-none tracking-[0.05em]">HỌC ĐỦ, DÙNG NGAY</p>
               <h2 className="font-lamoric text-[2.3vw] text-secondary font-normal leading-none tracking-[0.05em]">
                 1.399.000đ
@@ -86,10 +89,10 @@ export default function Pricing() {
             </div>
           </div>
 
-          <div className="relative w-[40dvw]">
-            <img src="/images/ticket-small.png" className="w-full  h-auto object-contain" />
-            <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[4%] pl-[2%] pr-[15%] gap-[1.5dvw]">
-              <h3 className="font-qalogre font-normal text-[1.5dvw] text-primaryText leading-none tracking-[0.05em]">LIFETIME PEACE-OF-MIND</h3>
+          <div className="relative w-[46.4dvw]">
+            <img src="/images/pricing/ticket-small.png" className="w-full  h-auto object-contain" />
+            <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[6%] pl-[13.3%] pr-[25%] gap-[1.5dvw]">
+              <h3 className="font-morgan font-normal text-[1.8dvw] text-primaryText leading-none tracking-[0.05em]">LIFETIME PEACE-OF-MIND</h3>
               <p className="font-gilroy font-normal text-[1.15dvw] text-secondary leading-none tracking-[0.05em]">ĐƯỢC CHỌN NHIỀU NHẤT</p>
               <p className="font-gilroy font-normal text-[1.15dvw] text-[#C18989] leading-none tracking-[0.05em]">Cập nhật trọn đời</p>
               <h2 className="font-lamoric text-[2.3vw] text-secondary font-normal leading-none tracking-[0.05em]">
