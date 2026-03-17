@@ -31,14 +31,14 @@ export default function Faq() {
                 </h1>
 
                 {/* layout faq */}
-                <div className="w-full grid grid-cols-[25%_1fr] gap-6 pl-[350px] pr-[200px] ">
+                <div className="w-full grid grid-cols-[500px_1fr] gap-6 pl-[350px] pr-[200px] ">
 
                     {/* FAQ IMAGE */}
                     <div className="flex items-start justify-start  pt-[180px]">
                         <img
                             src="/images/faq.png"
                             alt="faq"
-                            className="h-auto w-full object-contain"
+                            className="h-auto w-217px object-contain"
                         />
                     </div>
 
@@ -71,8 +71,6 @@ export default function Faq() {
                     </div>
 
                 </div>
-
-
             </div>
         </section>
     )
