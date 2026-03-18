@@ -27,63 +27,74 @@ const faqList = [
 export default function Faq() {
     return (
         <section className="w-full bg-secondary">
-            <div className="w-full h-full flex flex-col items-center">
+            <div className="w-full flex flex-col items-center gap-[82px] pb-[279px]">
                 <h1 className="font-lamoric text-beige text-[4.4dvw]">
                     CÂU HỎI THƯỜNG GẶP
                 </h1>
-
-                {/* layout faq */}
-                <div className="w-full grid grid-cols-[500px_1fr] gap-6 pl-[350px] pr-[200px] ">
-
-                    <div className="w-max flex gap-6 pt-[120px] pb-[279px] mx-auto">
+                
+                {/* faq content layouts [fixed px]*/}
+                <div className="w-[683px] flex mx-auto items-start">
 
 
-                        {/* FAQ IMAGE */}
-                        <div className="flex items-start justify-start pt-[76px]">
-                            <img
-                                src="/images/faq.png"
-                                alt="faq"
-                                className="h-auto w-217px object-contain"
-                            />
-                        </div>
-
-                        {/* CONTENT */}
-                        <div className="flex flex-col">
-                            {faqList.map((item, index) => {
-                                const isFirst = index === 0;
-                                const isLast = index === faqList.length - 1;
-                                const isNextLast = index === faqList.length - 2;
-
-                                return (
-                                    <div key={index} className="relative flex gap-[18px]">
-                                        {/* LINE */}
-                                        <div className={cn("absolute bottom-0 left-[25px] w-[1px] -translate-x-1/2 bg-beige", isFirst ? "top-[16px]" : "top-0", isLast && "hidden")} />
-                                        <div className={cn("absolute top-0 left-[25px] w-[1px] h-[10px] -translate-x-1/2 bg-beige", isLast ? "block" : "hidden")} />
-
-                                        {/* STAR */}
-                                        <div className={cn("flex-shrink-0 flex items-start", isFirst && "pt-[16px]")}>
-                                            <img
-                                                src="src/assets/icons/star.svg"
-                                                alt="star"
-                                                className="w-[50px] h-[70px] object-contain"
-                                            />
-                                        </div>
-
-                                        {/* TEXT */}
-                                        <div className={cn("max-w-[359px]", (isFirst || isLast) ? "pt-0" : "pt-[20px]", isNextLast ? "pb-[48px]" : "pb-[28px]")}>
-                                            <h3 className="font-gilroy font-medium text-beige text-[24px] leading-none tracking-[0.05em] inline-block border-b border-beige pb-2">
-                                                {item.title}
-                                            </h3>
-                                            <p className="pt-[10px] font-gilroy text-[18px] leading-none text-beige/85">
-                                                {item.desc}
-                                            </p>
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </div>
+                    {/* images layouts left*/}
+                    <div className="w-[223px] flex pt-[80px] ">
+                        <img src="images/faq.png" alt="faq section" className="w-full h-full object-contain "/>
                     </div>
+                    
+                    {/* content layouts right */}
+                    <div className="flex flex-col">
+                        {faqList.map((item, index) => {
+                            
+                            // first elements
+                            const isFirst = index === 0;
+                            
+                            // last elements
+                            const isLast = index === faqList.length - 1;
+                            
+                            // foruth elements
+                            const isNextLast = index === faqList.length - 2;
+                        
+                            // third elements 
+                            const isThird = index === faqList.length - 3;
+
+                            return (
+                                <div key = {index} className="relative flex gap-[18px]">
+                                    {/* LINE */}
+                                    <div className={cn("absolute bottom-0 left-[25px] w-[1px] -translate-x-1/2 bg-beige", isFirst ? "top-[16px]" : "top-0", isLast && "h-[30px]")} />
+                                    <div className={cn("absolute top-0 left-[25px] w-[1px] h-[10px] -translate-x-1/2 bg-beige", isLast ? "block" : "hidden")} />
+
+                                    {/*Star*/}
+                                    <div className={cn("flex-shrink-0 flex items-start", 
+                                        isFirst && "pt-[16px]", 
+                                        isLast && "pt-[25px]", 
+                                        isNextLast && "pt-[15px]",
+                                        isThird && "pt-[15px]"
+                                        )}>
+                                        <img src="src/assets/icons/star.svg"
+                                            alt="star"
+                                            className="w-[50px] h-[70px] object-contain" 
+                                        />
+                                    </div>
+
+                                    {/* contents TEXT */}
+                                    <div className=" max-w-[359px] flex flex-col flex-end pt-[21px] gap-2">
+                                        <h3 className="font-gilroy font-medium text-warmBeige text-[24px] leading-none tracking-[0.05em] 
+                                            inline-block border-b border-warmBeige pb-2">
+                                                {item.title}
+                                        </h3>
+                                        <p className="pt-[8px] font-gilroy font-normal text-[18px] tracking-[0.05em] leading-none text-warmBeige">
+                                                {item.desc}
+                                        </p>
+                                    </div>
+
+                                </div>
+                            )
+                        })}
+                    </div>
+
                 </div>
+
+
             </div>
         </section>
     )
