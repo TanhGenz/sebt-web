@@ -69,7 +69,7 @@ export default function Journey() {
                 </div>
 
                 {/* content text layouts */}
-                <div className="flex flex-col gap-[15px] pb-[23px]">
+                <div className="flex flex-col gap-[15px] pb-[48px]">
                   <h3 className="font-lamoric text-[36px] leading-none text-beige uppercase">
                     {lesson.title}
                   </h3>
