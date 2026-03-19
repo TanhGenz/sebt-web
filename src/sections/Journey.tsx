@@ -54,20 +54,11 @@ export default function Journey() {
   return (
     <section className="w-full bg-secondary">
       <div className="flex flex-col py-[53px] gap-[68px]">
-          <h1 className="text-center font-lamoric text-beige text-[4.4dvw]">
-            HÀNH TRÌNH 7 PHẦN
-          </h1>
-          
-          {/* board layout */}
-          <div className="w-[908px] border border-white mx-auto  py-[62px] pl-[55px] pr-[15px]">
-            {lessonList.map((lesson) => (
-              <div className="flex gap-[100px]" key={lesson.number}>
-              
-                {/* Number in left layout */}
-                <div className= "text-[100px]  text-beige border-r pr-[91px] boder-solid">
-                  <span>{lesson.number}</span> 
-                </div>
+        <h1 className="text-center font-lamoric text-beige text-[4.4dvw]">
+          HÀNH TRÌNH 7 PHẦN
+        </h1>
 
+<<<<<<< HEAD
                 {/* content text layouts */}
                 <div className="flex flex-col gap-[15px] pb-[48px]">
                   <h3 className="font-lamoric text-[36px] leading-none text-beige uppercase">
@@ -80,11 +71,35 @@ export default function Journey() {
                     {lesson.description}
                   </p>
                 </div>
+=======
+        {/* board layout */}
+        <div className="w-[908px] border border-white mx-auto  py-[62px] pl-[55px] pr-[15px]">
+          {lessonList.map((lesson) => (
+            <div className="flex gap-[100px]" key={lesson.number}>
+
+              {/* Number in left layout */}
+              <div className="w-[200px] flex-shrink-0 flex items-center text-[100px] leading-none text-beige border-r  boder-solid">
+                <p>{lesson.number}</p>
+>>>>>>> b6f6e52978b853778b83fc49374249708ad9e2e9
               </div>
 
-            
-            ))}
-          </div>
+              {/* content text layouts */}
+              <div className="flex flex-col gap-[15px] pb-[23px]">
+                <h3 className="font-lamoric text-[36px] leading-none text-beige uppercase">
+                  {lesson.title}
+                </h3>
+                <p className="font-bladeRush text-[32px] leading-none text-beige">
+                  {lesson.subtitle}
+                </p>
+                <p className="font-gilroy text-[20px]  text-beige">
+                  {lesson.description}
+                </p>
+              </div>
+            </div>
+
+
+          ))}
+        </div>
       </div>
     </section>
   );
