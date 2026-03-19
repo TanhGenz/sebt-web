@@ -95,9 +95,17 @@ export default function Pricing() {
   return (
     <section className="w-full bg-secondary">
       <div className="flex flex-col items-center pb-[12vw] pt-[6vw]">
-        <h1 className="font-lamoric text-beige text-[9vw] leading-none ">
-          HỌC VIÊN NÓI GÌ
-        </h1>
+        {/*  */}
+        <div className="flex flex-col items-center">
+          <h1 className="font-lamoric text-beige text-[4.4vw] leading-none ">
+            HỌC VIÊN NÓI GÌ
+          </h1>
+          <img
+            src="src\assets\icons\line-white.svg"
+            alt="content-section-line"
+            className="w-[28.6dvw] h-auto object-contain"
+          />
+        </div>
 
         <div className="mt-[8vw] flex w-full flex-col gap-[18px] xl:px-[15.6dvw] px-[12dvw]">
           {testimonials.map((item, index) => (

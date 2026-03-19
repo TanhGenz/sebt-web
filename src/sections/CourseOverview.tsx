@@ -163,14 +163,14 @@ export default function CourseOverview() {
             NỘI DUNG CÁC PHẦN
           </h3>
           <img
-            src="src\assets\icons\lines.svg"
+            src="src\assets\icons\line-red.svg"
             alt="content-section-line"
             className="w-[28.6dvw] h-auto object-contain"
           />
         </div>
 
         {/* Content grid */}
-        <div className="w-full mt-[2dvw]">
+        <div className="w-full mt-[2dvw] pb-[8.1dvw]">
           <div className="w-[70.28dvw] flex flex-wrap justify-center gap-[1.2dvw] mx-auto">
             {imagesDemo.map((image) => (
               <div className="w-[16.67dvw] h-auto object-cover">
@@ -178,21 +178,6 @@ export default function CourseOverview() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Test */}
-        <div className="w-full h-max flex flex-col gap-0">
-          <img
-            src="/images/decor/paper-1.png"
-            alt="paper-1"
-            className="w-full h-auto object-contain"
-          />
-          <div className="w-full h-[262px] bg-secondary relative z-10"></div>
-          <img
-            src="/images/decor/paper-1.png"
-            alt="paper-2"
-            className="w-full h-auto object-contain scale-y-[-1] realative z-0 translate-y-[-2px]"
-          />
         </div>
       </div>
     </section>

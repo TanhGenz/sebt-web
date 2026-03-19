@@ -34,7 +34,8 @@ export default {
         bladeRush: ["BladeRush", "sans-serif"],
         kamilla: ["Karmila", "sans-serif"],
         morgan: ["Morgan", "sans-serif"],
-        onebold: ["Onebold", "sans-serif"]
+        onebold: ["Onebold", "sans-serif"],
+        cinzel: ["Cinzel", "sans-serif"]
       },
     },
   },

@@ -75,3 +75,11 @@ body {
   font-weight: 700;
   font-style: normal;
 }
+
+
+@font-face {
+  font-family: "Cinzel";
+  src: url("../assets/fonts/CinzelDecorative.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}

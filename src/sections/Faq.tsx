@@ -26,12 +26,27 @@ const faqList = [
 
 export default function Faq() {
     return (
-        <section className="w-full bg-secondary">
-            <div className="w-full flex flex-col items-center gap-[82px] pb-[279px]">
-                <h1 className="font-lamoric text-beige text-[4.4dvw]">
-                    CÂU HỎI THƯỜNG GẶP
-                </h1>
-                
+        <section className="relative w-full bg-secondary">
+
+            <div className="absolute top-[-5dvw] right-0 left-0">
+                    <img src="images/decor/paper.png" alt="paper" className="w-full " />
+            </div>
+
+            <div className="w-full flex flex-col items-center gap-[82px] pb-[279px] pt-[50px]">
+
+                {/*  */}
+                <div className="flex flex-col items-center">
+                    <h1 className="font-lamoric text-beige text-[4.4dvw]">
+                        CÂU HỎI THƯỜNG GẶP
+                    </h1>
+                    <img
+                        src="src\assets\icons\line-white.svg"
+                        alt="content-section-line"
+                        className="w-[28.6dvw] h-auto object-contain"
+                    />
+                    </div>
+
+
                 {/* faq content layouts [fixed px]*/}
                 <div className="w-[683px] flex mx-auto items-start">
 
@@ -76,11 +91,11 @@ export default function Faq() {
 
                                     {/* contents TEXT */}
                                     <div className=" max-w-[359px] flex flex-col flex-end pb-[21px] gap-2">
-                                        <h3 className="font-gilroy font-medium text-warmBeige text-[24px] leading-none tracking-[0.05em] 
+                                        <h3 className="font-gilroy font-medium text-warmBeige text-[24px] leading-none  
                                             inline-block border-b border-warmBeige pb-2">
                                                 {item.title}
                                         </h3>
-                                        <p className="pt-[8px] font-gilroy font-normal text-[18px] tracking-[0.05em] leading-none text-warmBeige">
+                                        <p className="pt-[8px] font-gilroy font-normal text-[18px]  leading-none text-warmBeige">
                                                 {item.desc}
                                         </p>
                                     </div>

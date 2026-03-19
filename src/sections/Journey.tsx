@@ -52,11 +52,25 @@ const lessonList = [
 
 export default function Journey() {
   return (
-    <section className="w-full bg-secondary">
-      <div className="flex flex-col py-[53px] gap-[68px]">
-        <h1 className="text-center font-lamoric text-beige text-[4.4dvw]">
-          HÀNH TRÌNH 7 PHẦN
-        </h1>
+    <section className="relative  w-full bg-secondary">
+
+      {/* paper decor */}
+      <div className="absolute top-0 left-0 w-full -translate-y-[90%]">
+          <img src="images/decor/paper.png" alt="paper-decor" className="w-full h-full object-contain" />
+      </div>
+
+      <div className="relative z-10 flex flex-col pb-[53px] gap-[68px]">
+
+          <div className="flex flex-col items-center">
+            <h1 className="text-center font-lamoric text-beige text-[4.4dvw]">
+              HÀNH TRÌNH 7 PHẦN
+            </h1>
+          <img
+            src="src\assets\icons\line-white.svg"
+            alt="content-section-line"
+            className="w-[28.6dvw] h-auto object-contain"
+          />
+        </div>
 
         {/* board layout */}
         <div className="w-[908px] border border-white mx-auto  py-[62px] pl-[55px] pr-[15px]">

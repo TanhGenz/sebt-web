@@ -28,9 +28,16 @@ export default function Question() {
       {/* full layout */}
       <div className="flex flex-col items-center gap-[68px] pt-[22px] pb-[167px]">
         {/* title */}
-        <h1 className="font-lamoric text-[4.4dvw] text-beige leading-none">
-          CÓ PHẢI BẠN...
-        </h1>
+        <div className="flex flex-col items-center">
+          <h1 className="font-lamoric text-[4.4dvw] text-beige leading-none">
+            CÓ PHẢI BẠN...
+          </h1>
+          <img
+            src="src\assets\icons\line-white.svg"
+            alt="content-section-line"
+            className="w-[28.6dvw] h-auto object-contain"
+          />
+        </div>
 
         {/* layout question */}
         <div className="relative mx-auto w-[500px] z-10 bg-beige">
@@ -80,7 +87,7 @@ export default function Question() {
       {/* decor paper */}
       <div className="relative z-10">
         <div className="absolute bottom-[-1dvw] right-0 left-0">
-          <img src="images/decor/questionDecor/paper-bottom.png" alt="flower-right-top" className="w-full "/>
+          <img src="images/decor/questionDecor/paper-bottom.png" alt="paper-bottom" className="w-full "/>
         </div> 
       </div>
 
