@@ -68,3 +68,10 @@ body {
   font-weight: 700;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Onebold";
+  src: url("../assets/fonts/Milton_One_Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}

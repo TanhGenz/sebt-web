@@ -54,7 +54,7 @@ export default function Pricing() {
         </div>
 
         {/* big voucher ele */}
-        <div className="relative w-[70.5dvw] mt-[7.6dvw]"> 
+        <div className="relative w-[70.5dvw] mt-[7.6dvw] "> 
        {/* calc w-[71.5dvw] => not wrap all content , up to 80dvw*/}
           <img src="images/pricing/ticket.png" className="w-full h-auto  object-contain" />
           <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[2.3%] pl-[2.2%] pr-[16.5%] gap-[1dvw]">

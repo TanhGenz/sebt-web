@@ -51,8 +51,7 @@ export default function Faq() {
                             // last elements
                             const isLast = index === faqList.length - 1;
                             
-                            // foruth elements
-                            const isNextLast = index === faqList.length - 2;
+                          
                         
                             // third elements 
                             const isThird = index === faqList.length - 3;
@@ -64,10 +63,9 @@ export default function Faq() {
                                     <div className={cn("absolute top-0 left-[25px] w-[1px] h-[10px] -translate-x-1/2 bg-beige", isLast ? "block" : "hidden")} />
 
                                     {/*Star*/}
-                                    <div className={cn("flex-shrink-0 flex items-start", 
-                                        isFirst && "pt-[16px]", 
-                                        isLast && "pt-[25px]", 
-                                        isNextLast && "pt-[15px]",
+                                    <div className={cn("flex-shrink-0 flex items-start",            
+                                        isLast && "pt-[2px]", 
+                                       
                                         isThird && "pt-[15px]"
                                         )}>
                                         <img src="src/assets/icons/star.svg"
@@ -77,7 +75,7 @@ export default function Faq() {
                                     </div>
 
                                     {/* contents TEXT */}
-                                    <div className=" max-w-[359px] flex flex-col flex-end pt-[21px] gap-2">
+                                    <div className=" max-w-[359px] flex flex-col flex-end pb-[21px] gap-2">
                                         <h3 className="font-gilroy font-medium text-warmBeige text-[24px] leading-none tracking-[0.05em] 
                                             inline-block border-b border-warmBeige pb-2">
                                                 {item.title}

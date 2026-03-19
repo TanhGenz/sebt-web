@@ -1,10 +1,25 @@
 export default function AboutMe() {
   return (
     <section className="w-full bg-beige">
-      <div className="w-full h-full  flex flex-col items-center gap-[268px]">
-        <h1 className="font-lamoric text-primaryText text-[4.4dvw]">
-          VỀ MINH TRANG
-        </h1>
+
+      {/* decor paper */}
+      <div className="relative z-10">
+        <div className="absolute top-[-5.7dvw] right-0 left-0">
+          <img src="images/decor/aboutDecor/paper.png" alt="flower" className="w-full " />
+        </div>
+      </div>
+
+      <div className="w-full h-full  flex flex-col items-center pt-[100px] gap-[150px]">
+        <div className="flex flex-col items-center">
+          <h1 className="font-lamoric text-primaryText text-[4.4dvw]">
+            VỀ MINH TRANG
+          </h1>
+          <img
+            src="src\assets\icons\lines.svg"
+            alt="content-section-line"
+            className="w-[28.6dvw] h-auto object-contain"
+          />
+        </div>
 
         {/* about Layout */}
         <div className="relative mx-auto mb-[100px] w-[531px] h-auto bg-secondary rounded-b-full p-[11px]">
