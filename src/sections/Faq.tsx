@@ -48,11 +48,11 @@ export default function Faq() {
 
 
                 {/* faq content layouts [fixed px]*/}
-                <div className="w-[683px] flex mx-auto items-start">
+                <div className="w-[683px] flex mx-auto items-start gap-7">
 
 
                     {/* images layouts left*/}
-                    <div className="w-[223px] flex pt-[80px] ">
+                    <div className="w-[223px] flex pt-[55px]">
                         <img src="images/faq.png" alt="faq section" className="w-full h-full object-contain "/>
                     </div>
                     
@@ -81,7 +81,7 @@ export default function Faq() {
                                     <div className={cn("flex-shrink-0 flex items-start",            
                                         isLast && "pt-[2px]", 
                                        
-                                        isThird && "pt-[15px]"
+                                        isThird && "pb-[15px]"
                                         )}>
                                         <img src="src/assets/icons/star.svg"
                                             alt="star"

@@ -99,7 +99,7 @@ export default function Pricing() {
 
           <div className="relative w-[46.4dvw]">
             <img src="/images/pricing/ticket-small.png" className="w-full  h-auto object-contain" />
-            <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[6%] pl-[13.3%] pr-[25%] gap-[1dvw]">
+            <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[6%] pl-[5%] pr-[25%] gap-[1dvw]">
               <h3 className="font-morgan font-normal text-[1.8dvw] text-primaryText leading-none ">LIFETIME PEACE-OF-MIND</h3>
               <p className="font-gilroy font-normal text-[1.15dvw] text-secondary leading-none ">ĐƯỢC CHỌN NHIỀU NHẤT</p>
               <p className="font-gilroy font-normal text-[1.15dvw] text-[#C18989] leading-none ">Cập nhật trọn đời</p>
