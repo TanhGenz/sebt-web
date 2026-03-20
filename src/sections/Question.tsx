@@ -32,7 +32,7 @@ export default function Question() {
       md:pb-[167px] pb-[80px]">
         {/* title */}
         <div className="flex flex-col items-center">
-          <h1 className="lg:text-[4.4dvw] text-[7.9dvw] font-lamoric  text-beige leading-none">
+          <h1 className="lg:text-[4.4dvw] text-[8.4dvw] font-lamoric  text-beige leading-none">
             CÓ PHẢI BẠN...
           </h1>
           <img

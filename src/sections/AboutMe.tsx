@@ -16,7 +16,7 @@ export default function AboutMe() {
 
       <div className="relative z-10 w-full h-full  flex flex-col items-center  sm:gap-[150px] gap-[100px]">
         <div className="flex flex-col items-center">
-          <h1 className="lg:text-[4.4dvw] text-[7.9dvw] font-lamoric text-primaryText">
+          <h1 className="lg:text-[4.4dvw] text-[8.4dvw] font-lamoric text-primaryText">
             VỀ MINH TRANG
           </h1>
           <img

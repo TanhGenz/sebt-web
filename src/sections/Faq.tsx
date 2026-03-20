@@ -26,77 +26,94 @@ const faqList = [
 
 export default function Faq() {
     return (
-        <section className="relative w-full bg-secondary">
+        <section className="relative w-full bg-secondary bg-none">
 
-            <div className="absolute top-[-5dvw] right-0 left-0">
-                    <img src="images/decor/paper.png" alt="paper" className="w-full " />
+            {/* images layout in mobiles */}
+            <div className="relative">
+                <img src="images/faq-mobile.png" alt="faq mobile"
+                    className="absolute translate-x-5  object-contain md:hidden"
+                />
             </div>
 
-            <div className="w-full flex flex-col items-center gap-[82px] pb-[279px] pt-[50px]">
+            <div className="absolute top-[-5dvw] right-0 left-0">
+                <img src="images/decor/paper.png" alt="paper" className="w-full " />
+            </div>
+
+            <div className="w-full flex flex-col items-center md:gap-[82px] gap-[50px] md:pb-[279px] pb-[110px] md:pt-[50px] pt-[10px]">
 
                 {/*  */}
                 <div className="flex flex-col items-center">
-                    <h1 className="font-lamoric text-beige text-[4.4dvw]">
+                    <h1 className="lg:text-[4.4dvw] text-[7.9dvw] font-lamoric text-beige">
                         CÂU HỎI THƯỜNG GẶP
                     </h1>
                     <img
                         src="src\assets\icons\line-white.svg"
                         alt="content-section-line"
-                        className="w-[28.6dvw] h-auto object-contain"
+                        className="w-[28.6dvw] h-auto object-contain hidden md:block"
                     />
-                    </div>
+                </div>
 
 
                 {/* faq content layouts [fixed px]*/}
-                <div className="w-[683px] flex mx-auto items-start gap-7">
+                <div className="
+                md:w-[683px] w-[350px]
+                flex 
+                mx-auto items-start 
+                md:gap-7 gap-0
+                
+                ">
 
 
                     {/* images layouts left*/}
-                    <div className="w-[223px] flex pt-[55px]">
-                        <img src="images/faq.png" alt="faq section" className="w-full h-full object-contain "/>
+                    <div className="w-[223px] md:flex hidden pt-[55px]">
+                        <img src="images/faq.png" alt="faq section" className="w-full h-full object-contain" />
                     </div>
-                    
+
                     {/* content layouts right */}
                     <div className="flex flex-col">
                         {faqList.map((item, index) => {
-                            
+
                             // first elements
                             const isFirst = index === 0;
-                            
+
                             // last elements
                             const isLast = index === faqList.length - 1;
-                            
-                          
-                        
+
+
+
                             // third elements 
                             const isThird = index === faqList.length - 3;
 
                             return (
-                                <div key = {index} className="relative flex gap-[18px]">
+                                <div key={index} className="md:gap-[18px] gap-[8px] relative flex">
                                     {/* LINE */}
-                                    <div className={cn("absolute bottom-0 left-[25px] w-[1px] -translate-x-1/2 bg-beige", isFirst ? "top-[16px]" : "top-0", isLast && "h-[30px]")} />
-                                    <div className={cn("absolute top-0 left-[25px] w-[1px] h-[10px] -translate-x-1/2 bg-beige", isLast ? "block" : "hidden")} />
+                                    {/* hidden md:block => only displaye when > md */}
+                                    <div className={cn("absolute bottom-0 left-[25px] w-[1px] -translate-x-1/2 bg-beige hidden md:block", isFirst ? "top-[16px]" : "top-0", isLast && "h-[30px]")} />
+                                    <div className={cn("absolute top-0 left-[25px] w-[1px] h-[10px] -translate-x-1/2 bg-beige hidden md:block", isLast ? "block" : "hidden")} />
 
                                     {/*Star*/}
-                                    <div className={cn("flex-shrink-0 flex items-start",            
-                                        isLast && "pt-[2px]", 
-                                       
+                                    <div className={cn("flex-shrink-0 flex items-start",
+                                        isLast && "pt-[2px]",
+
                                         isThird && "pb-[15px]"
-                                        )}>
+                                    )}>
                                         <img src="src/assets/icons/star.svg"
                                             alt="star"
-                                            className="w-[50px] h-[70px] object-contain" 
+                                            className="md:w-[50px] w-[14px] md:h-[70px] h-[19.5px] object-contain"
                                         />
                                     </div>
 
                                     {/* contents TEXT */}
-                                    <div className=" max-w-[359px] flex flex-col flex-end pb-[48px] gap-2">
-                                        <h3 className="font-gilroy font-medium text-warmBeige text-[24px] leading-none  
+                                    <div className=" 
+                                    md:max-w-[359px] w-full
+                                    md:pb-[21px] pb-[12px] 
+                                    flex flex-col flex-end gap-2">
+                                        <h3 className="md:text-[24px] text-[16px] font-gilroy font-medium text-warmBeige  leading-none  
                                             inline-block border-b border-warmBeige pb-2">
-                                                {item.title}
+                                            {item.title}
                                         </h3>
-                                        <p className="pt-[8px] font-gilroy font-normal text-[18px]  leading-none text-warmBeige">
-                                                {item.desc}
+                                        <p className="md:text-[18px] text-[16px] pt-[8px] font-gilroy font-normal leading-none text-warmBeige">
+                                            {item.desc}
                                         </p>
                                     </div>
 
