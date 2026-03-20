@@ -12,7 +12,7 @@ export default function Question() {
     <section className=" w-full  bg-secondary">
 
       {/* decor */}
-      <div className="relative z-10 mx-auto">
+      <div className="relative z-10 mx-auto hidden md:block">
         <div className="absolute top-[-11.9dvw] right-0">
           <img src="images/decor/flower-decor.png" alt="flower-right-top" className="w-[39dvw] rotate-[-152.2deg]" />
         </div>
@@ -26,21 +26,24 @@ export default function Question() {
 
 
       {/* full layout */}
-      <div className="flex flex-col items-center gap-[68px] pt-[22px] pb-[167px]">
+      <div className="
+      md:gap-[68px] gap-[30px] flex flex-col items-center  
+      md:pt-[22px] pt-[7.6px] 
+      md:pb-[167px] pb-[80px]">
         {/* title */}
         <div className="flex flex-col items-center">
-          <h1 className="font-lamoric text-[4.4dvw] text-beige leading-none">
+          <h1 className="lg:text-[4.4dvw] text-[7.9dvw] font-lamoric  text-beige leading-none">
             CÓ PHẢI BẠN...
           </h1>
           <img
             src="src\assets\icons\line-white.svg"
             alt="content-section-line"
-            className="w-[28.6dvw] h-auto object-contain"
+            className="w-[28.6dvw] h-auto object-contain hidden md:block"
           />
         </div>
 
         {/* layout question */}
-        <div className="relative mx-auto w-[500px] z-10 bg-beige">
+        <div className="md:w-[500px] w-[343px] relative mx-auto z-10 bg-beige">
 
           {/* dots 4  */}
           <div className="absolute top-0 left-0 size-8 -translate-y-1/2 -translate-x-1/2 bg-secondary rounded-full"></div>
@@ -50,14 +53,20 @@ export default function Question() {
 
 
           {/* contents layout */}
-          <div className="px-[65px] py-[28px] flex flex-col gap-[14px]">
+          <div className="
+          md:px-[65px] px-[18.69px] 
+          md:py-[28px] py-[28px] flex flex-col 
+          md:gap-[14px] gap-[9px]">
+            
+            
+            
             {questionItems.map((item, index) => (
-              <div key={index} className="border-t-2 border-dashed border-primaryText/60">
-                <br />
+              <div key={index} className=" pt-[14px] border-t-2 border-dashed border-secondary">
+               
                 <div className="flex items-start gap-[14px]">
                   {/* dots and content */}
                   <div className="flex-shrink-0 w-1 aspect-square bg-secondary rounded-full translate-y-[16px]" />
-                  <p className="font-gilroy font-medium text-[20px] text-secondary ">
+                  <p className="md:text-[20px] text-[14px] font-gilroy font-medium text-secondary ">
                     {item}
                   </p>
                 </div>
@@ -68,7 +77,7 @@ export default function Question() {
         </div>
 
         {/* box */}
-        <div className="relative mx-auto">
+        <div className="relative mx-auto hidden md:block">
           <img
             src="/images/decor/box-quest.png"
             alt="box question"

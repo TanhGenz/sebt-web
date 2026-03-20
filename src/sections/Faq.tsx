@@ -90,7 +90,7 @@ export default function Faq() {
                                     </div>
 
                                     {/* contents TEXT */}
-                                    <div className=" max-w-[359px] flex flex-col flex-end pb-[21px] gap-2">
+                                    <div className=" max-w-[359px] flex flex-col flex-end pb-[48px] gap-2">
                                         <h3 className="font-gilroy font-medium text-warmBeige text-[24px] leading-none  
                                             inline-block border-b border-warmBeige pb-2">
                                                 {item.title}

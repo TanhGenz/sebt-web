@@ -170,7 +170,7 @@ export default function CourseOverview() {
         </div>
 
         {/* Content grid */}
-        <div className="w-full mt-[2dvw] pb-[8.1dvw]">
+        <div className="w-full mt-[2dvw] ">
           <div className="w-[70.28dvw] flex flex-wrap justify-center gap-[1.2dvw] mx-auto">
             {imagesDemo.map((image) => (
               <div className="w-[16.67dvw] h-auto object-cover">

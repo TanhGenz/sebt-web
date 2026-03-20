@@ -59,39 +59,44 @@ export default function Journey() {
           <img src="images/decor/paper.png" alt="paper-decor" className="w-full h-full object-contain" />
       </div>
 
-      <div className="relative z-10 flex flex-col pb-[53px] gap-[68px]">
+      <div className="md:gap-[68px] gap-[20px] relative z-10 flex flex-col pb-[53px] ">
 
           <div className="flex flex-col items-center">
-            <h1 className="text-center font-lamoric text-beige text-[4.4dvw]">
+            <h1 className="lg:text-[4.4dvw] text-[7.9dvw] text-center font-lamoric text-beige">
               HÀNH TRÌNH 7 PHẦN
             </h1>
           <img
             src="src\assets\icons\line-white.svg"
             alt="content-section-line"
-            className="w-[28.6dvw] h-auto object-contain"
+            className="w-[28.6dvw] h-auto object-contain hidden md:block"
           />
         </div>
 
         {/* board layout */}
-        <div className="w-[908px] border border-white mx-auto  py-[62px] pl-[55px] pr-[15px]">
+        <div className="
+        lg:w-[908px] w-full 
+        lg:border border-0 border-white mx-auto 
+        lg:pl-[55px] pl-[16.4px] lg:py-[62px] py-[25px]
+        pr-[15px]">
+          
           {lessonList.map((lesson) => (
-            <div className="flex gap-[100px]" key={lesson.number}>
+            <div className="md:gap-[100px] gap-[14.5px] flex " key={lesson.number}>
 
               {/* Number in left layout */}
-              <div className="w-[180px] flex-shrink-0 flex items-center  leading-none  border-r  boder-solid">
-                <p  className="font-onebold text-[120px] text-beige ">{lesson.number}</p>
+              <div className="md:w-[180px] w-[70px] flex-shrink-0 flex items-center  leading-none  border-r  boder-solid">
+                <p  className="md:text-[120px] text-[58.72px] font-onebold text-beige ">{lesson.number}</p>
 
               </div>
 
               {/* content text layouts */}
-              <div className="flex flex-col gap-[15px] pb-[23px]">
-                <h3 className="font-lamoric text-[36px] leading-none text-beige uppercase">
+              <div className="md:gap-[15px] gap-[8.4px]  flex flex-col pb-[23px]">
+                <h3 className=" md:text-[36px] text-[19.11px] font-lamoric leading-none text-beige uppercase">
                   {lesson.title}
                 </h3>
-                <p className="font-bladeRush text-[32px] leading-none text-beige">
+                <p className=" md:text-[32px] font-bladeRush leading-none text-beige">
                   {lesson.subtitle}
                 </p>
-                <p className="font-gilroy text-[20px]  text-beige">
+                <p className="md:text-[20px] text-[12.74px] font-gilroy text-beige">
                   {lesson.description}
                 </p>
               </div>
