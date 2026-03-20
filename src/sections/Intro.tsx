@@ -1,15 +1,12 @@
 export default function Intro() {
   return (
-    <section className="relative w-full">
-
-
+    <section className="relative w-full translate-y-[-1px]">
       <div className=" w-full h-full">
         <img
           src="/images/decor/introDecor/background-intro.png"
           alt="background intro"
           className="w-full h-full object-contain"
         />
-
       </div>
 
       <div className="absolute translate-x-1/2 -translate-y-[100%] w-max flex items-center justify-center mx-auto  pb-[1.45dvw]">
