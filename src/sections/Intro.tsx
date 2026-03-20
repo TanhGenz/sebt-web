@@ -5,11 +5,11 @@ export default function Intro() {
         <img
           src="/images/decor/introDecor/background-intro.png"
           alt="background intro"
-          className="w-full h-full object-contain "
+          className="w-full h-full object-contain"
         />
       </div>
 
-      <div className="absolute translate-x-1/2 -translate-y-[100%] w-max flex items-center justify-center mx-auto pb-[1.45dvw]">
+      <div className="absolute translate-x-1/2 -translate-y-[100%] w-max flex items-center justify-center mx-auto  pb-[1.45dvw]">
         {/* Paper */}
         <img
           src="/images/intro.svg"

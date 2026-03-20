@@ -15,16 +15,16 @@ export default function Final() {
                 
 
 
-                <div className="absolute inset-0 z-10 flex flex-col items-center gap-[6dvw] pt-[6.25dvw]">
+                <div className="absolute inset-0 z-10 flex flex-col items-center md:gap-[6dvw] gap-[1.7dvw] md:py-[6.25dvw] py-[5dvw]">
                     {/*  */}
                     <div className="flex flex-col items-center">
-                        <h1 className="font-lamoric text-primaryText text-[4.4dvw]">
+                        <h1 className="lg:text-[4.4dvw] text-[8.4dvw] font-lamoric text-primaryText">
                             BẠN ĐÃ SẴN SÀNG ?
                         </h1>
                         <img
                             src="src\assets\icons\line-red.svg"
                             alt="content-section-line"
-                            className="w-[28.6dvw] h-auto object-contain"
+                            className="w-[28.6dvw] h-auto object-contain hidden md:block"
                         />
                     </div>
 
@@ -41,9 +41,8 @@ export default function Final() {
                     </div>
 
                     {/*  */}
-
-                    <div className="relative w-[48.5dvw] z-10 shadow-[8px_8px_20px_rgba(0,0,0,0.2)]">
-                        <img src="/images/final.png" alt="end journey" className="w-full" />
+                    <div className="hidden md:block relative w-[48.5dvw] z-10 shadow-[8px_8px_20px_rgba(0,0,0,0.2)] ">
+                        <img src="/images/decor/finalDecor/final.png" alt="end journey" className="w-full" />
                         <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
                             <div className="flex flex-col items-center gap-[0.5dvw]">
                                 <p className="font-lamoric font-normal text-[2.2dvw] text-primaryText leading-none ">
@@ -57,6 +56,17 @@ export default function Final() {
                             </div>
                         </div>
                     </div>
+
+                    <div className="relative w-[50.5dvw]   md:hidden">
+                        <img src="/images/decor/finalDecor/final-mobile.png" alt="end journey" className="w-full" />
+                        <div className="flex flex-col items-center gap-[0.5dvw] absolute top-[12dvw] left-1/2 -translate-x-1/2 ">
+                                <p className="font-lamoric font-normal text-[2.2dvw] text-primaryText leading-none ">
+                                    BẮT ĐẦU HÀNH TRÌNH
+                                </p>
+                                
+                            </div>
+                    </div>
+
                 </ div>
             </div>
         </section>
