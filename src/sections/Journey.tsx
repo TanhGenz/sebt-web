@@ -56,15 +56,15 @@ export default function Journey() {
 
       {/* paper decor */}
       <div className="absolute top-0 left-0 w-full -translate-y-[90%]">
-          <img src="images/decor/paper.png" alt="paper-decor" className="w-full h-full object-contain" />
+        <img src="images/decor/paper.png" alt="paper-decor" className="w-full h-full object-contain" />
       </div>
 
       <div className="relative z-10 flex flex-col pb-[53px] gap-[68px]">
 
-          <div className="flex flex-col items-center">
-            <h1 className="text-center font-lamoric text-beige text-[4.4dvw]">
-              HÀNH TRÌNH 7 PHẦN
-            </h1>
+        <div className="flex flex-col items-center">
+          <h1 className="text-center font-lamoric text-beige text-[4.4dvw]">
+            HÀNH TRÌNH 7 PHẦN
+          </h1>
           <img
             src="src\assets\icons\line-white.svg"
             alt="content-section-line"
@@ -73,13 +73,13 @@ export default function Journey() {
         </div>
 
         {/* board layout */}
-        <div className="w-[908px] border border-white mx-auto  py-[62px] pl-[55px] pr-[15px]">
+        <div className="lg:w-[908px] w-full lg:border border-0 border-white mx-auto py-[62px] pl-[55px] pr-[15px]">
           {lessonList.map((lesson) => (
             <div className="flex gap-[100px]" key={lesson.number}>
 
               {/* Number in left layout */}
               <div className="w-[180px] flex-shrink-0 flex items-center  leading-none  border-r  boder-solid">
-                <p  className="font-onebold text-[120px] text-beige ">{lesson.number}</p>
+                <p className="font-onebold text-[120px] text-beige ">{lesson.number}</p>
 
               </div>
 
