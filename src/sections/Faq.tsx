@@ -62,8 +62,6 @@ export default function Faq() {
                 md:gap-7 gap-0
                 
                 ">
-
-
                     {/* images layouts left*/}
                     <div className="w-[223px] md:flex hidden pt-[55px]">
                         <img src="images/faq.png" alt="faq section" className="w-full h-full object-contain" />
