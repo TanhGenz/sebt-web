@@ -22,9 +22,7 @@ export default function Outcome() {
   return (
     <section className="relative w-full bg-beige">
       <div className="w-full h-full">
-        <div className="flex flex-col items-center gap-5 
-        md:pt-8 pt-0 
-        md:pb-[225px] pb-[55px]">
+        <div className="flex flex-col items-center gap-5  md:pt-8 pt-0 md:pb-[225px] pb-[55px]">
           <div className="flex flex-col items-center">
             <h1 className="lg:text-[4.4dvw] text-[8.4dvw] font-lamoric  text-primaryText">
               SAU KHÓA HỌC BẠN SẼ
@@ -36,10 +34,7 @@ export default function Outcome() {
             />
           </div>
 
-          <div className="flex 
-          md:w-[60.2dvw] w-[367px]
-          md:pl-[45px] pl-[30px]
-          flex-col gap-3 ">
+          <div className="flex  md:w-[60.2dvw] w-[367px] md:pl-[45px] pl-[30px] flex-col gap-3 ">
             {titleList.map((item, index) => (
               <div
                 key={index}
