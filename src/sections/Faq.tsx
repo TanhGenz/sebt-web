@@ -28,6 +28,10 @@ export default function Faq() {
     return (
         <section className="relative w-full bg-secondary bg-none">
 
+
+            <div className=" -translate-y-[90%] right-0 left-0 ">
+                <img src="images/decor/paper.png" alt="paper" className="w-full h-full" />
+            </div>
             {/* images layout in mobiles */}
             <div className="relative">
                 <img src="images/faq-mobile.png" alt="faq mobile"
@@ -35,9 +39,7 @@ export default function Faq() {
                 />
             </div>
 
-            <div className="absolute top-[-5dvw] right-0 left-0">
-                <img src="images/decor/paper.png" alt="paper" className="w-full " />
-            </div>
+
 
             <div className="w-full flex flex-col items-center md:gap-[82px] gap-[50px] md:pb-[279px] pb-[110px] md:pt-[50px] pt-[10px]">
 
