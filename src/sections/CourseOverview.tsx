@@ -140,7 +140,7 @@ export default function CourseOverview() {
       <div className="relative">
         {/* Main heading */}
         <div className="text-center pt-[5.6dvw]">
-          <h1 className="font-qalogre text-[4.45dvw] leading-none text-primaryText">
+          <h1 className="font-qalogre md:text-[4.4dvw] text-[34px]  leading-none text-primaryText">
             LẦN ĐẦU CHUẨN BỊ
             <br />
             KHÔNG CẦN LO TOAN

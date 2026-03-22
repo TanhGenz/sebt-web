@@ -24,7 +24,7 @@ export default function Outcome() {
       <div className="w-full h-full">
         <div className="flex flex-col items-center gap-5  md:pt-8 pt-0 md:pb-[225px] pb-[55px]">
           <div className="flex flex-col items-center">
-            <h1 className="lg:text-[4.4dvw] text-[8.4dvw] font-lamoric  text-primaryText">
+            <h1 className="md:text-[4.4dvw] text-[34px] font-lamoric  text-primaryText">
               SAU KHÓA HỌC BẠN SẼ
             </h1>
             <img

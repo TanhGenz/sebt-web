@@ -97,7 +97,7 @@ export default function Pricing() {
       <div className="flex flex-col items-center pb-[12vw] pt-[6vw]">
         {/*  */}
         <div className="flex flex-col items-center">
-          <h1 className="font-lamoric text-beige text-[4.4vw] leading-none ">
+          <h1 className="font-lamoric text-beige md:text-[4.4dvw] text-[34px] leading-none ">
             HỌC VIÊN NÓI GÌ
           </h1>
           <img

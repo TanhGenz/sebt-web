@@ -43,7 +43,7 @@ export default function Faq() {
 
                 {/*  */}
                 <div className="flex flex-col items-center">
-                    <h1 className="lg:text-[4.4dvw] text-[7.9dvw] font-lamoric text-beige">
+                    <h1 className="md:text-[4.4dvw] text-[34px] font-lamoric text-beige">
                         CÂU HỎI THƯỜNG GẶP
                     </h1>
                     <img

@@ -62,7 +62,7 @@ export default function Journey() {
       <div className="md:gap-[68px] gap-[20px] relative z-10 flex flex-col pb-[53px] ">
 
         <div className="flex flex-col items-center">
-          <h1 className="text-center font-lamoric text-beige text-[4.4dvw]">
+          <h1 className="text-center font-lamoric text-beige md:text-[4.4dvw] text-[34px]">
             HÀNH TRÌNH 7 PHẦN
           </h1>
           <img

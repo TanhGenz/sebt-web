@@ -19,7 +19,7 @@ export default function Final() {
                 <div className="absolute inset-0 z-10 flex flex-col items-center md:gap-[6dvw] gap-[1.7dvw] md:py-[6.25dvw] py-[5dvw]">
                     {/*  */}
                     <div className="flex flex-col items-center">
-                        <h1 className="lg:text-[4.4dvw] text-[8.4dvw] font-lamoric text-primaryText">
+                        <h1 className="md:text-[4.4dvw] text-[34px] font-lamoric text-primaryText">
                             BẠN ĐÃ SẴN SÀNG ?
                         </h1>
                         <img
