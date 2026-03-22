@@ -36,8 +36,8 @@ export default function Pricing() {
 
 
         {/* board / 4  ele */}
-        <div className="w-[71.5dvw] mt-[2.2dvw]">
-          <div className="grid grid-cols-4">
+        <div className="md:w-[71.5dvw] w-[475px] mt-[2.2dvw]">
+          <div className="grid md:grid-cols-4 grid-cols-3">
             {items.map((item, i) => (
               <div key={i} className="border border-red-900 aspect-square">
                 {item.type === "image" ? (
@@ -52,8 +52,8 @@ export default function Pricing() {
                   </div>
                 ) : (
                   <div className="flex h-full flex-col items-center justify-center p-[1.2dvw] text-center">
-                    <h3 className="font-gilroy font-bold  text-[1.4dvw] text-secondary  ">{item.title}</h3>
-                    <p className="font-gilroy font-normal text-[1.4dvw] text-secondary  pt-[0.4dvw] ">{item.desc}</p>
+                    <h3 className="font-gilroy font-bold  md:text-[1.4dvw] text-[9.21px] text-secondary  ">{item.title}</h3>
+                    <p className="font-gilroy font-normal md:text-[1.4dvw] text-[9.21px] text-secondary  pt-[0.4dvw] ">{item.desc}</p>
                   </div>
                 )}
               </div>
