@@ -45,10 +45,7 @@ export default function Outcome() {
                     {item}
                   </h3>
                   <div className="absolute bottom-[-1px] left-[-6px] right-0 h-[2px] bg-primaryText rounded-full" />
-                  <div className="absolute 
-                  md:top-[5px] top-[13px] md:left-[-45px] left-[-28px] 
-                  md:w-[40px] w-[22.26px] md:aspect-square aspect-square  
-                  border-[1px] border-primaryText rounded-full" />
+                  <div className="absolute md:top-[5px] top-[13px] md:left-[-45px] left-[-28px] md:w-[40px] w-[22.26px] md:aspect-square aspect-square border-[1px] border-primaryText rounded-full" />
                 </div>
                 <p className="md:text-[20px] text-[16px]">{contentList[index]}</p>
               </div>

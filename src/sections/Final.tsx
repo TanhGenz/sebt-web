@@ -2,17 +2,18 @@ export default function Final() {
     return (
         <section className="relative w-full">
             <div className="w-full h-full">
+                <div className=" - top-0 right-0 left-0 bg-beige">
+                    <img src="images/decor/finalDecor/paper.png" alt="paper" className="w-full object-caontain" />
+                </div>
                 <img
                     src="/images/decor/finalDecor/background-final.png"
                     alt="backgorund final"
                     className="w-full h-full object-cover object-center"
                 />
 
+               
 
-                <div className="absolute top-[-5.5dvw] right-0 left-0">
-                    <img src="images/decor/finalDecor//paper.png" alt="paper" className="w-full " />
-                </div>
-                
+
 
 
                 <div className="absolute inset-0 z-10 flex flex-col items-center md:gap-[6dvw] gap-[1.7dvw] md:py-[6.25dvw] py-[5dvw]">
@@ -57,16 +58,15 @@ export default function Final() {
                         </div>
                     </div>
 
-                    <div className="relative w-[50.5dvw]   md:hidden">
+                    <div className="relative w-[50.5dvw] md:hidden">
                         <img src="/images/decor/finalDecor/final-mobile.png" alt="end journey" className="w-full" />
                         <div className="flex flex-col items-center gap-[0.5dvw] absolute top-[12dvw] left-1/2 -translate-x-1/2 ">
-                                <p className="font-lamoric font-normal text-[2.2dvw] text-primaryText leading-none ">
-                                    BẮT ĐẦU HÀNH TRÌNH
-                                </p>
-                                
-                            </div>
-                    </div>
+                            <p className="font-lamoric font-normal text-[2.2dvw] text-primaryText leading-none ">
+                                BẮT ĐẦU HÀNH TRÌNH
+                            </p>
 
+                        </div>
+                    </div>
                 </ div>
             </div>
         </section>
