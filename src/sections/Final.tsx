@@ -1,6 +1,7 @@
 export default function Final() {
     return (
         <section className="relative w-full md:bg-none bg-beige">
+            <img src="images/decor/finalDecor/paper.png" alt="paper" className="relative w-full object-contain bottom-0 right-0 left-0 z-10" />
             <div className="absolute inset-0 hidden md:block">
                 <img
                 src="/images/decor/finalDecor/background-final.png"
@@ -8,6 +9,9 @@ export default function Final() {
                 className="w-full h-full object-cover"
                 />
             </div>
+             
+            
+            
             {/* content layout section */} 
             <div className="relative inset-0 z-10 flex flex-col items-center md:gap-[6dvw] gap-[22px] md:py-[6.25dvw] py-[26px]">
                 {/* TITLE */}

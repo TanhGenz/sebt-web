@@ -27,17 +27,17 @@ const faqList = [
 export default function Faq() {
     return (
         <section className="relative w-full bg-secondary">
-            <div className="-translate-y-[90%] top-0 right-0 left-0 ">
-                <img src="images/decor/paper.png" alt="paper" className="w-full h-full" />
-            </div>
-            {/* images layout in mobiles */}
-            <div className="relative">
-                <img src="images/faq-mobile.png" alt="faq mobile"
-                    className="absolute translate-x-5  object-contain md:hidden"
-                />
-            </div>
+           
+            <img src="images/decor/paper.png" alt="paper" className="w-full h-full -translate-y-[100%] top-0 right-0 left-0 " />
+            
+            
             <div className="w-full flex flex-col items-center md:gap-[82px] gap-[50px] md:pb-[279px] pb-[110px] md:pt-[50px] pt-[10px]">
-                {/*  */}
+                {/*  images layout in mobiles  */}
+                <img src="images/faq-mobile.png" alt="faq mobile"
+                    className="w-auto h-full absolute top-0 left-0  object-contain md:hidden"
+                />
+
+
                 <div className="flex flex-col items-center">
                     <h1 className="md:text-[4.4dvw] text-[34px] font-lamoric text-beige">
                         CÂU HỎI THƯỜNG GẶP
@@ -99,10 +99,6 @@ export default function Faq() {
                     </div>
 
                 </div>
-            </div>
-            {/*  */}
-            <div className="relative z-10 translate-y-[100%] bottom-1 right-0 left-0">
-                <img src="images/decor/finalDecor/paper.png" alt="paper" className="w-full object-contain" />
             </div>
         </section>
     )
