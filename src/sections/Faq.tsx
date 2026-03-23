@@ -26,10 +26,8 @@ const faqList = [
 
 export default function Faq() {
     return (
-        <section className="relative w-full bg-secondary bg-none">
-
-
-            <div className=" -translate-y-[90%] right-0 left-0 ">
+        <section className="relative w-full bg-secondary">
+            <div className="-translate-y-[90%] top-0 right-0 left-0 ">
                 <img src="images/decor/paper.png" alt="paper" className="w-full h-full" />
             </div>
             {/* images layout in mobiles */}
@@ -38,11 +36,7 @@ export default function Faq() {
                     className="absolute translate-x-5  object-contain md:hidden"
                 />
             </div>
-
-
-
             <div className="w-full flex flex-col items-center md:gap-[82px] gap-[50px] md:pb-[279px] pb-[110px] md:pt-[50px] pt-[10px]">
-
                 {/*  */}
                 <div className="flex flex-col items-center">
                     <h1 className="md:text-[4.4dvw] text-[34px] font-lamoric text-beige">
@@ -54,35 +48,19 @@ export default function Faq() {
                         className="w-[28.6dvw] h-auto object-contain hidden md:block"
                     />
                 </div>
-
-
                 {/* faq content layouts [fixed px]*/}
-                <div className="
-                md:w-[683px] w-[350px]
-                flex 
-                mx-auto items-start 
-                md:gap-7 gap-0
-                
-                ">
-
-
+                <div className=" md:w-[683px] w-[350px] flex mx-auto items-start md:gap-7 gap-0 ">
                     {/* images layouts left*/}
                     <div className="w-[223px] md:flex hidden pt-[55px]">
                         <img src="images/faq.png" alt="faq section" className="w-full h-full object-contain" />
                     </div>
-
                     {/* content layouts right */}
                     <div className="flex flex-col">
                         {faqList.map((item, index) => {
-
                             // first elements
                             const isFirst = index === 0;
-
                             // last elements
                             const isLast = index === faqList.length - 1;
-
-
-
                             // third elements 
                             const isThird = index === faqList.length - 3;
 
@@ -106,10 +84,7 @@ export default function Faq() {
                                     </div>
 
                                     {/* contents TEXT */}
-                                    <div className=" 
-                                    md:max-w-[359px] w-full
-                                    md:pb-[21px] pb-[12px] 
-                                    flex flex-col flex-end gap-2">
+                                    <div className="md:max-w-[359px] w-full md:pb-[21px] pb-[12px] flex flex-col flex-end gap-2">
                                         <h3 className="md:text-[24px] text-[16px] font-gilroy font-medium text-warmBeige  leading-none  
                                             inline-block border-b border-warmBeige pb-2">
                                             {item.title}
@@ -118,16 +93,17 @@ export default function Faq() {
                                             {item.desc}
                                         </p>
                                     </div>
-
                                 </div>
                             )
                         })}
                     </div>
 
                 </div>
-
-
             </div>
+            {/*  */}
+            {/* <div className="relative z-10 translate-y-[100%] bottom-1 right-0 left-0">
+                    <img src="images/decor/finalDecor/paper.png" alt="paper" className="w-full object-contain" />
+            </div> */}
         </section>
     )
 }
