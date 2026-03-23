@@ -49,8 +49,8 @@ function TestimonialItem({
   return (
     <div
       className={[
-        "relative w-full h-[160px] flex items-center",
-        isLeft ? "xl:pr-[230px] pr-[180px]" : "xl:pl-[230px] pl-[180px]",
+        "relative w-full md:h-[160px] h-[128px] flex items-center",
+        isLeft ? "xl:pr-[230px] pr-[15px]" : "xl:pl-[230px] pl-[15px]",
       ].join(" ")}
     >
       {/* CIRCLE */}
@@ -58,12 +58,12 @@ function TestimonialItem({
         className={[
           "absolute z-10 bg-secondary rounded-full border border-beige",
           "flex items-center justify-center text-center",
-          "size-[160px]",
-          "top-1/2 -translate-y-1/2",
-          isLeft ? "left-0" : "right-0",
+          "md:size-[160px] size-[68px]",
+          "md:top-1/2 top-0  md:-translate-y-1/2 translate-y-[5%]",
+          isLeft ? "md:left-0 left-5" : "md:right-0 right-5",
         ].join(" ")}
       >
-        <p className="px-2 font-gilroy text-beige font-semibold leading-tight text-[15px]">
+        <p className="px-2 font-gilroy text-beige font-semibold leading-tight md:text-[15px] text-[7.8px]">
           {name} - {age} tuổi
         </p>
       </div>
@@ -71,15 +71,15 @@ function TestimonialItem({
       <div
         className={[
           "border-beige",
-          "py-[26px]",
+          "md:py-[26px] py-[13.1px]",
           isLeft
             ? [
-              "ml-[80px] border-t border-b border-r",
-              "pr-[14px] pl-[102px]",
+              "md:ml-[80px] ml-[60px] md:border-l-none border-l border-t border-b border-r",
+              "md:pr-[14px] pr-[7.25px] md:pl-[102px] pl-[49.3px]",
             ].join(" ")
             : [
-              "mr-[80px] border-t border-l border-b",
-              "pr-[102px] pl-[14px]",
+              "md:mr-[80px] mr-[60px] md:border-r-none border-r border-t border-l border-b",
+              "md:pr-[102px] pr-[49.3px] md:pl-[14px] pl-[7.25px]",
             ].join(" "),
         ].join(" ")}
       >
@@ -87,14 +87,17 @@ function TestimonialItem({
           “ {quote} ”
         </p>
       </div>
-    </div>
+    </div> 
   )
 }
 
 export default function Pricing() {
   return (
-    <section className="w-full bg-secondary">
-      <div className="flex flex-col items-center pb-[12vw] pt-[6vw]">
+    <section className="relative w-full bg-secondary">
+      <div className="-translate-y-[90%] top-0 right-0 left-0 ">
+          <img src="images/decor/paper.png" alt="paper" className="w-full h-full" />
+      </div>
+      <div className="flex flex-col items-center md:pb-[12vw] pb-[20px]">
         {/*  */}
         <div className="flex flex-col items-center">
           <h1 className="font-lamoric text-beige md:text-[4.4dvw] text-[34px] leading-none ">
@@ -103,11 +106,11 @@ export default function Pricing() {
           <img
             src="src\assets\icons\line-white.svg"
             alt="content-section-line"
-            className="w-[28.6dvw] h-auto object-contain"
+            className="w-[28.6dvw] h-auto object-contain md:block hidden"
           />
         </div>
 
-        <div className="mt-[8vw] flex w-full flex-col gap-[18px] xl:px-[15.6dvw] px-[12dvw]">
+        <div className="flex w-full flex-col gap-18px md:px-[15.6dvw] px-[15px]">
           {testimonials.map((item, index) => (
             <TestimonialItem
               key={`${item.name}-${index}`}

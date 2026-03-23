@@ -101,9 +101,9 @@ export default function Faq() {
                 </div>
             </div>
             {/*  */}
-            {/* <div className="relative z-10 translate-y-[100%] bottom-1 right-0 left-0">
+            <div className="relative z-10 translate-y-[100%] bottom-1 right-0 left-0">
                     <img src="images/decor/finalDecor/paper.png" alt="paper" className="w-full object-contain" />
-            </div> */}
+            </div>
         </section>
     )
 }
