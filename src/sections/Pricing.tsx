@@ -20,9 +20,9 @@ const items = [
 // % size width screen
 export default function Pricing() {
   return (
-    <section className="w-full bg-beige">
-      <div className="flex flex-col items-center pb-[4vw]">
-
+    <section className="relative w-full bg-beige">
+      <img src="images/pricing/pricing-background.png" alt="background-pricing" className="w-full h-auto hidden md:block"/>
+      <div className="md:absolute static inset-0 top-1 flex flex-col items-center md:pb-0 pb-[50px] ">
         <div className="flex flex-col items-center">
           <h1 className="font-lamoric text-primaryText md:text-[4.4dvw] text-[34px]">
             QUYỀN LỢI & BẢNG GIÁ
@@ -30,13 +30,13 @@ export default function Pricing() {
           <img
             src="src\assets\icons\line-red.svg"
             alt="content-section-line"
-            className="w-[28.6dvw] h-auto object-contain"
+            className="w-[28.6dvw] h-auto object-contain hidden md:block"
           />
         </div>
 
 
         {/* board / 4  ele */}
-        <div className="md:w-[71.5dvw] w-[475px] mt-[2.2dvw]">
+        <div className="md:w-[71.5dvw] w-[365px] md:mt-[2.2dvw] mt-[20.61px]">
           <div className="grid md:grid-cols-4 grid-cols-3">
             {items.map((item, i) => (
               <div key={i} className="border border-red-900 aspect-square">
@@ -62,10 +62,10 @@ export default function Pricing() {
         </div>
 
         {/* big voucher ele */}
-        <div className="relative md:w-[70.5dvw] w-[364px] mt-[7.6dvw] "> 
+        <div className="relative md:w-[71.5dvw] w-[364px] md:mt-[7.6dvw] mt-[20.61px] md:mb-[4.7dvw] mb-[33.27px]"> 
        {/* calc w-[71.5dvw] => not wrap all content , up to 80dvw*/}
           <img src="images/pricing/ticket.png" className="w-full h-auto  object-contain" />
-          <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[2.3%] pl-[2.2%] pr-[16.5%] gap-[1dvw]">
+          <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center md:pt-[2.3%] pt-[8.5px] md:pl-[2.2%] pl-[24.8px] md:pr-[16.5%] pr-[72px] md:gap-[1dvw] gap-[7px]">
             <div className="font-morgan font-normal md:text-[3.3dvw] text-[21px] text-primaryText leading-none  text-center">
               <h3 >FOUNDING CIRCLE </h3>
               <h3>CHỈ 50 HỌC VIÊN ĐẦU</h3>
@@ -83,7 +83,7 @@ export default function Pricing() {
             <h1 className=" font-lamoric md:text-[6.67dvw] text-[20.27px] text-secondary font-normal leading-none ">1.299.000đ</h1>
           </div>
         </div>
-        <br />
+        
         {/* 2 ticket small */}
         {/* CORE VERSION 13900 */}
         <div className="md:w-[71.5dvw] flex md:flex-row flex-col md:gap-[7.4dvw] gap-[33.27px]  md:my-[7.6dvw] my-0">
