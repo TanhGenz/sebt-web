@@ -22,7 +22,7 @@ export default function Pricing() {
   return (
     <section className="relative w-full bg-beige">
       <img src="images/pricing/pricing-background.png" alt="background-pricing" className="w-full h-auto hidden md:block"/>
-      <div className="md:absolute static inset-0 top-1 flex flex-col items-center md:pb-0 pb-[50px] ">
+      <div className="md:absolute static inset-0 top-1 flex flex-col items-center md:pb-0 pb-[50px] md:pt-[5dvw] pt-[40px]">
         <div className="flex flex-col items-center">
           <h1 className="font-lamoric text-primaryText md:text-[4.4dvw] text-[34px]">
             QUYỀN LỢI & BẢNG GIÁ
