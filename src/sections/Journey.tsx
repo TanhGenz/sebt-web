@@ -53,7 +53,6 @@ const lessonList = [
 export default function Journey() {
   return (
     <section className="relative  w-full bg-secondary">
-
       {/* paper decor */}
       <div className="absolute top-0 left-0 w-full -translate-y-[90%]">
         <img src="images/decor/paper.png" alt="paper-decor" className="w-full h-full object-contain" />
@@ -73,11 +72,7 @@ export default function Journey() {
         </div>
 
         {/* board layout */}
-        <div className="
-        lg:w-[908px] w-full 
-        lg:border border-0 border-white mx-auto 
-        lg:pl-[55px] pl-[16.4px] lg:py-[62px] py-[25px]
-        pr-[15px]">
+        <div className="lg:w-[908px] w-full lg:border border-0 border-white mx-auto lg:pl-[55px] pl-[16.4px] lg:py-[62px] py-[25px] pr-[15px]">
           {lessonList.map((lesson) => (
             <div className="md:gap-[100px] gap-[14.5px] flex " key={lesson.number}>
 

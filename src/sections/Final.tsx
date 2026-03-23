@@ -9,8 +9,6 @@ export default function Final() {
                 className="w-full h-full object-cover"
                 />
             </div>
-             
-            
             
             {/* content layout section */} 
             <div className="relative inset-0 z-10 flex flex-col items-center md:gap-[6dvw] gap-[22px] md:py-[6.25dvw] py-[26px]">

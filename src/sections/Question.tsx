@@ -53,13 +53,7 @@ export default function Question() {
 
 
           {/* contents layout */}
-          <div className="
-          md:px-[65px] px-[18.69px] 
-          md:py-[28px] py-[28px] flex flex-col 
-          md:gap-[14px] gap-[9px]">
-            
-            
-            
+          <div className="md:px-[65px] px-[18.69px] md:py-[28px] py-[28px] flex flex-col md:gap-[14px] gap-[9px]">
             {questionItems.map((item, index) => (
               <div key={index} className=" pt-[14px] border-t-2 border-dashed border-secondary">
                
