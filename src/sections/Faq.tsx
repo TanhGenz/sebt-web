@@ -26,22 +26,14 @@ const faqList = [
 
 export default function Faq() {
     return (
-        <section className="relative w-full bg-secondary bg-none">
-
+        <section className="relative w-full bg-none flex flex-col">
             {/* images layout in mobiles */}
-            <div className="relative">
+            <img src="images/decor/paper.png" alt="paper" className="w-full h-auto translate-y-[1px]" />
+            <div className="relative w-full bg-secondary flex flex-col items-center md:gap-[82px] gap-[50px] md:pb-[279px] pb-[110px] md:pt-[50px] pt-[10px]">
                 <img src="images/faq-mobile.png" alt="faq mobile"
-                    className="absolute translate-x-5  object-contain md:hidden"
+                    className="w-auto h-full absolute top-0 left-1/2 -translate-x-1/2 object-contain md:hidden"
                 />
-            </div>
-
-            <div className="absolute top-[-5dvw] right-0 left-0">
-                <img src="images/decor/paper.png" alt="paper" className="w-full " />
-            </div>
-
-            <div className="w-full flex flex-col items-center md:gap-[82px] gap-[50px] md:pb-[279px] pb-[110px] md:pt-[50px] pt-[10px]">
-
-                {/*  */}
+                {/* title */}
                 <div className="flex flex-col items-center">
                     <h1 className="lg:text-[4.4dvw] text-[7.9dvw] font-lamoric text-beige">
                         CÂU HỎI THƯỜNG GẶP
@@ -52,35 +44,19 @@ export default function Faq() {
                         className="w-[28.6dvw] h-auto object-contain hidden md:block"
                     />
                 </div>
-
-
                 {/* faq content layouts [fixed px]*/}
-                <div className="
-                md:w-[683px] w-[350px]
-                flex 
-                mx-auto items-start 
-                md:gap-7 gap-0
-                
-                ">
-
-
+                <div className="md:w-[683px] w-[350px] flex mx-auto items-start md:gap-7 gap-0">
                     {/* images layouts left*/}
                     <div className="w-[223px] md:flex hidden pt-[55px]">
                         <img src="images/faq.png" alt="faq section" className="w-full h-full object-contain" />
                     </div>
-
                     {/* content layouts right */}
                     <div className="flex flex-col">
                         {faqList.map((item, index) => {
-
                             // first elements
                             const isFirst = index === 0;
-
                             // last elements
                             const isLast = index === faqList.length - 1;
-
-
-
                             // third elements 
                             const isThird = index === faqList.length - 3;
 
@@ -116,15 +92,11 @@ export default function Faq() {
                                             {item.desc}
                                         </p>
                                     </div>
-
                                 </div>
                             )
                         })}
                     </div>
-
                 </div>
-
-
             </div>
         </section>
     )

@@ -1,6 +1,6 @@
 export default function HeroHeadline() {
     return (
-        <section className="w-full">
+        <section className="w-full bg-beige translate-y-[-1px]">
             <div className="relative w-full">
                 <img src="images/decor/paper.png" alt="" className="w-full h-auto translate-y-[4px] object-contain" />
                 <div className="bg-secondary flex flex-col items-center py-[7.4dvw]">
