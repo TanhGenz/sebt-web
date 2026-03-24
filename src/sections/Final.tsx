@@ -1,7 +1,7 @@
 export default function Final() {
     return (
         <section className="relative w-full md:bg-none bg-beige">
-            <img src="images/decor/finalDecor/paper.png" alt="paper" className="relative w-full object-contain bottom-0 right-0 left-0 z-10" />
+            <img src="images/decor/finalDecor/paper.png" alt="paper" className="relative w-full object-contain bottom-1 right-0 left-0 z-10" />
             <div className="absolute inset-0 hidden md:block">
                 <img
                 src="/images/decor/finalDecor/background-final.png"

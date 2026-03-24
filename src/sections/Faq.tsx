@@ -31,7 +31,7 @@ export default function Faq() {
             <div className="w-full flex flex-col items-center md:gap-[82px] gap-[50px] md:pb-[279px] pb-[110px] md:pt-[50px] pt-[10px]">
                 {/*  images layout in mobiles  */}
                 <img src="images/faq-mobile.png" alt="faq mobile"
-                    className="pt-[10px] w-auto h-full absolute top-0 left-0  object-contain md:hidden"
+                    className="py-[10px] pl-[15px] w-auto h-full absolute top-0 left-0  object-contain md:hidden"
                 />
                 <div className="flex flex-col items-center">
                     <h1 className="md:text-[4.4dvw] text-[34px] font-lamoric text-beige">

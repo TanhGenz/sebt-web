@@ -1,21 +1,37 @@
 const items = [
-  { type: "image", img: "/images/demo-imgs.svg" },
+  { type: "image", img: "/images/pricing/avt-pricing/avt-1.png" },
   { type: "text", title: "VIDEO", desc: "Toàn bộ 7 phần học với video chia nhỏ, dễ theo dõi" },
-  { type: "image", img: "/images/demo-imgs.svg" },
+  { type: "image", img: "/images/pricing/avt-pricing/avt-2.png" },
   { type: "text", title: "Tài liệu", desc: "Tài liệu bổ trợ (PDF, slide)" },
 
   { type: "text", title: "Bài tập", desc: "Bài tập thực hành áp dụng ngay" },
-  { type: "image", img: "/images/demo-imgs.svg" },
+  { type: "image", img: "/images/pricing/avt-pricing/avt-3.png" },
   { type: "text", title: "Nhóm hỗ trợ", desc: "Nhóm hỗ trợ học tập riêng (có thể dùng nickname)" },
-  { type: "image", img: "/images/demo-imgs.svg" },
+  { type: "image", img: "/images/pricing/avt-pricing/avt-4.png" },
 
-  { type: "image", img: "/images/demo-imgs.svg" },
+  { type: "image", img: "/images/pricing/avt-pricing/avt-5.png" },
   { type: "text", title: "Workshop", desc: "Workshop Zoom hàng tháng với Trang" },
-  { type: "image", img: "/images/demo-imgs.svg" },
+  { type: "image", img: "/images/pricing/avt-pricing/avt-6.png" },
   { type: "text", title: "Q&A", desc: "Hỏi đáp & phản hồi trong thời gian học" },
 ];
 
+// const mobilePos = [
+//   "col-start-1 row-start-1",
+//   "col-start-2 row-start-1",
+//   "col-start-3 row-start-1",
 
+//   "col-start-1 row-start-2",
+//   "col-start-2 row-start-2",
+//   "col-start-3 row-start-2",
+
+//   "col-start-1 row-start-3",
+//   "col-start-2 row-start-3",
+//   "col-start-3 row-start-3",
+
+//   "col-start-1 row-start-4",
+//   "col-start-2 row-start-4",
+//   "col-start-3 row-start-4",
+// ];
 
 // % size width screen
 export default function Pricing() {
@@ -41,7 +57,7 @@ export default function Pricing() {
             {items.map((item, i) => (
               <div key={i} className="border border-red-900 aspect-square">
                 {item.type === "image" ? (
-                  <div className="relative h-full w-full overflow-hidden">
+                  <div className="relative h-full md:w-full w-[120px] overflow-hidden">
                     {/* 71.5 / 4 = 17.875dvw = 1 square   */}
                     <img
                       src={item.img}
@@ -86,7 +102,7 @@ export default function Pricing() {
         
         {/* 2 ticket small */}
         {/* CORE VERSION 13900 */}
-        <div className="md:w-[71.5dvw] flex md:flex-row flex-col md:gap-[7.4dvw] gap-[33.27px]  md:my-[7.6dvw] my-0">
+        <div className="md:w-[71.5dvw] flex md:flex-row flex-col md:gap-[7.4dvw] gap-[33.27px]  md:my-[7.6dvw] my-0 ">
           <div className="relative md:w-[42.5dvw] w-[364px] h-auto">
             <img src="/images/pricing/ticket-small.png" className="w-full h-auto object-contain" />
             <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center md:pt-[3.5%] pt-[12.2px] md:pl-[4.4%] pl-[16px] md:pr-[21.5%] pr-[77.35px] md:gap-[1.7dvw] gap-[12px]">
@@ -97,9 +113,9 @@ export default function Pricing() {
               </h2>
             </div>
           </div>
-          
+    
           {/*  LIFETIME PEACE-OF-MIND 16900 */}
-          <div className="relative md:w-[46.4dvw] w-[364px]">
+          <div className="relative md:w-[46.4dvw] w-[364px] ">
             <img src="/images/pricing/ticket-small.png" className="w-full  h-auto object-contain" />
             <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center pt-[6%] pl-[5%] pr-[25%] gap-[1dvw]">
               <h3 className="font-morgan font-normal md:text-[1.8dvw] text-[23.12px] text-primaryText leading-none ">LIFETIME PEACE-OF-MIND</h3>

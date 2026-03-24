@@ -98,7 +98,7 @@ export default function Pricing() {
           <img src="images/decor/paper.png" alt="paper" className="w-full h-full" />
       </div>
       <div className="flex flex-col items-center md:pb-[12vw] pb-[20px]">
-        {/*  */}
+        {/* title */}
         <div className="flex flex-col items-center">
           <h1 className="font-lamoric text-beige md:text-[4.4dvw] text-[34px] leading-none ">
             HỌC VIÊN NÓI GÌ

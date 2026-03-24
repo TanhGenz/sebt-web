@@ -139,13 +139,13 @@ const PhotoCardsRow = () => {
 
 export default function CourseOverview() {
   const imagesDemo = [
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
+    "/images/avt-overview/H1.png",
+    "/images/avt-overview/H2.png",
+    "/images/avt-overview/H3.png",
+    "/images/avt-overview/H4.png",
+    "/images/avt-overview/H5.png",
+    "/images/avt-overview/H6.png",
+    "/images/avt-overview/H7.png",
   ];
 
   return (
