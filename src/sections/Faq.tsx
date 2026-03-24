@@ -28,7 +28,7 @@ export default function Faq() {
     return (
         <section className="relative w-full bg-secondary">          
             <img src="images/decor/paper.png" alt="paper" className="w-full h-full -translate-y-[90%] top-0 right-0 left-0 " />
-            <div className="w-full flex flex-col items-center md:gap-[82px] gap-[50px] md:pb-[279px] pb-[110px] md:pt-[50px] pt-[10px]">
+            <div className="w-full flex flex-col items-center md:gap-[82px] gap-[50px] md:pb-[279px] pb-[110px] ">
                 {/*  images layout in mobiles  */}
                 <img src="images/faq-mobile.png" alt="faq mobile"
                     className="py-[10px] pl-[15px] w-auto h-full absolute top-0 left-0  object-contain md:hidden"

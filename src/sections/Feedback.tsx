@@ -3,37 +3,42 @@ type Testimonial = {
   age: number
   quote: string
   align: "left" | "right"
+  img: string
 }
 
 const testimonials: Testimonial[] = [
   {
-    name: "Hoa",
+    name: "Sen",
     age: 23,
     align: "left",
     quote:
       "Mình từng rất sợ. Không biết lần đầu sẽ như thế nào. Nhưng sau khi học xong, mình cảm thấy như được ai đó cầm tay dẫn đi. Lần đầu của mình gần như không đau.",
-  },
+    img: "/images/avt-feedback/S-avt.png",
+    },
   {
-    name: "Lan",
+    name: "Minh",
     age: 24,
     align: "right",
     quote:
       "Mình từng rất sợ. Không biết lần đầu sẽ như thế nào. Nhưng sau khi học xong, mình cảm thấy như được ai đó cầm tay dẫn đi. Lần đầu của mình gần như không đau.",
-  },
+    img: "/images/avt-feedback/M-avt.png",
+    },
   {
-    name: "Hồng",
+    name: "Duyên",
     age: 25,
     align: "left",
     quote:
       "Mình từng rất sợ. Không biết lần đầu sẽ như thế nào. Nhưng sau khi học xong, mình cảm thấy như được ai đó cầm tay dẫn đi. Lần đầu của mình gần như không đau.",
-  },
+    img: "/images/avt-feedback/D-avt.png",
+    },
   {
-    name: "Sen",
+    name: "Banh",
     age: 26,
     align: "right",
     quote:
       "Mình từng rất sợ. Không biết lần đầu sẽ như thế nào. Nhưng sau khi học xong, mình cảm thấy như được ai đó cầm tay dẫn đi. Lần đầu của mình gần như không đau.",
-  },
+    img: "/images/avt-feedback/B-avt.png",
+    },
 ]
 
 type TestimonialItemProps = Testimonial
@@ -41,6 +46,7 @@ type TestimonialItemProps = Testimonial
 function TestimonialItem({
   name,
   age,
+  img,
   quote,
   align,
 }: TestimonialItemProps) {
@@ -63,9 +69,12 @@ function TestimonialItem({
           isLeft ? "md:left-0 left-5" : "md:right-0 right-5",
         ].join(" ")}
       >
-        <p className="px-2 font-gilroy text-beige font-semibold leading-tight md:text-[15px] text-[7.8px]">
-          {name} - {age} tuổi
+        <img src= {img} alt="avt-customer" className="absolute inset-0 h-full w-full object-cover rounded-full"/>
+        <p className="relative z-10 px-2 font-gilroy text-beige font-semibold leading-tight md:text-[15px] text-[7.8px]">
+          {/* {name} - {age} tuổi */}
         </p>
+        
+
       </div>
       {/* BOX */}
       <div
@@ -75,11 +84,11 @@ function TestimonialItem({
           isLeft
             ? [
               "md:ml-[80px] ml-[60px] md:border-l-none border-l border-t border-b border-r",
-              "md:pr-[14px] pr-[7.25px] md:pl-[102px] pl-[49.3px]",
+              "md:pr-[14px] pr-[7.25px] md:pl-[102px] pl-[40px]",
             ].join(" ")
             : [
               "md:mr-[80px] mr-[60px] md:border-r-none border-r border-t border-l border-b",
-              "md:pr-[102px] pr-[49.3px] md:pl-[14px] pl-[7.25px]",
+              "md:pr-[102px] pr-[40px] md:pl-[14px] pl-[7.25px]",
             ].join(" "),
         ].join(" ")}
       >
@@ -110,10 +119,11 @@ export default function Pricing() {
           />
         </div>
 
-        <div className="flex w-full flex-col gap-18px md:px-[15.6dvw] px-[15px]">
+        <div className="flex w-full flex-col  gap-18px md:px-[15.6dvw] px-0">
           {testimonials.map((item, index) => (
             <TestimonialItem
               key={`${item.name}-${index}`}
+              img= {item.img}
               name={item.name}
               age={item.age}
               quote={item.quote}
