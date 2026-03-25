@@ -84,24 +84,24 @@ const PhotoCardsRow = () => {
     className?: string;
     transform: CardTransform;
   }[] = [
-    {
-      image: "/images/demo-imgs.svg",
-      title: "ĐAU ? KHÔNG PHẢI SỢ",
-      className: "relative",
-      transform: { i: 0, x: "-15%", y: "-5%", rotate: 5.5 },
-    },
-    {
-      image: "/images/demo-imgs.svg",
-      title: "PETER CHỐNG ĐỐI ?",
-      transform: { i: 1, x: 0, y: 0, rotate: 0 },
-    },
-    {
-      image: "/images/demo-imgs.svg",
-      title: "CHỈ TRONG 7 PHẦN HỌC",
-      className: "relative",
-      transform: { i: 2, x: "15%", y: "-5%", rotate: -5.5 },
-    },
-  ];
+      {
+        image: "/images/demo-imgs.svg",
+        title: "ĐAU ? KHÔNG PHẢI SỢ",
+        className: "relative",
+        transform: { i: 0, x: "-15%", y: "-5%", rotate: 5.5 },
+      },
+      {
+        image: "/images/demo-imgs.svg",
+        title: "PETER CHỐNG ĐỐI ?",
+        transform: { i: 1, x: 0, y: 0, rotate: 0 },
+      },
+      {
+        image: "/images/demo-imgs.svg",
+        title: "CHỈ TRONG 7 PHẦN HỌC",
+        className: "relative",
+        transform: { i: 2, x: "15%", y: "-5%", rotate: -5.5 },
+      },
+    ];
 
   return (
     <div
@@ -136,11 +136,11 @@ export default function CourseOverview() {
   ];
 
   return (
-    <section className="relative w-full bg-beige">
+    <section className="relative w-full bg-beige pb-[2.6dvw]">
       <div className="relative">
         {/* Main heading */}
-        <div className="text-center pt-[5.6dvw]">
-          <h1 className="font-qalogre text-[4.45dvw] leading-none text-primaryText">
+        <div className="text-center pt-[5.76dvw]">
+          <h1 className="font-qalogre text-[4.45dvw] leading-[1.4] text-primaryText">
             LẦN ĐẦU CHUẨN BỊ
             <br />
             KHÔNG CẦN LO TOAN
@@ -170,7 +170,7 @@ export default function CourseOverview() {
         </div>
 
         {/* Content grid */}
-        <div className="w-full mt-[2dvw] ">
+        <div className="w-full mt-[2dvw]">
           <div className="w-[70.28dvw] flex flex-wrap justify-center gap-[1.2dvw] mx-auto">
             {imagesDemo.map((image) => (
               <div className="w-[16.67dvw] h-auto object-cover">

@@ -1,18 +1,12 @@
 export default function AboutMe() {
   return (
-    <section className="w-full bg-beige">
-
+    <section className="relative translate-y-[-1px] w-full bg-beige">
       {/* decor paper */}
       <div className="relative z-1">
-        <div className="top-0 right-0 left-0 -translate-y-[1px]">
-          <img src="images/decor/aboutDecor/about-paper-top.png" alt="top decor" className="w-full " />
-        </div>
         <div className="absolute translate-x-[10%] translate-y-[20%]  right-0 hidden md:block">
           <img src="images/decor/aboutDecor/about-line-right.png" alt="right decor" className="w-full " />
         </div>
       </div>
-
-
 
       <div className="relative z-10 w-full h-full  flex flex-col items-center  sm:gap-[150px] gap-[100px]">
         <div className="flex flex-col items-center">
@@ -37,7 +31,7 @@ export default function AboutMe() {
           <div className="absolute left-1/2 top-0 z-10 
             sm:w-[253px] w-[178px] sm:h-[253px] h-[178px]  
             -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-[0.5dvw] border-white bg-white">
-            
+
             <img
               src="images/avt.png"
               alt="Minh Trang"
@@ -49,7 +43,7 @@ export default function AboutMe() {
             <div className="flex flex-col 
             sm:px-[50px] px-[10px] 
             sm:pt-[139px] pt-[100px] pb-[109px] gap-[16px]">
-            
+
               <p className="text-start font-gilroy text-creamBeige text-[16px] font-normal leading-none ">
                 Minh Trang là nhà hoạt động giới tính và khoái cảm, người sáng lập
                 SexEdu by Trang (SEBT) từ năm 2019.

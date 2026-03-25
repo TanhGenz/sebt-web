@@ -1,26 +1,26 @@
 export default function Intro() {
   return (
-    <section className="relative w-full translate-y-[-1px]">
-      <div className=" w-full h-full">
-        <img
-          src="/images/decor/introDecor/background-intro.png"
-          alt="background intro"
-          className="w-full h-full object-contain"
-        />
-      </div>
+    <section className="relative w-full flex flex-col items-center justify-center translate-y-[-3px]">
+      {/* Background */}
+      <img
+        src="/images/decor/introDecor/background-intro.png"
+        alt="background-intro"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-      <div className="absolute translate-x-1/2 -translate-y-[100%] w-max flex items-center justify-center mx-auto  pb-[1.45dvw]">
+      {/* Letter content */}
+      <div className="relative w-max flex items-center justify-center mx-auto pb-[20px]">
         {/* Paper */}
         <img
           src="/images/intro.svg"
           alt="banner-hero-section"
-          className="w-[49.4dvw] h-auto object-contain"
+          className="w-[710px] h-auto object-contain"
         />
 
         {/* Content */}
         <div className="absolute inset-0 font-gilroy text-secondary flex flex-col pt-[4%] pl-[13.8%] pr-[9.5%]">
-          <h1 className="font-kamilla text-[6.7dvw] leading-none text-end pb-[3.3%]">Gửi Bạn,</h1>
-          <p className="text-[1.2dvw] leading-none font-medium text-justify">
+          <h1 className="font-kamilla text-[96px] leading-none text-end pb-[3.3%]">Gửi Bạn,</h1>
+          <p className="text-[16px] leading-none font-medium text-justify">
             Nếu bạn đang đọc những dòng này, có thể bạn đang chuẩn bị cho một điều gì đó rất quan trọng — lần đầu tiên trong đời bạn bước vào một trải nghiệm thân mật.
             <br />
             <br />
@@ -33,13 +33,13 @@ export default function Intro() {
             Và mình ước, giá như ngày đó có ai đó nói cho mình biết:
           </p>
           <br />
-          <p className="text-[1.1dvw] leading-none text-center italic">
+          <p className="text-[16px] leading-none text-center italic">
             "Lần đầu không nhất thiết phải đau, phải ra máu. Bạn có
             <br />
             quyền được chuẩn bị. Bạn có quyền hiểu cơ thể mình."
           </p>
           <br />
-          <p className="text-[1.1dvw] leading-none font-medium text-justify">
+          <p className="text-[16px] leading-none font-medium text-justify">
             Đó là lý do Trang tạo ra khóa học này.
             <br />
             <br />
@@ -57,7 +57,7 @@ export default function Intro() {
             <br />
             Cùng nhau cố gắng nhé,
           </p>
-          <h1 className="font-kamilla text-[6.7dvw] leading-none pt-[4%] pl-[12.1%]">Trang</h1>
+          <h1 className="font-kamilla text-[96px] leading-none pt-[4%] pl-[12.1%]">Trang</h1>
         </div>
 
         {/* Decor */}

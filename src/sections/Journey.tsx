@@ -52,57 +52,49 @@ const lessonList = [
 
 export default function Journey() {
   return (
-    <section className="relative  w-full bg-secondary">
-
+    <section className="relative w-full bg-secondary">
       {/* paper decor */}
-      <div className="absolute top-0 left-0 w-full -translate-y-[90%]">
-        <img src="images/decor/paper.png" alt="paper-decor" className="w-full h-full object-contain" />
+      <div className="absolute top-0 left-0 w-full -translate-y-[99%]">
+        <img src="images/decor/paper-top.svg" alt="paper-top" className="w-full h-auto object-contain" />
       </div>
 
-      <div className="md:gap-[68px] gap-[20px] relative z-10 flex flex-col pb-[53px] ">
-
+      <div className="xl:gap-[68px] gap-[48px] relative z-10 flex flex-col pt-[10px]">
         <div className="flex flex-col items-center">
-          <h1 className="text-center font-lamoric text-beige text-[4.4dvw]">
+          <h1 className="text-center font-lamoric text-beige xl:text-[64px] text-[48px]">
             HÀNH TRÌNH 7 PHẦN
           </h1>
           <img
             src="src\assets\icons\line-white.svg"
             alt="content-section-line"
-            className="w-[28.6dvw] h-auto object-contain hidden md:block"
+            className="xl:w-[412px] w-[342px] h-auto object-contain hidden md:block"
           />
         </div>
 
         {/* board layout */}
-        <div className="
-        lg:w-[908px] w-full 
-        lg:border border-0 border-white mx-auto 
-        lg:pl-[55px] pl-[16.4px] lg:py-[62px] py-[25px]
-        pr-[15px]">
+        <div className="lg:w-[908px] w-full lg:border border-0 border-white mx-auto xl:pl-[55px] pl-[42px] lg:py-[62px] py-[25px] pr-[15px]">
           {lessonList.map((lesson) => (
-            <div className="md:gap-[100px] gap-[14.5px] flex " key={lesson.number}>
-
+            <div className="md:gap-[100px] gap-[14.5px] flex" key={lesson.number}>
               {/* Number in left layout */}
-              <div className="md:w-[180px] w-[70px] flex-shrink-0 flex items-center  leading-none  border-r  boder-solid">
-                <p  className="md:text-[120px] text-[58.72px] font-onebold text-beige ">{lesson.number}</p>
+              <div className="md:w-[180px] w-[70px] flex-shrink-0 flex items-center leading-none border-r boder-solid">
+                <p className="xl:text-[128px] text-[110px] font-onebold text-beige">{lesson.number}</p>
               </div>
-
               {/* content text layouts */}
-              <div className="md:gap-[15px] gap-[8.4px]  flex flex-col pb-[23px]">
-                <h3 className=" md:text-[36px] text-[19.11px] font-lamoric leading-none text-beige uppercase">
+              <div className="md:gap-[15px] gap-[8px] flex flex-col xl:pb-[48px] pb-[36px]">
+                <h3 className="xl:text-[36px] text-[32px] font-lamoric leading-none text-beige uppercase">
                   {lesson.title}
                 </h3>
-                <p className=" md:text-[32px] font-bladeRush leading-none text-beige">
+                <p className="xl:text-[32px] text-[28px] font-bladeRush leading-none text-beige">
                   {lesson.subtitle}
                 </p>
-                <p className="md:text-[20px] text-[12.74px] font-gilroy text-beige">
+                <p className="xl:text-[20px] text-[18px] font-gilroy text-beige">
                   {lesson.description}
                 </p>
               </div>
             </div>
-
-
           ))}
         </div>
+
+        <img src="images/decor/paper-bottom-light.svg" alt="paper-bottom" className="w-full h-auto object-contain" />
       </div>
     </section>
   );
