@@ -1,4 +1,4 @@
-const items = [
+const DesktopItems = [
   { type: "image", img: "/images/pricing/avt-pricing/avt-1.png" },
   { type: "text", title: "VIDEO", desc: "Toàn bộ 7 phần học với video chia nhỏ, dễ theo dõi" },
   { type: "image", img: "/images/pricing/avt-pricing/avt-2.png" },
@@ -15,25 +15,24 @@ const items = [
   { type: "text", title: "Q&A", desc: "Hỏi đáp & phản hồi trong thời gian học" },
 ];
 
-// const mobilePos = [
-//   "col-start-1 row-start-1",
-//   "col-start-2 row-start-1",
-//   "col-start-3 row-start-1",
+const MobileItems = [
+  { type: "image", img: "/images/pricing/avt-pricing/avt-1.png" },
+  { type: "text", title: "Bài tập", desc: "Bài tập thực hành áp dụng ngay" },
+  { type: "image", img: "/images/pricing/avt-pricing/avt-2.png" },
+  
+  { type: "text", title: "Workshop", desc: "Workshop Zoom hàng tháng với Trang" },
+  { type: "image", img: "/images/pricing/avt-pricing/avt-3.png" },
+  { type: "text", title: "VIDEO", desc: "Toàn bộ 7 phần học với video chia nhỏ, dễ theo dõi" },
+  
+  { type: "image", img: "/images/pricing/avt-pricing/avt-5.png" },
+  { type: "text", title: "Nhóm hỗ trợ", desc: "Nhóm hỗ trợ học tập riêng (có thể dùng nickname)" },
+  { type: "image", img: "/images/pricing/avt-pricing/avt-4.png" },
+  
+  { type: "text", title: "Q&A", desc: "Hỏi đáp & phản hồi trong thời gian học" },
+  { type: "image", img: "/images/pricing/avt-pricing/avt-6.png" },
+  { type: "text", title: "Tài liệu", desc: "Tài liệu bổ trợ (PDF, slide)" },
+];
 
-//   "col-start-1 row-start-2",
-//   "col-start-2 row-start-2",
-//   "col-start-3 row-start-2",
-
-//   "col-start-1 row-start-3",
-//   "col-start-2 row-start-3",
-//   "col-start-3 row-start-3",
-
-//   "col-start-1 row-start-4",
-//   "col-start-2 row-start-4",
-//   "col-start-3 row-start-4",
-// ];
-
-// % size width screen
 export default function Pricing() {
   return (
     <section className="relative w-full bg-beige">
@@ -51,13 +50,13 @@ export default function Pricing() {
         </div>
 
 
-        {/* board / 4  ele */}
-        <div className="md:w-[71.5dvw] w-[365px] md:mt-[2.2dvw] mt-[20.61px]">
+        {/* board / 4  ele DESKTOP */}
+        <div className="w-[71.5dvw] mt-[2.2dvw] md:block hidden">
           <div className="grid md:grid-cols-4 grid-cols-3">
-            {items.map((item, i) => (
+            {DesktopItems.map((item, i) => (
               <div key={i} className="border border-red-900 aspect-square">
                 {item.type === "image" ? (
-                  <div className="relative h-full md:w-full w-[120px] overflow-hidden">
+                  <div className="relative h-full w-full overflow-hidden">
                     {/* 71.5 / 4 = 17.875dvw = 1 square   */}
                     <img
                       src={item.img}
@@ -68,8 +67,34 @@ export default function Pricing() {
                   </div>
                 ) : (
                   <div className="flex h-full flex-col items-center justify-center p-[1.2dvw] text-center">
-                    <h3 className="font-gilroy font-bold  md:text-[1.4dvw] text-[9.21px] text-secondary  ">{item.title}</h3>
-                    <p className="font-gilroy font-normal md:text-[1.4dvw] text-[9.21px] text-secondary  pt-[0.4dvw] ">{item.desc}</p>
+                    <h3 className="font-gilroy font-bold  text-[1.4dvw] text-secondary  ">{item.title}</h3>
+                    <p className="font-gilroy font-normal text-[1.4dvw] text-secondary  pt-[0.4dvw] ">{item.desc}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* board / 4 ele  MOBILES */}
+        <div className="w-[365px] mt-[20.61px] md:hidden block">
+          <div className="grid grid-cols-3">
+            {MobileItems.map((item, i) => (
+              <div key={i} className="border border-red-900 aspect-square">
+                {item.type === "image" ? (
+                  <div className="relative h-full w-[120px] overflow-hidden">
+                    {/* 71.5 / 4 = 17.875dvw = 1 square   */}
+                    <img
+                      src={item.img}
+                      alt=""
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-secondary/50" />
+                  </div>
+                ) : (
+                  <div className="flex h-full flex-col items-center justify-center p-[25px] text-center">
+                    <h3 className="font-gilroy font-bold  text-[9.21px] text-secondary  ">{item.title}</h3>
+                    <p className="font-gilroy font-normal text-[9.21px] text-secondary  pt-[0.4dvw] ">{item.desc}</p>
                   </div>
                 )}
               </div>

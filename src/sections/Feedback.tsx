@@ -55,7 +55,7 @@ function TestimonialItem({
   return (
     <div
       className={[
-        "relative w-full md:h-[160px] h-[128px] flex items-center",
+        "relative w-full md:h-[160px] min-h-[128px] flex items-center ",
         isLeft ? "xl:pr-[230px] pr-[15px]" : "xl:pl-[230px] pl-[15px]",
       ].join(" ")}
     >
@@ -80,7 +80,7 @@ function TestimonialItem({
       <div
         className={[
           "border-beige",
-          "md:py-[26px] py-[13.1px]",
+          "md:py-[26px] py-[6px]",
           isLeft
             ? [
               "md:ml-[80px] ml-[60px] md:border-l-none border-l border-t border-b border-r",
@@ -92,9 +92,12 @@ function TestimonialItem({
             ].join(" "),
         ].join(" ")}
       >
-        <p className="font-gilroy text-beige italic text-[16px] leading-none">
-          “ {quote} ”
-        </p>
+        <div className="w-full">
+          <p className="font-gilroy text-beige italic text-[16px] leading-none">“ {quote} ”
+          </p>
+        </div>
+        
+          
       </div>
     </div> 
   )
@@ -119,7 +122,7 @@ export default function Pricing() {
           />
         </div>
 
-        <div className="flex w-full flex-col  gap-18px md:px-[15.6dvw] px-0">
+        <div className="flex w-full flex-col  gap-[18px] md:px-[15.6dvw] px-0">
           {testimonials.map((item, index) => (
             <TestimonialItem
               key={`${item.name}-${index}`}
