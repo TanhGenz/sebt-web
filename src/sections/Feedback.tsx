@@ -93,21 +93,24 @@ function TestimonialItem({
 
 export default function Pricing() {
   return (
-    <section className="w-full bg-secondary">
-      <div className="flex flex-col items-center pb-[12vw] pt-[6vw]">
-        {/*  */}
+    <section className="relative w-full bg-secondary">
+      {/* paper decor */}
+      <div className="absolute top-0 left-0 w-full -translate-y-[99%]">
+        <img src="images/decor/paper-top.svg" alt="paper-top" className="w-full h-auto object-contain" />
+      </div>
+      <div className="flex flex-col items-center py-[12px]">
+        {/* title */}
         <div className="flex flex-col items-center">
-          <h1 className="font-lamoric text-beige text-[4.4vw] leading-none ">
+          <h1 className="xl:text-[64px] text-[48px] font-lamoric text-beige leading-none">
             HỌC VIÊN NÓI GÌ
           </h1>
           <img
             src="src\assets\icons\line-white.svg"
             alt="content-section-line"
-            className="w-[28.6dvw] h-auto object-contain"
+            className="xl:w-[412px] w-[342px] h-auto object-contain hidden md:block"
           />
         </div>
-
-        <div className="mt-[8vw] flex w-full flex-col gap-[18px] xl:px-[15.6dvw] px-[12dvw]">
+        <div className="w-full flex flex-col gap-[18px] xl:px-[225px] px-[160px]">
           {testimonials.map((item, index) => (
             <TestimonialItem
               key={`${item.name}-${index}`}
@@ -119,6 +122,7 @@ export default function Pricing() {
           ))}
         </div>
       </div>
+      <img src="images/decor/paper-bottom-light.svg" alt="paper-bottom" className="w-full h-auto object-contain" />
     </section>
   )
 }

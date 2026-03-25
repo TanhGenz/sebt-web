@@ -93,7 +93,6 @@ export default function Journey() {
             </div>
           ))}
         </div>
-
         <img src="images/decor/paper-bottom-light.svg" alt="paper-bottom" className="w-full h-auto object-contain" />
       </div>
     </section>
