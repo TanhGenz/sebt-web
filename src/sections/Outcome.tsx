@@ -22,11 +22,9 @@ export default function Outcome() {
   return (
     <section className="relative w-full bg-beige">
       <div className="w-full h-full">
-        <div className="flex flex-col items-center gap-5 
-        md:pt-8 pt-0 
-        md:pb-[225px] pb-[55px]">
+        <div className="flex flex-col items-center gap-5  md:pt-8 pt-0 md:pb-[225px] pb-[55px]">
           <div className="flex flex-col items-center">
-            <h1 className="lg:text-[4.4dvw] text-[8.4dvw] font-lamoric  text-primaryText">
+            <h1 className="md:text-[4.4dvw] text-[34px] font-lamoric  text-primaryText">
               SAU KHÓA HỌC BẠN SẼ
             </h1>
             <img
@@ -36,10 +34,7 @@ export default function Outcome() {
             />
           </div>
 
-          <div className="flex 
-          md:w-[60.2dvw] w-[367px]
-          md:pl-[45px] pl-[30px]
-          flex-col gap-3 ">
+          <div className="flex  md:w-[60.2dvw] w-[367px] md:pl-[45px] pl-[30px] flex-col gap-3 ">
             {titleList.map((item, index) => (
               <div
                 key={index}
@@ -50,10 +45,7 @@ export default function Outcome() {
                     {item}
                   </h3>
                   <div className="absolute bottom-[-1px] left-[-6px] right-0 h-[2px] bg-primaryText rounded-full" />
-                  <div className="absolute 
-                  md:top-[5px] top-[13px] md:left-[-45px] left-[-28px] 
-                  md:w-[40px] w-[22.26px] md:aspect-square aspect-square  
-                  border-[1px] border-primaryText rounded-full" />
+                  <div className="absolute md:top-[5px] top-[13px] md:left-[-45px] left-[-28px] md:w-[40px] w-[22.26px] md:aspect-square aspect-square border-[1px] border-primaryText rounded-full" />
                 </div>
                 <p className="md:text-[20px] text-[16px]">{contentList[index]}</p>
               </div>

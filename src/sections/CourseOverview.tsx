@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+// import { motion, useInView } from "framer-motion";
 import { cn } from "../ultils/string";
 
 type CardTransform = {
@@ -9,40 +9,48 @@ type CardTransform = {
   rotate: number;
 };
 
-const fadeInUp = {
-  hidden: (t: CardTransform) => ({
-    opacity: 0,
-    y: 60,
-    x: t.x,
-    rotate: t.rotate,
-  }),
-  visible: (t: CardTransform) => ({
-    opacity: 1,
-    y: t.y,
-    x: t.x,
-    rotate: t.rotate,
-    transition: { duration: 0.5, delay: t.i * 0.15 },
-  }),
-};
+  // style CSS replace locate, coordinates cards
+// const fadeInUp = {
+//   hidden: (t: CardTransform) => ({
+//     opacity: 0,
+//     y: 60,
+//     x: t.x,
+//     rotate: t.rotate,
+//   }),
+//   visible: (t: CardTransform) => ({
+//     opacity: 1,
+//     y: t.y,
+//     x: t.x,
+//     rotate: t.rotate,
+//     transition: { duration: 0.5, delay: t.i * 0.15 },
+//   }),
+// };
 
 type PhotoCardProps = {
   image: string;
   title: string;
   className?: string;
-  variants?: typeof fadeInUp;
-  initial?: string;
-  animate?: string;
-  custom?: CardTransform;
+
+  // Replace const fadeInUp
+  style?: React.CSSProperties;
+
+  /* TURN OFF ANIMATION */
+
+  // variants?: typeof fadeInUp;
+  // initial?: string;
+  // animate?: string;
+  // custom?: CardTransform;
 };
 
 const PhotoCard = ({
   image,
   title,
   className,
-  variants,
-  initial,
-  animate,
-  custom,
+  style
+  // variants,
+  // initial,
+  // animate,
+  // custom,
 }: PhotoCardProps) => {
   const baseClass = cn(
     "w-[22.5%] flex flex-col items-center bg-white rounded-[6px] shadow-[4px_4px_4px_0px_#00000040]",
@@ -58,26 +66,28 @@ const PhotoCard = ({
       </p>
     </>
   );
-  if (variants != null && initial != null && animate != null) {
-    return (
-      <motion.div
-        className={baseClass}
-        variants={variants}
-        initial={initial}
-        animate={animate}
-        custom={custom}
-      >
-        {content}
-      </motion.div>
-    );
-  }
-  return <div className={baseClass}>{content}</div>;
+  /* dont need statements for animation */
+
+  // if (variants != null && initial != null && animate != null) {
+  //   return (
+  //     <motion.div
+  //       className={baseClass}
+  //       variants={variants}
+  //       initial={initial}
+  //       animate={animate}
+  //       custom={custom}
+  //     >
+  //       {content}
+  //     </motion.div>
+  //   );
+  // }
+  return <div className={baseClass} style={style}>{content}</div>;
 };
 
 const PhotoCardsRow = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
-
+  
+  // const inView = useInView(ref, { once: true, amount: 0.5 });
   const cards: {
     image: string;
     title: string;
@@ -114,10 +124,13 @@ const PhotoCardsRow = () => {
           image={card.image}
           title={card.title}
           className={card.className}
-          variants={fadeInUp}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          custom={card.transform}
+          // variants={fadeInUp}
+          // initial="hidden"
+          // animate={inView ? "visible" : "hidden"}
+          // custom={card.transform}
+          style={{
+            transform: `translate(${card.transform.x}, ${card.transform.y}) rotate(${card.transform.rotate}deg)`,
+          }}
         />
       ))}
     </div>
@@ -126,13 +139,13 @@ const PhotoCardsRow = () => {
 
 export default function CourseOverview() {
   const imagesDemo = [
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
+    "/images/avt-overview/H1.png",
+    "/images/avt-overview/H2.png",
+    "/images/avt-overview/H3.png",
+    "/images/avt-overview/H4.png",
+    "/images/avt-overview/H5.png",
+    "/images/avt-overview/H6.png",
+    "/images/avt-overview/H7.png",
   ];
 
   return (
@@ -140,7 +153,7 @@ export default function CourseOverview() {
       <div className="relative">
         {/* Main heading */}
         <div className="text-center pt-[5.6dvw]">
-          <h1 className="font-qalogre text-[4.45dvw] leading-none text-primaryText">
+          <h1 className="font-qalogre md:text-[4.4dvw] text-[34px]  leading-none text-primaryText">
             LẦN ĐẦU CHUẨN BỊ
             <br />
             KHÔNG CẦN LO TOAN
