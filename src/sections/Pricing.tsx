@@ -49,7 +49,6 @@ export default function Pricing() {
           />
         </div>
 
-
         {/* board / 4  ele DESKTOP */}
         <div className="w-[71.5dvw] mt-[2.2dvw] md:block hidden">
           <div className="grid md:grid-cols-4 grid-cols-3">
@@ -57,7 +56,7 @@ export default function Pricing() {
               <div key={i} className="border border-red-900 aspect-square">
                 {item.type === "image" ? (
                   <div className="relative h-full w-full overflow-hidden">
-                    {/* 71.5 / 4 = 17.875dvw = 1 square   */}
+                    {/* 71.5 / 4 = 17.875dvw = 1 square */}
                     <img
                       src={item.img}
                       alt=""
@@ -76,7 +75,7 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* board / 4 ele  MOBILES */}
+        {/* board / 3 ele  MOBILES */}
         <div className="w-[365px] mt-[20.61px] md:hidden block">
           <div className="grid grid-cols-3">
             {MobileItems.map((item, i) => (
@@ -126,8 +125,9 @@ export default function Pricing() {
         </div>
         
         {/* 2 ticket small */}
-        {/* CORE VERSION 13900 */}
+        
         <div className="md:w-[71.5dvw] flex md:flex-row flex-col md:gap-[7.4dvw] gap-[33.27px]  md:my-[7.6dvw] my-0 ">
+          {/* CORE VERSION 13900 */}
           <div className="relative md:w-[42.5dvw] w-[364px] h-auto">
             <img src="/images/pricing/ticket-small.png" className="w-full h-auto object-contain" />
             <div className="absolute inset-0 font-gilroy text-secondary flex flex-col items-center md:pt-[3.5%] pt-[12.2px] md:pl-[4.4%] pl-[16px] md:pr-[21.5%] pr-[77.35px] md:gap-[1.7dvw] gap-[12px]">
