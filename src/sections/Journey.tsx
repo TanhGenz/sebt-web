@@ -58,7 +58,7 @@ export default function Journey() {
         <img src="images/decor/paper-top.svg" alt="paper-top" className="w-full h-auto object-contain" />
       </div>
 
-      <div className="xl:gap-[68px] gap-[48px] relative z-10 flex flex-col pt-[10px]">
+      <div className="xl:gap-[68px] md:gap-[48px] gap-[18px] relative z-10 flex flex-col pt-[10px]">
         <div className="flex flex-col items-center">
           <h1 className="text-center font-lamoric text-beige xl:text-[64px] text-[48px]">
             HÀNH TRÌNH 7 PHẦN
@@ -71,22 +71,22 @@ export default function Journey() {
         </div>
 
         {/* board layout */}
-        <div className="lg:w-[908px] w-full lg:border border-0 border-white mx-auto xl:pl-[55px] pl-[42px] lg:py-[62px] py-[25px] pr-[15px]">
+        <div className="lg:w-[908px] w-full lg:border border-0 border-white mx-auto xl:pl-[55px] md:pl-[42px] pl-[18px] lg:py-[62px] md:py-[25px] py-[18px] pr-[18px]">
           {lessonList.map((lesson) => (
-            <div className="md:gap-[100px] gap-[14.5px] flex" key={lesson.number}>
+            <div className="flex md:gap-[100px] gap-[18px]" key={lesson.number}>
               {/* Number in left layout */}
-              <div className="md:w-[180px] w-[70px] flex-shrink-0 flex items-center leading-none border-r boder-solid">
-                <p className="xl:text-[128px] text-[110px] font-onebold text-beige">{lesson.number}</p>
+              <div className="md:w-[180px] w-[80px] flex-shrink-0 flex items-center leading-none border-r boder-solid">
+                <p className="xl:text-[128px] md:ext-[110px] text-[68px] font-onebold text-beige">{lesson.number}</p>
               </div>
               {/* content text layouts */}
               <div className="md:gap-[15px] gap-[8px] flex flex-col xl:pb-[48px] pb-[36px]">
-                <h3 className="xl:text-[36px] text-[32px] font-lamoric leading-none text-beige uppercase">
+                <h3 className="xl:text-[36px] md:text-[32px] text-[24px] font-lamoric leading-none text-beige uppercase">
                   {lesson.title}
                 </h3>
-                <p className="xl:text-[32px] text-[28px] font-bladeRush leading-none text-beige">
+                <p className="xl:text-[32px] md:text-[28px] text-[20px] font-bladeRush leading-none text-beige">
                   {lesson.subtitle}
                 </p>
-                <p className="xl:text-[20px] text-[18px] font-gilroy text-beige">
+                <p className="xl:text-[20px] md:text-[18px] text-[16px] font-gilroy text-beige">
                   {lesson.description}
                 </p>
               </div>

@@ -10,7 +10,7 @@ export default function AboutMe() {
 
       <div className="relative z-10 w-full h-full  flex flex-col items-center  sm:gap-[150px] gap-[100px]">
         <div className="flex flex-col items-center">
-          <h1 className="xl:text-[64px] text-[48px] font-lamoric text-primaryText">
+          <h1 className="xl:text-[64px] sm:text-[48px] text-[38px] font-lamoric text-primaryText">
             VỀ MINH TRANG
           </h1>
           <img
@@ -21,7 +21,7 @@ export default function AboutMe() {
         </div>
 
         {/* about Layout */}
-        <div className="relative mx-auto sm:mb-[100px] mb-[23px] sm:w-[531px] w-[376px] sm:p-[11px] p-[8px] h-auto bg-secondary rounded-b-full shadow-[8px_8px_20px_rgba(0,0,0,0.2)]">
+        <div className="relative mx-auto sm:mb-[100px] mb-[23px] sm:w-[531px] w-[390px] sm:p-[11px] p-[8px] h-auto bg-secondary rounded-b-full shadow-[8px_8px_20px_rgba(0,0,0,0.2)]">
           {/* AVATAR */}
           <div className="absolute left-1/2 top-0 z-10 sm:w-[253px] w-[178px] sm:h-[253px] h-[178px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-[0.5dvw] border-white bg-white">
             <img

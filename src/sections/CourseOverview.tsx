@@ -35,6 +35,31 @@ type PhotoCardProps = {
   custom?: CardTransform;
 };
 
+const cards: {
+  image: string;
+  title: string;
+  className?: string;
+  transform: CardTransform;
+}[] = [
+    {
+      image: "/images/demo-imgs.svg",
+      title: "ĐAU ? KHÔNG PHẢI SỢ",
+      className: "relative",
+      transform: { i: 0, x: "-15%", y: "-5%", rotate: 5.5 },
+    },
+    {
+      image: "/images/demo-imgs.svg",
+      title: "PETER CHỐNG ĐỐI ?",
+      transform: { i: 1, x: 0, y: 0, rotate: 0 },
+    },
+    {
+      image: "/images/demo-imgs.svg",
+      title: "CHỈ TRONG 7 PHẦN HỌC",
+      className: "relative",
+      transform: { i: 2, x: "15%", y: "-5%", rotate: -5.5 },
+    },
+  ];
+
 const PhotoCard = ({
   image,
   title,
@@ -78,31 +103,6 @@ const PhotoCardsRow = () => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
 
-  const cards: {
-    image: string;
-    title: string;
-    className?: string;
-    transform: CardTransform;
-  }[] = [
-      {
-        image: "/images/demo-imgs.svg",
-        title: "ĐAU ? KHÔNG PHẢI SỢ",
-        className: "relative",
-        transform: { i: 0, x: "-15%", y: "-5%", rotate: 5.5 },
-      },
-      {
-        image: "/images/demo-imgs.svg",
-        title: "PETER CHỐNG ĐỐI ?",
-        transform: { i: 1, x: 0, y: 0, rotate: 0 },
-      },
-      {
-        image: "/images/demo-imgs.svg",
-        title: "CHỈ TRONG 7 PHẦN HỌC",
-        className: "relative",
-        transform: { i: 2, x: "15%", y: "-5%", rotate: -5.5 },
-      },
-    ];
-
   return (
     <div
       ref={ref}
@@ -136,19 +136,19 @@ export default function CourseOverview() {
   ];
 
   return (
-    <section className="relative w-full bg-beige pb-[2.6dvw]">
+    <section className="relative w-full bg-beige md:pb-[2.6dvw] pb-[24px] md:pt-0 pt-[30px]">
       <div className="relative">
         {/* Main heading */}
-        <div className="text-center pt-[5.76dvw]">
-          <h1 className="font-qalogre text-[4.45dvw] leading-[1.4] text-primaryText">
+        <div className="text-center md:pt-[5.76dvw] pt-[14px] md:pb-0 pb-[6px] md:border-none border-t border-b border-primaryText">
+          <h1 className="font-qalogre xl:text-[64px] md:text-[48px] text-[32px] md:leading-[1.4] leading-[1.2] text-center text-primaryText">
             LẦN ĐẦU CHUẨN BỊ
             <br />
             KHÔNG CẦN LO TOAN
           </h1>
         </div>
 
-        {/* Polaroid cards */}
-        <div className="w-full">
+        {/* Polaroid cards for desktop */}
+        <div className="w-full md:block hidden">
           <img
             src="/images/decor/curved-string.png"
             alt="curved-string"
@@ -156,9 +156,20 @@ export default function CourseOverview() {
           />
           <PhotoCardsRow />
         </div>
+        {/* Polaroid cards for mobile */}
+        <div className="w-full max-w-[400px] mx-auto md:hidden flex flex-col items-center gap-[24px] pt-[24px] px-[18px]">
+          {cards.map((card) => (
+            <div className="w-full max-w-[362px] px-[24px] pt-[24px] pb-[17px] flex flex-col items-center gap-[26px] bg-white rounded-[6px] shadow-[4px_4px_4px_0px_#00000040]">
+              <img src={card.image} alt="peter" className="w-full h-auto object-contain" />
+              <p className="text-center font-gilroy text-[26px] font-semibold uppercase text-primaryText">
+                {card.title}
+              </p>
+            </div>
+          ))}
+        </div>
 
         {/* Sub heading */}
-        <div className="mt-[2dvw] text-center flex flex-col items-center">
+        <div className="mt-[2dvw] text-center md:flex hidden flex-col items-center">
           <h3 className="font-qalogre text-[3.9dvw] leading-none text-primaryText">
             NỘI DUNG CÁC PHẦN
           </h3>
@@ -170,7 +181,7 @@ export default function CourseOverview() {
         </div>
 
         {/* Content grid */}
-        <div className="w-full mt-[2dvw]">
+        <div className="w-full mt-[2dvw] md:block hidden">
           <div className="w-[70.28dvw] flex flex-wrap justify-center gap-[1.2dvw] mx-auto">
             {imagesDemo.map((image) => (
               <div className="w-[16.67dvw] h-auto object-cover">

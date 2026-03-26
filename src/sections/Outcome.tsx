@@ -22,10 +22,10 @@ export default function Outcome() {
   return (
     <section className="relative w-full bg-beige">
       <div className="w-full h-full">
-        <div className="flex flex-col items-center xl:gap-[50px] gap-[36px] pt-0 md:pb-[210px] pb-[55px]">
+        <div className="flex flex-col items-center xl:gap-[50px] gap-[18px] pt-0 md:pb-[210px] pb-[55px]">
           {/* title */}
           <div className="flex flex-col items-center">
-            <h1 className="xl:text-[64px] text-[48px] font-lamoric text-primaryText">
+            <h1 className="xl:text-[64px] md:text-[48px] text-[32px] font-lamoric text-primaryText">
               SAU KHÓA HỌC BẠN SẼ
             </h1>
             <img
@@ -36,18 +36,18 @@ export default function Outcome() {
           </div>
 
           {/* content */}
-          <div className="flex flex-col gap-3 md:w-full w-[367px] md:max-w-[884px] md:pr-[8px] md:pl-[53px] pl-[30px]">
+          <div className="flex flex-col gap-3 w-full md:max-w-[884px] max-w-[400px] pr-[8px] md:pl-[53px] pl-[38px]">
             {titleList.map((item, index) => (
               <div
                 key={index}
                 className="flex flex-col pb-3"
               >
                 <div className="relative w-max">
-                  <h3 className="md:text-[24px] text-[20px] pb-[5px] font-gilroy font-bold leading-none text-primaryText">
+                  <h3 className="md:text-[24px] text-[20px] md:pb-[5px] font-gilroy font-bold leading-none text-primaryText">
                     {item}
                   </h3>
-                  <div className="absolute bottom-[-1px] left-[-6px] right-0 h-[2px] bg-primaryText rounded-full" />
-                  <div className="absolute md:top-[10px] top-[13px] md:left-[-45px] left-[-28px] md:w-[40px] w-[22.26px] md:aspect-square aspect-square border-[2px] border-primaryText rounded-full" />
+                  <div className="absolute bottom-[-1px] left-[-6px] right-0 md:h-[2px] h-[1px] bg-primaryText rounded-full" />
+                  <div className="absolute md:top-[10px] top-[10px] md:left-[-45px] left-[-28px] md:w-[40px] w-[22px] md:aspect-square aspect-square md:border-[2px] border-[1px] border-primaryText rounded-full" />
                 </div>
                 <p className="md:text-[20px] text-[16px] font-gilroy italic leading-none mt-[6px]">{contentList[index]}</p>
               </div>

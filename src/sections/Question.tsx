@@ -21,10 +21,10 @@ export default function Question() {
       </div>
 
       {/* full layout */}
-      <div className="xl:gap-[68px] gap-[48px] flex flex-col items-center md:pt-[22px] pt-[7.6px] md:pb-[11.1dvw] pb-[80px]">
+      <div className="xl:gap-[68px] md:gap-[48px] gap-[12px] flex flex-col items-center md:pt-[22px] pt-[7.6px] md:pb-[11.1dvw] pb-[80px]">
         {/* title */}
         <div className="flex flex-col items-center">
-          <h1 className="xl:text-[64px] text-[54px] font-lamoric text-beige leading-none">
+          <h1 className="xl:text-[64px] md:text-[48px] text-[32px] font-lamoric text-beige leading-none">
             CÓ PHẢI BẠN...
           </h1>
           <img
@@ -42,12 +42,12 @@ export default function Question() {
           <div className="absolute top-0 right-0 size-8 -translate-y-1/2 translate-x-1/2 bg-secondary rounded-full" />
           <div className="absolute bottom-0 right-0 size-8 translate-y-1/2 translate-x-1/2 bg-secondary rounded-full" />
           {/* contents layout */}
-          <div className="md:px-[65px] px-[18.69px] md:py-[28px] py-[28px] flex flex-col md:gap-[14px] gap-[9px]">
+          <div className="md:px-[65px] px-[18px] md:py-[28px] pt-[28px] flex flex-col md:gap-[14px] gap-[9px]">
             {questionItems.map((item, index) => (
-              <div key={index} className=" pt-[14px] border-t-2 border-dashed border-secondary">
+              <div key={index} className="pt-[14px] last:pb-[14px] border-t-2 md:last:border-b-2 border-dashed border-secondary">
                 <div className="flex items-start gap-[14px]">
                   {/* dots and content */}
-                  <div className="flex-shrink-0 w-1 aspect-square bg-secondary rounded-full translate-y-[16px]" />
+                  <div className="flex-shrink-0 w-1 aspect-square bg-secondary rounded-full translate-y-[12px]" />
                   <p className="md:text-[20px] text-[14px] font-gilroy font-medium text-secondary ">
                     {item}
                   </p>
@@ -55,6 +55,11 @@ export default function Question() {
               </div>
             ))}
           </div>
+          <p className="md:hidden block text-center text-[14px] font-gilroy font-bold text-secondary py-[12px] border-t-2 border-b-2 border-dashed border-secondary mb-[24px] mx-[18px]">
+            Nếu bạn thấy mình trong ít nhất 1 dòng trên
+            <br />
+            Khóa học này được thiết kế cho bạn.
+          </p>
         </div>
         {/* box */}
         <div className="relative mx-auto hidden md:block">

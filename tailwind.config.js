@@ -21,6 +21,7 @@ export default {
         // beigebeige
         lightBeige: "#F4EEE7",
         creamBeige: "#EDDCC7",
+        darkBeige: "#DACFC3",
         warmBeige: "#BFB3A4",
 
         primaryText: "#82152C",
@@ -35,7 +36,7 @@ export default {
         kamilla: ["Karmila", "sans-serif"],
         morgan: ["Morgan", "sans-serif"],
         onebold: ["Onebold", "sans-serif"],
-        cinzel: ["Cinzel", "sans-serif"]
+        cinzel: ["Cinzel", "sans-serif"],
       },
     },
   },
