@@ -30,7 +30,11 @@ const slideFromRight = {
   visible: (i: number) => ({
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const, delay: i * 0.2 },
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as const,
+      delay: i * 0.2,
+    },
   }),
 };
 
@@ -59,24 +63,24 @@ const cards: {
   className?: string;
   transform: CardTransform;
 }[] = [
-    {
-      image: "/images/demo-imgs.svg",
-      title: "ĐAU ? KHÔNG PHẢI SỢ",
-      className: "relative",
-      transform: { i: 0, x: "-15%", y: "-5%", rotate: 5.5 },
-    },
-    {
-      image: "/images/demo-imgs.svg",
-      title: "PETER CHỐNG ĐỐI ?",
-      transform: { i: 1, x: 0, y: 0, rotate: 0 },
-    },
-    {
-      image: "/images/demo-imgs.svg",
-      title: "CHỈ TRONG 7 PHẦN HỌC",
-      className: "relative",
-      transform: { i: 2, x: "15%", y: "-5%", rotate: -5.5 },
-    },
-  ];
+  {
+    image: "/images/avt-overview/H1.png",
+    title: "ĐAU ? KHÔNG PHẢI SỢ",
+    className: "relative",
+    transform: { i: 0, x: "-15%", y: "-5%", rotate: 5.5 },
+  },
+  {
+    image: "/images/avt-overview/H2.png",
+    title: "PETER CHỐNG ĐỐI ?",
+    transform: { i: 1, x: 0, y: 0, rotate: 0 },
+  },
+  {
+    image: "/images/avt-overview/H3.png",
+    title: "CHỈ TRONG 7 PHẦN HỌC",
+    className: "relative",
+    transform: { i: 2, x: "15%", y: "-5%", rotate: -5.5 },
+  },
+];
 
 const PhotoCard = ({
   image,
@@ -117,7 +121,6 @@ const PhotoCard = ({
   return <div className={baseClass}>{content}</div>;
 };
 
-
 const ContentGridImages = ({ images }: { images: string[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
@@ -143,11 +146,7 @@ const ContentGridImages = ({ images }: { images: string[] }) => {
   );
 };
 
-const MobilePolaroidCard = ({
-  card,
-}: {
-  card: (typeof cards)[number];
-}) => {
+const MobilePolaroidCard = ({ card }: { card: (typeof cards)[number] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.8 });
 
@@ -159,7 +158,11 @@ const MobilePolaroidCard = ({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
-      <img src={card.image} alt="peter" className="w-full h-auto object-contain" />
+      <img
+        src={card.image}
+        alt="peter"
+        className="w-full h-auto object-contain"
+      />
       <p className="text-center font-gilroy text-[26px] font-semibold uppercase text-primaryText">
         {card.title}
       </p>
@@ -202,13 +205,13 @@ const PhotoCardsRow = () => {
 
 export default function CourseOverview() {
   const imagesDemo = [
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
-    "/images/demo-imgs.svg",
+    "/images/avt-overview/H1.png",
+    "/images/avt-overview/H2.png",
+    "/images/avt-overview/H3.png",
+    "/images/avt-overview/H4.png",
+    "/images/avt-overview/H5.png",
+    "/images/avt-overview/H6.png",
+    "/images/avt-overview/H7.png",
   ];
 
   return (
