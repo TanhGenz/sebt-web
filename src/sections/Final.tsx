@@ -40,10 +40,10 @@ export default function Final() {
 
                 {/* image text Desktop*/}
                 <motion.div 
-                 initial={{ opacity: 0, y: 50 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
-                 viewport={{ once: true }}                
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+                viewport={{ once: true }}                
                 className="relative md:block hidden w-[47.5dvw] shadow-[8px_8px_20px_rgba(0,0,0,0.2)]">
                     <img 
                         src="/images/decor/finalDecor/final.png" 
