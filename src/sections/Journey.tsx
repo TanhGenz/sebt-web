@@ -76,7 +76,7 @@ export default function Journey() {
             <div className="flex md:gap-[100px] gap-[18px]" key={lesson.number}>
               {/* Number in left layout */}
               <div className="md:w-[180px] w-[80px] flex-shrink-0 flex items-center leading-none border-r boder-solid">
-                <p className="xl:text-[128px] md:ext-[110px] text-[68px] font-onebold text-beige">{lesson.number}</p>
+                <p className="xl:text-[128px] md:text-[110px] text-[68px] font-onebold text-beige">{lesson.number}</p>
               </div>
               {/* content text layouts */}
               <div className="md:gap-[15px] gap-[8px] flex flex-col xl:pb-[48px] pb-[36px]">
