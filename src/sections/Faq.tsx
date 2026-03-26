@@ -26,22 +26,21 @@ const faqList = [
 
 export default function Faq() {
     return (
-        <section className="relative w-full bg-none flex flex-col">
+        <section className="relative translate-y-[-1px] w-full bg-secondary flex flex-col">
             {/* images layout in mobiles */}
-            <img src="images/decor/paper.png" alt="paper" className="w-full h-auto translate-y-[1px]" />
-            <div className="relative w-full bg-secondary flex flex-col items-center md:gap-[82px] gap-[50px] md:pb-[279px] pb-[110px] md:pt-[50px] pt-[10px]">
+            <div className="relative w-full flex flex-col items-center xl:gap-[82px] md:gap-[50px] gap-[24px] md:pb-[260px] pb-[110px] md:pt-[34px] pt-[10px]">
                 <img src="images/faq-mobile.png" alt="faq mobile"
-                    className="w-auto h-full absolute top-0 left-1/2 -translate-x-1/2 object-contain md:hidden"
+                    className="w-auto h-[90%] absolute top-[5%] left-1/2 -translate-x-1/2 object-contain md:hidden"
                 />
                 {/* title */}
                 <div className="flex flex-col items-center">
-                    <h1 className="lg:text-[4.4dvw] text-[7.9dvw] font-lamoric text-beige">
+                    <h1 className="xl:text-[64px] md:text-[48px] text-[36px] font-lamoric text-beige">
                         CÂU HỎI THƯỜNG GẶP
                     </h1>
                     <img
                         src="src\assets\icons\line-white.svg"
                         alt="content-section-line"
-                        className="w-[28.6dvw] h-auto object-contain hidden md:block"
+                        className="xl:w-[412px] w-[342px] h-auto object-contain hidden md:block"
                     />
                 </div>
                 {/* faq content layouts [fixed px]*/}

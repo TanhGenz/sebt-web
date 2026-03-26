@@ -1,3 +1,5 @@
+import { cn } from "../ultils/string"
+
 type Testimonial = {
   name: string
   age: number
@@ -46,68 +48,96 @@ function TestimonialItem({
 }: TestimonialItemProps) {
   const isLeft = align === "left"
 
+
   return (
-    <div
-      className={[
-        "relative w-full h-[160px] flex items-center",
-        isLeft ? "xl:pr-[230px] pr-[180px]" : "xl:pl-[230px] pl-[180px]",
-      ].join(" ")}
-    >
-      {/* CIRCLE */}
+    <>
+      {/* desktop */}
       <div
         className={[
-          "absolute z-10 bg-secondary rounded-full border border-beige",
-          "flex items-center justify-center text-center",
-          "size-[160px]",
-          "top-1/2 -translate-y-1/2",
-          isLeft ? "left-0" : "right-0",
+          "relative w-full h-[160px] md:flex hidden items-center",
+          isLeft ? "xl:pr-[230px] lg:pr-[180px] pr-[100px]" : "xl:pl-[230px] lg:pl-[180px] pl-[100px]",
         ].join(" ")}
       >
-        <p className="px-2 font-gilroy text-beige font-semibold leading-tight text-[15px]">
-          {name} - {age} tuổi
-        </p>
+        {/* CIRCLE */}
+        <div
+          className={[
+            "absolute z-10 bg-secondary rounded-full border border-beige",
+            "flex items-center justify-center text-center",
+            "size-[160px]",
+            "top-1/2 -translate-y-1/2",
+            isLeft ? "left-0" : "right-0",
+          ].join(" ")}
+        >
+          <p className="px-2 font-gilroy text-beige font-semibold leading-tight text-[15px]">
+            {name} - {age} tuổi
+          </p>
+        </div>
+        {/* BOX */}
+        <div
+          className={[
+            "border-beige",
+            "py-[26px]",
+            isLeft
+              ? [
+                "ml-[80px] border-t border-b border-r",
+                "pr-[14px] pl-[102px]",
+              ].join(" ")
+              : [
+                "mr-[80px] border-t border-l border-b",
+                "pr-[102px] pl-[14px]",
+              ].join(" "),
+          ].join(" ")}
+        >
+          <p className="font-gilroy text-beige italic text-[16px] leading-none">
+            “ {quote} ”
+          </p>
+        </div>
       </div>
-      {/* BOX */}
-      <div
-        className={[
-          "border-beige",
-          "py-[26px]",
-          isLeft
-            ? [
-              "ml-[80px] border-t border-b border-r",
-              "pr-[14px] pl-[102px]",
-            ].join(" ")
-            : [
-              "mr-[80px] border-t border-l border-b",
-              "pr-[102px] pl-[14px]",
-            ].join(" "),
-        ].join(" ")}
-      >
-        <p className="font-gilroy text-beige italic text-[16px] leading-none">
-          “ {quote} ”
-        </p>
+      {/* mobile */}
+      <div className={cn("w-full relative pt-[14px] md:hidden block", isLeft ? "pl-[40px]" : "pr-[40px]")}>
+        <div
+          className={[
+            "absolute z-10 bg-secondary rounded-full border border-beige",
+            "flex items-center justify-center text-center",
+            "size-[78px]",
+            "top-0",
+            isLeft ? "left-0" : "right-0",
+          ].join(" ")}
+        >
+          <p className="px-2 font-gilroy text-beige font-semibold leading-tight text-[10px]">
+            {name} - {age} tuổi
+          </p>
+        </div>
+        <div className={cn("w-full min-h-[128px] flex items-center border border-beige py-[12px]", isLeft ? "pl-[50px] pr-[8px]" : "pr-[50px] pl-[8px]")}>
+          <p className="font-gilroy text-beige italic text-[16px] leading-none">
+            “ {quote} ”
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
 export default function Pricing() {
   return (
-    <section className="w-full bg-secondary">
-      <div className="flex flex-col items-center pb-[12vw] pt-[6vw]">
-        {/*  */}
+    <section className="relative w-full bg-secondary">
+      {/* paper decor */}
+      <div className="absolute top-0 left-0 w-full -translate-y-[99%]">
+        <img src="images/decor/paper-top.svg" alt="paper-top" className="w-full h-auto object-contain" />
+      </div>
+      <div className="flex flex-col items-center xl:gap-[32px] gap-[24px] py-[12px]">
+        {/* title */}
         <div className="flex flex-col items-center">
-          <h1 className="font-lamoric text-beige text-[4.4vw] leading-none ">
+          <h1 className="xl:text-[64px] text-[48px] font-lamoric text-beige leading-none">
             HỌC VIÊN NÓI GÌ
           </h1>
           <img
             src="src\assets\icons\line-white.svg"
             alt="content-section-line"
-            className="w-[28.6dvw] h-auto object-contain"
+            className="xl:w-[412px] w-[342px] h-auto object-contain hidden md:block"
           />
         </div>
-
-        <div className="mt-[8vw] flex w-full flex-col gap-[18px] xl:px-[15.6dvw] px-[12dvw]">
+        <div className="w-full flex flex-col gap-[18px] xl:px-[225px] lg:px-[140px] md:px-[80px] px-[18px]">
           {testimonials.map((item, index) => (
             <TestimonialItem
               key={`${item.name}-${index}`}
@@ -119,6 +149,7 @@ export default function Pricing() {
           ))}
         </div>
       </div>
+      <img src="images/decor/paper-bottom-light.svg" alt="paper-bottom" className="w-full h-auto object-contain" />
     </section>
   )
 }
