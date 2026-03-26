@@ -104,7 +104,7 @@ export default function Faq() {
                                         isLast && "pt-[2px]",
                                         isThird && "pb-[15px]"
                                     )}>
-                                        <img src="src/assets/icons/star.svg"
+                                        <img src="/icons/star.svg"
                                             alt="star"
                                             className="md:w-[50px] w-[14px] md:h-[70px] h-[19.5px] object-contain"
                                         />

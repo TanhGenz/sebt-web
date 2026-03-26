@@ -241,7 +241,7 @@ export default function CourseOverview() {
             NỘI DUNG CÁC PHẦN
           </h3>
           <img
-            src="src\assets\icons\line-red.svg"
+            src="/icons/line-red.svg"
             alt="content-section-line"
             className="w-[28.6dvw] h-auto object-contain"
           />

@@ -69,7 +69,7 @@ export default function Pricing() {
             QUYỀN LỢI & BẢNG GIÁ
           </h1>
           <img
-            src="src\assets\icons\line-red.svg"
+            src="/icons/line-red.svg"
             alt="content-section-line"
             className="xl:w-[412px] w-[342px] h-auto object-contain hidden md:block"
           />
