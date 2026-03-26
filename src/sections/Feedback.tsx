@@ -146,7 +146,7 @@ export default function Pricing() {
             HỌC VIÊN NÓI GÌ
           </h1>
           <img
-            src="src\assets\icons\line-white.svg"
+            src="/icons/line-white.svg"
             alt="content-section-line"
             className="xl:w-[412px] w-[342px] h-auto object-contain hidden md:block"
           />
