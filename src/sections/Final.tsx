@@ -22,7 +22,7 @@ export default function Final() {
                         BẠN ĐÃ SẴN SÀNG ?
                     </h1>
                     <img
-                        src="src\assets\icons\line-red.svg"
+                        src="/icons/line-red.svg"
                         alt="content-section-line"
                         className="xl:w-[412px] w-[342px] h-auto object-contain hidden md:block"
                     />
@@ -57,7 +57,7 @@ export default function Final() {
                                     BẮT ĐẦU HÀNH TRÌNH
                                 </p>
                                 <img
-                                    src="src\assets\icons\line-red.svg"
+                                    src="/icons/line-red.svg"
                                     alt="content-section-line"
                                     className="w-[234px] h-auto object-contain"
                                 />
