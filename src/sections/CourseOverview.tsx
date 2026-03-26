@@ -21,8 +21,26 @@ const fadeInUp = {
     y: t.y,
     x: t.x,
     rotate: t.rotate,
-    transition: { duration: 0.5, delay: t.i * 0.15 },
+    transition: { duration: 0.6, delay: t.i * 0.25 },
   }),
+};
+
+const slideFromRight = {
+  hidden: { opacity: 0, x: 72 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const, delay: i * 0.2 },
+  }),
+};
+
+const slideFromBottom = {
+  hidden: { opacity: 0, y: 36 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
+  },
 };
 
 type PhotoCardProps = {
@@ -99,9 +117,67 @@ const PhotoCard = ({
   return <div className={baseClass}>{content}</div>;
 };
 
-const PhotoCardsRow = () => {
+
+const ContentGridImages = ({ images }: { images: string[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
+
+  return (
+    <div
+      ref={ref}
+      className="w-[70.28dvw] flex flex-wrap justify-center gap-[1.2dvw] mx-auto"
+    >
+      {images.map((image, index) => (
+        <motion.div
+          key={`${image}-${index}`}
+          className="w-[16.67dvw] overflow-hidden"
+          variants={slideFromRight}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          custom={index}
+        >
+          <img src={image} alt="peter" className="w-full h-auto object-cover" />
+        </motion.div>
+      ))}
+    </div>
+  );
+};
+
+const MobilePolaroidCard = ({
+  card,
+}: {
+  card: (typeof cards)[number];
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.8 });
+
+  return (
+    <motion.div
+      ref={ref}
+      className="w-full max-w-[362px] px-[24px] pt-[24px] pb-[17px] flex flex-col items-center gap-[26px] bg-white rounded-[6px] shadow-[4px_4px_4px_0px_#00000040]"
+      variants={slideFromBottom}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+    >
+      <img src={card.image} alt="peter" className="w-full h-auto object-contain" />
+      <p className="text-center font-gilroy text-[26px] font-semibold uppercase text-primaryText">
+        {card.title}
+      </p>
+    </motion.div>
+  );
+};
+
+const MobilePolaroidCards = () => (
+  <div className="w-full max-w-[400px] mx-auto md:hidden flex flex-col items-center gap-[24px] pt-[24px] px-[18px]">
+    {cards.map((card) => (
+      <MobilePolaroidCard key={card.title} card={card} />
+    ))}
+  </div>
+);
+
+const PhotoCardsRow = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 1 });
 
   return (
     <div
@@ -157,16 +233,7 @@ export default function CourseOverview() {
           <PhotoCardsRow />
         </div>
         {/* Polaroid cards for mobile */}
-        <div className="w-full max-w-[400px] mx-auto md:hidden flex flex-col items-center gap-[24px] pt-[24px] px-[18px]">
-          {cards.map((card) => (
-            <div className="w-full max-w-[362px] px-[24px] pt-[24px] pb-[17px] flex flex-col items-center gap-[26px] bg-white rounded-[6px] shadow-[4px_4px_4px_0px_#00000040]">
-              <img src={card.image} alt="peter" className="w-full h-auto object-contain" />
-              <p className="text-center font-gilroy text-[26px] font-semibold uppercase text-primaryText">
-                {card.title}
-              </p>
-            </div>
-          ))}
-        </div>
+        <MobilePolaroidCards />
 
         {/* Sub heading */}
         <div className="mt-[2dvw] text-center md:flex hidden flex-col items-center">
@@ -182,13 +249,7 @@ export default function CourseOverview() {
 
         {/* Content grid */}
         <div className="w-full mt-[2dvw] md:block hidden">
-          <div className="w-[70.28dvw] flex flex-wrap justify-center gap-[1.2dvw] mx-auto">
-            {imagesDemo.map((image) => (
-              <div className="w-[16.67dvw] h-auto object-cover">
-                <img src={image} alt="peter" />
-              </div>
-            ))}
-          </div>
+          <ContentGridImages images={imagesDemo} />
         </div>
       </div>
     </section>

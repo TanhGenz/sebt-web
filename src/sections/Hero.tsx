@@ -16,7 +16,6 @@ export default function Hero() {
           <p className="font-qalogre text-[2.5dvw] leading-none">
             KHÔNG CẦN PHẢI ĐÁNG SỢ
           </p>
-
           <p className="font-gilroy mt-8 rounded-full border border-white/60 px-6 py-3 text-sm">
             Khóa học bởi SexEdu by Trang
           </p>
