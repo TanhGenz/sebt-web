@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import { cn } from "../ultils/string";
 
 const faqList = [
@@ -22,9 +24,29 @@ const faqList = [
         title: "Đã thử mấy lần nhưng không vào được, khóa học có giúp được không?",
         desc: "Đây là một trong những tình huống phổ biến nhất mình gặp. Khóa học có một phần riêng hướng dẫn xử lý — từ nguyên nhân đến giải pháp từng bước.",
     }
-]
+];
+
+const IMG_DURATION = 0.8;
+const GAP_AFTER_IMAGE = 0.1;
+const ITEM_STAGGER = 0.25;
+const ITEM_DURATION = 0.8;
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Faq() {
+    const blockRef = useRef<HTMLDivElement>(null);
+    const inView = useInView(blockRef, { once: true, amount: 0.15 });
+    const [isMd, setIsMd] = useState(false);
+
+    useEffect(() => {
+        const mq = window.matchMedia("(min-width: 768px)");
+        setIsMd(mq.matches);
+        const onChange = () => setIsMd(mq.matches);
+        mq.addEventListener("change", onChange);
+        return () => mq.removeEventListener("change", onChange);
+    }, []);
+
+    const firstItemDelay = isMd ? IMG_DURATION + GAP_AFTER_IMAGE : 0.08;
+
     return (
         <section className="relative translate-y-[-1px] w-full bg-secondary flex flex-col">
             {/* images layout in mobiles */}
@@ -44,32 +66,42 @@ export default function Faq() {
                     />
                 </div>
                 {/* faq content layouts [fixed px]*/}
-                <div className="md:w-[683px] w-[350px] flex mx-auto items-start md:gap-7 gap-0">
-                    {/* images layouts left*/}
-                    <div className="w-[223px] md:flex hidden pt-[55px]">
+                <div ref={blockRef} className="md:w-[683px] w-[350px] flex mx-auto items-start md:gap-7 gap-0">
+                    {/* images layouts left — desktop: animates in first */}
+                    <motion.div
+                        className="w-[223px] md:flex hidden pt-[55px]"
+                        initial={{ opacity: 0, y: 28 }}
+                        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
+                        transition={{ duration: IMG_DURATION, ease }}
+                    >
                         <img src="images/faq.png" alt="faq section" className="w-full h-full object-contain" />
-                    </div>
+                    </motion.div>
                     {/* content layouts right */}
                     <div className="flex flex-col">
                         {faqList.map((item, index) => {
-                            // first elements
                             const isFirst = index === 0;
-                            // last elements
                             const isLast = index === faqList.length - 1;
-                            // third elements 
                             const isThird = index === faqList.length - 3;
 
                             return (
-                                <div key={index} className="md:gap-[18px] gap-[8px] relative flex">
+                                <motion.div
+                                    key={index}
+                                    className="md:gap-[18px] gap-[8px] relative flex"
+                                    initial={{ opacity: 0, y: 18 }}
+                                    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+                                    transition={{
+                                        duration: ITEM_DURATION,
+                                        delay: firstItemDelay + index * ITEM_STAGGER,
+                                        ease,
+                                    }}
+                                >
                                     {/* LINE */}
-                                    {/* hidden md:block => only displaye when > md */}
                                     <div className={cn("absolute bottom-0 left-[25px] w-[1px] -translate-x-1/2 bg-beige hidden md:block", isFirst ? "top-[16px]" : "top-0", isLast && "h-[30px]")} />
                                     <div className={cn("absolute top-0 left-[25px] w-[1px] h-[10px] -translate-x-1/2 bg-beige hidden md:block", isLast ? "block" : "hidden")} />
 
                                     {/*Star*/}
                                     <div className={cn("flex-shrink-0 flex items-start",
                                         isLast && "pt-[2px]",
-
                                         isThird && "pb-[15px]"
                                     )}>
                                         <img src="src/assets/icons/star.svg"
@@ -91,7 +123,7 @@ export default function Faq() {
                                             {item.desc}
                                         </p>
                                     </div>
-                                </div>
+                                </motion.div>
                             )
                         })}
                     </div>

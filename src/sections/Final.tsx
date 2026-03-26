@@ -1,4 +1,13 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
 export default function Final() {
+    const boxRef = useRef<HTMLDivElement>(null);
+    const boxInView = useInView(boxRef, { once: true, amount: 0.5 });
+    const decorRef = useRef<HTMLDivElement>(null);
+    const decorInView = useInView(decorRef, { once: true, amount: 0.4 });
+    const ease = [0.22, 1, 0.36, 1] as const;
+
     return (
         <section className="relative w-full translate-y-[-1px]">
             <img
@@ -19,39 +28,57 @@ export default function Final() {
                     />
                 </div>
                 {/* content */}
-                <div className="xl:w-[918px] md:w-[840px] w-[calc(100%-36px)] max-md:mx-auto p-[28px] bg-beige text-center border border-secondary shadow-[8px_8px_20px_rgba(0,0,0,0.2)] flex flex-col items-center font-gilroy font-normal text-secondary leading-none text-[18px]">
+                <motion.div
+                    ref={boxRef}
+                    className="xl:w-[918px] md:w-[840px] w-[calc(100%-36px)] max-md:mx-auto p-[28px] bg-beige text-center border border-secondary shadow-[8px_8px_20px_rgba(0,0,0,0.2)] flex flex-col items-center font-gilroy font-normal text-secondary leading-none text-[18px] overflow-x-hidden"
+                    initial={{ opacity: 0, y: 56 }}
+                    animate={boxInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 56 }}
+                    transition={{ duration: 0.65, ease }}
+                >
                     <p>Bạn không cần phải "thử vận may" nữa.</p>
                     <br />
                     <p>Bạn không cần phải sợ hãi những gì chưa biết.</p>
                     <br />
                     <p>Bạn xứng đáng được chuẩn bị — để lần đầu trở thành trải nghiệm kết nối, không phải ám ảnh.</p>
-                </div>
+                </motion.div>
 
-                {/*  */}
-                <div className="hidden md:block relative w-[48.5dvw] z-10 shadow-[8px_8px_20px_rgba(0,0,0,0.2)] ">
-                    <img src="/images/decor/finalDecor/final.png" alt="end journey" className="w-full" />
-                    <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                        <div className="flex flex-col items-center gap-[0.5dvw]">
-                            <p className="font-lamoric font-normal text-[2.2dvw] text-primaryText leading-none ">
+                {/* Decor Image and Text — slide up from bottom (desktop + mobile) */}
+                <div ref={decorRef} className="w-full flex flex-col items-center overflow-x-hidden">
+                    <motion.div
+                        className="hidden md:block relative w-[48.5dvw] z-10 shadow-[8px_8px_20px_rgba(0,0,0,0.2)]"
+                        initial={{ opacity: 0, y: 56 }}
+                        animate={decorInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 56 }}
+                        transition={{ duration: 1.5, ease }}
+                    >
+                        <img src="/images/decor/finalDecor/final.png" alt="end journey" className="w-full" />
+                        <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                            <div className="flex flex-col items-center gap-[0.5dvw]">
+                                <p className="font-lamoric font-normal text-[2.2dvw] text-primaryText leading-none ">
+                                    BẮT ĐẦU HÀNH TRÌNH
+                                </p>
+                                <img
+                                    src="src\assets\icons\line-red.svg"
+                                    alt="content-section-line"
+                                    className="w-[234px] h-auto object-contain"
+                                />
+                            </div>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        className="relative w-full md:hidden"
+                        initial={{ opacity: 0, y: 56 }}
+                        animate={decorInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 56 }}
+                        transition={{ duration: 1.5, ease }}
+                    >
+                        <img src="/images/decor/finalDecor/final.png" alt="end journey" className="w-full h-auto" />
+                        <div className="w-max flex flex-col items-center absolute top-[41%] left-[50.5%] -translate-x-1/2">
+                            <p className="font-lamoric font-normal text-[5dvw] text-primaryText leading-none ">
                                 BẮT ĐẦU HÀNH TRÌNH
                             </p>
-                            <img
-                                src="src\assets\icons\line-red.svg"
-                                alt="content-section-line"
-                                className="w-[234px] h-auto object-contain"
-                            />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
-                <div className="relative w-full md:hidden">
-                    <img src="/images/decor/finalDecor/final.png" alt="end journey" className="w-full h-auto" />
-                    <div className="w-max flex flex-col items-center absolute top-[41%] left-[50.5%] -translate-x-1/2">
-                        <p className="font-lamoric font-normal text-[5dvw] text-primaryText leading-none ">
-                            BẮT ĐẦU HÀNH TRÌNH
-                        </p>
-                    </div>
-                </div>
-            </ div>
+            </div>
         </section>
     )
 }

@@ -1,4 +1,31 @@
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+
 export default function Intro() {
+  const letterRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(letterRef, { once: true, amount: 0.5 });
+  const [isMd, setIsMd] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    setIsMd(mq.matches);
+    const onChange = () => setIsMd(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  const contentDelay = isMd ? 1 : 0;
+
+  const contentFade = {
+    initial: { opacity: 0 },
+    animate: inView ? { opacity: 1 } : { opacity: 0 },
+    transition: {
+      duration: 2,
+      delay: contentDelay,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
+  };
+
   return (
     <section className="relative w-full flex flex-col items-center justify-center translate-y-[-3px]">
       {/* Background */}
@@ -9,16 +36,24 @@ export default function Intro() {
       />
 
       {/* Letter content */}
-      <div className="relative md:w-max w-full max-md:bg-darkBeige flex items-center justify-center mx-auto md:pb-[20px]">
-        {/* Paper */}
-        <img
+      <div
+        ref={letterRef}
+        className="relative md:w-max w-full max-md:bg-darkBeige flex items-center justify-center mx-auto md:pb-[20px]"
+      >
+        {/* Paper — desktop: slide up from bottom first */}
+        <motion.img
           src="/images/intro.svg"
           alt="banner-hero-section"
           className="md:block hidden w-[710px] h-auto object-contain"
+          initial={{ y: 96, opacity: 0 }}
+          animate={inView ? { y: 0, opacity: 1 } : { y: 96, opacity: 0 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as const }}
         />
-
-        {/* Content */}
-        <div className="relative max-md:w-full max-md:max-w-[400px] md:absolute md:inset-0 font-gilroy text-secondary flex flex-col md:pt-[4%] pt-[15px] md:pl-[13.8%] pl-[18px] md:pr-[9.5%] pr-[18px]">
+        {/* Content — fade in after 0.5s (desktop); mobile: fade when in view */}
+        <motion.div
+          className="relative max-md:w-full max-md:max-w-[400px] md:absolute md:inset-0 font-gilroy text-secondary flex flex-col md:pt-[4%] pt-[15px] md:pl-[13.8%] pl-[18px] md:pr-[9.5%] pr-[18px]"
+          {...contentFade}
+        >
           <h1 className="font-kamilla md:text-[96px] text-[64px] leading-none text-end md:pb-[3.3%] pb-[32px]">Gửi Bạn,</h1>
           <p className="md:text-[16px] text-[15px] leading-none font-medium text-justify">
             Nếu bạn đang đọc những dòng này, có thể bạn đang chuẩn bị cho một điều gì đó rất quan trọng — lần đầu tiên trong đời bạn bước vào một trải nghiệm thân mật.
@@ -64,12 +99,13 @@ export default function Intro() {
             alt="letter-decor"
             className="md:hidden block absolute bottom-[24px] right-[42px] w-[132px] rotate-[16.3deg] h-auto object-contain"
           />
-        </div>
-        {/* Decor */}
-        <img
+        </motion.div>
+        {/* Decor — same fade as letter text */}
+        <motion.img
           src="/images/decor/letter-decor.png"
           alt="letter-decor"
           className="md:block hidden absolute top-[45.4%] right-[14%] w-[27.7%] rotate-[13.3deg] h-auto object-contain"
+          {...contentFade}
         />
       </div>
 
