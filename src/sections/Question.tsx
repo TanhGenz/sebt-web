@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
 const questionItems = [
   "Bạn đang chuẩn bị cho lần đầu và muốn được trang bị đúng cách",
   "Bạn đã thử nhưng chưa thành công - đau quá, không vào được, hoặc kết thúc trong thất vọng",
@@ -7,7 +10,23 @@ const questionItems = [
   "Bạn là ba mẹ, anh chị muốn trang bị kiến thức đúng đắn cho người thân",
 ];
 
+const CONTAINER_FADE_DURATION = 1;
+const AFTER_CONTAINER_DELAY = 0.2;
+const ITEM_STAGGER = 0.2;
+const ITEM_FADE_DURATION = 0.5;
+const ITEM_SLIDE_X = 56;
+const BOX_QUEST_SLIDE_Y = 88;
+const BOX_QUEST_DURATION = 1.5;
+
 export default function Question() {
+  const boxRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(boxRef, { once: true, amount: 0.5 });
+
+  const boxQuestRef = useRef<HTMLDivElement>(null);
+  const boxQuestInView = useInView(boxQuestRef, { once: true, amount: 0.35 });
+
+  const firstItemDelay = CONTAINER_FADE_DURATION + AFTER_CONTAINER_DELAY;
+
   return (
     <section className=" w-full bg-secondary">
       {/* decor */}
@@ -35,7 +54,13 @@ export default function Question() {
         </div>
 
         {/* layout question */}
-        <div className="md:w-[500px] w-[343px] relative mx-auto z-10 bg-beige">
+        <motion.div
+          ref={boxRef}
+          className="md:w-[500px] w-[343px] relative mx-auto z-10 bg-beige"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: inView ? 1 : 0 }}
+          transition={{ duration: CONTAINER_FADE_DURATION, ease: [0.22, 1, 0.36, 1] as const }}
+        >
           {/* dots 4  */}
           <div className="absolute top-0 left-0 size-8 -translate-y-1/2 -translate-x-1/2 bg-secondary rounded-full" />
           <div className="absolute bottom-0 left-0 size-8 translate-y-1/2 -translate-x-1/2 bg-secondary rounded-full" />
@@ -44,7 +69,21 @@ export default function Question() {
           {/* contents layout */}
           <div className="md:px-[65px] px-[18px] md:py-[28px] pt-[28px] flex flex-col md:gap-[14px] gap-[9px]">
             {questionItems.map((item, index) => (
-              <div key={index} className="pt-[14px] last:pb-[14px] border-t-2 md:last:border-b-2 border-dashed border-secondary">
+              <motion.div
+                key={index}
+                className="pt-[14px] last:pb-[14px] border-t-2 md:last:border-b-2 border-dashed border-secondary"
+                initial={{ opacity: 0, x: ITEM_SLIDE_X }}
+                animate={
+                  inView
+                    ? { opacity: 1, x: 0 }
+                    : { opacity: 0, x: ITEM_SLIDE_X }
+                }
+                transition={{
+                  duration: ITEM_FADE_DURATION,
+                  delay: firstItemDelay + index * ITEM_STAGGER,
+                  ease: [0.22, 1, 0.36, 1] as const,
+                }}
+              >
                 <div className="flex items-start gap-[14px]">
                   {/* dots and content */}
                   <div className="flex-shrink-0 w-1 aspect-square bg-secondary rounded-full translate-y-[12px]" />
@@ -52,17 +91,40 @@ export default function Question() {
                     {item}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-          <p className="md:hidden block text-center text-[14px] font-gilroy font-bold text-secondary py-[12px] border-t-2 border-b-2 border-dashed border-secondary mb-[24px] mx-[18px]">
+          <motion.p
+            className="md:hidden block text-center text-[14px] font-gilroy font-bold text-secondary py-[12px] border-t-2 border-b-2 border-dashed border-secondary mb-[24px] mx-[18px]"
+            initial={{ opacity: 0, x: ITEM_SLIDE_X }}
+            animate={
+              inView
+                ? { opacity: 1, x: 0 }
+                : { opacity: 0, x: ITEM_SLIDE_X }
+            }
+            transition={{
+              duration: ITEM_FADE_DURATION,
+              delay: firstItemDelay + questionItems.length * ITEM_STAGGER,
+              ease: [0.22, 1, 0.36, 1] as const,
+            }}
+          >
             Nếu bạn thấy mình trong ít nhất 1 dòng trên
             <br />
             Khóa học này được thiết kế cho bạn.
-          </p>
-        </div>
-        {/* box */}
-        <div className="relative mx-auto hidden md:block">
+          </motion.p>
+        </motion.div>
+        {/* box — slide up from bottom when in view */}
+        <motion.div
+          ref={boxQuestRef}
+          className="relative mx-auto hidden md:block"
+          initial={{ y: BOX_QUEST_SLIDE_Y, opacity: 0 }}
+          animate={
+            boxQuestInView
+              ? { y: 0, opacity: 1 }
+              : { y: BOX_QUEST_SLIDE_Y, opacity: 0 }
+          }
+          transition={{ duration: BOX_QUEST_DURATION, ease: [0.22, 1, 0.36, 1] as const }}
+        >
           <img
             src="/images/decor/box-quest.png"
             alt="box question"
@@ -74,7 +136,7 @@ export default function Question() {
               KHOÁ HỌC NÀY DÀNH CHO BẠN
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* decor paper */}

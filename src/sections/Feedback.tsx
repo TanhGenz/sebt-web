@@ -1,4 +1,10 @@
-import { cn } from "../ultils/string"
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { cn } from "../ultils/string";
+
+const SLIDE_X = 72;
+const SLIDE_DURATION = 1.5;
+const ease = [0.22, 1, 0.36, 1] as const;
 
 type Testimonial = {
   name: string
@@ -46,11 +52,19 @@ function TestimonialItem({
   quote,
   align,
 }: TestimonialItemProps) {
-  const isLeft = align === "left"
-
+  const isLeft = align === "left";
+  const rowRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(rowRef, { once: true, amount: 0.25 });
+  const slideFrom = isLeft ? -SLIDE_X : SLIDE_X;
 
   return (
-    <>
+    <motion.div
+      ref={rowRef}
+      className="w-full overflow-x-hidden"
+      initial={{ opacity: 0, x: slideFrom }}
+      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: slideFrom }}
+      transition={{ duration: SLIDE_DURATION, ease }}
+    >
       {/* desktop */}
       <div
         className={[
@@ -114,8 +128,8 @@ function TestimonialItem({
           </p>
         </div>
       </div>
-    </>
-  )
+    </motion.div>
+  );
 }
 
 export default function Pricing() {
