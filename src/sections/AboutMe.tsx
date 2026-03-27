@@ -1,21 +1,20 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const CONTAINER_DURATION = 0.6;
-const AFTER_CONTAINER = 0.2;
-const AVATAR_DURATION = 0.6;
-const AFTER_AVATAR = 0.2;
-const TEXT_BLOCK_DURATION = 0.6;
-const TEXT_STAGGER = 0.2;
+const CONTAINER_DURATION = 1.5;
+const AFTER_CONTAINER = 0.8;
+const AVATAR_DURATION = 1.5;
+const AFTER_AVATAR = 1.5;
+const TEXT_BLOCK_DURATION = 1.2;
+const TEXT_STAGGER = 0.4;
 
 export default function AboutMe() {
   const cardRef = useRef<HTMLDivElement>(null);
   const inView = useInView(cardRef, { once: true, amount: 0.2 });
   const ease = [0.22, 1, 0.36, 1] as const;
 
-  const avatarDelay = CONTAINER_DURATION + AFTER_CONTAINER;
-  const textBase =
-    CONTAINER_DURATION + AFTER_CONTAINER + AVATAR_DURATION + AFTER_AVATAR;
+  const avatarDelay = AFTER_CONTAINER;
+  const textBase = AFTER_AVATAR;
   const textDelay = (i: number) => textBase + i * TEXT_STAGGER;
 
   return (

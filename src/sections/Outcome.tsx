@@ -19,17 +19,17 @@ const contentList = [
   'Không phải lần đầu hoảng loạn. Mà là lần đầu trọn vẹn — dù nó có hoàn hảo hay không.',
 ];
 
-const ROW_STAGGER = 0.16;
-const DECOR_AFTER_TITLE = 0.06;
-const BODY_AFTER_TITLE = 0.12;
-const DURATION = 0.48;
+const ROW_STAGGER = 0.8;
+const DECOR_AFTER_TITLE = 0.4;
+const BODY_AFTER_TITLE = 0.5;
+const DURATION = 2;
 const H3_FROM_RIGHT = 52;
 const DECOR_FROM_LEFT = 48;
 const BODY_FROM_LEFT = 36;
 
 export default function Outcome() {
   const listRef = useRef<HTMLDivElement>(null);
-  const inView = useInView(listRef, { once: true, amount: 0.15 });
+  const inView = useInView(listRef, { once: true, amount: 0.4 });
 
   const ease = [0.22, 1, 0.36, 1] as const;
 

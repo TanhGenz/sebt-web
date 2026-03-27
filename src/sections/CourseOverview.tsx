@@ -12,7 +12,7 @@ type CardTransform = {
 const fadeInUp = {
   hidden: (t: CardTransform) => ({
     opacity: 0,
-    y: 60,
+    y: 80,
     x: t.x,
     rotate: t.rotate,
   }),
@@ -21,7 +21,7 @@ const fadeInUp = {
     y: t.y,
     x: t.x,
     rotate: t.rotate,
-    transition: { duration: 0.6, delay: t.i * 0.25 },
+    transition: { duration: 1, delay: t.i * 0.5 },
   }),
 };
 
@@ -31,19 +31,19 @@ const slideFromRight = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.6,
+      duration: 1.2,
       ease: [0.22, 1, 0.36, 1] as const,
-      delay: i * 0.2,
+      delay: i * 0.4,
     },
   }),
 };
 
 const slideFromBottom = {
-  hidden: { opacity: 0, y: 36 },
+  hidden: { opacity: 0, y: 48 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -63,24 +63,24 @@ const cards: {
   className?: string;
   transform: CardTransform;
 }[] = [
-  {
-    image: "/images/avt-overview/H1.png",
-    title: "ĐAU ? KHÔNG PHẢI SỢ",
-    className: "relative",
-    transform: { i: 0, x: "-15%", y: "-5%", rotate: 5.5 },
-  },
-  {
-    image: "/images/avt-overview/H2.png",
-    title: "PETER CHỐNG ĐỐI ?",
-    transform: { i: 1, x: 0, y: 0, rotate: 0 },
-  },
-  {
-    image: "/images/avt-overview/H3.png",
-    title: "CHỈ TRONG 7 PHẦN HỌC",
-    className: "relative",
-    transform: { i: 2, x: "15%", y: "-5%", rotate: -5.5 },
-  },
-];
+    {
+      image: "/images/avt-overview/H1.png",
+      title: "ĐAU ? KHÔNG PHẢI SỢ",
+      className: "relative",
+      transform: { i: 0, x: "-15%", y: "-5%", rotate: 5.5 },
+    },
+    {
+      image: "/images/avt-overview/H2.png",
+      title: "PETER CHỐNG ĐỐI ?",
+      transform: { i: 1, x: 0, y: 0, rotate: 0 },
+    },
+    {
+      image: "/images/avt-overview/H3.png",
+      title: "CHỈ TRONG 7 PHẦN HỌC",
+      className: "relative",
+      transform: { i: 2, x: "15%", y: "-5%", rotate: -5.5 },
+    },
+  ];
 
 const PhotoCard = ({
   image,

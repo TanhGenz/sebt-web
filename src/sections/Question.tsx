@@ -10,22 +10,22 @@ const questionItems = [
   "Bạn là ba mẹ, anh chị muốn trang bị kiến thức đúng đắn cho người thân",
 ];
 
-const CONTAINER_FADE_DURATION = 1;
-const AFTER_CONTAINER_DELAY = 0.2;
-const ITEM_STAGGER = 0.2;
-const ITEM_FADE_DURATION = 0.5;
+const CONTAINER_FADE_DURATION = 3;
+const AFTER_CONTAINER_DELAY = 2;
+const ITEM_STAGGER = 0.5;
+const ITEM_FADE_DURATION = 1.5;
 const ITEM_SLIDE_X = 56;
 const BOX_QUEST_SLIDE_Y = 88;
-const BOX_QUEST_DURATION = 1.5;
+const BOX_QUEST_DURATION = 2;
 
 export default function Question() {
   const boxRef = useRef<HTMLDivElement>(null);
   const inView = useInView(boxRef, { once: true, amount: 0.5 });
 
   const boxQuestRef = useRef<HTMLDivElement>(null);
-  const boxQuestInView = useInView(boxQuestRef, { once: true, amount: 0.35 });
+  const boxQuestInView = useInView(boxQuestRef, { once: true, amount: 0.4 });
 
-  const firstItemDelay = CONTAINER_FADE_DURATION + AFTER_CONTAINER_DELAY;
+  const firstItemDelay = AFTER_CONTAINER_DELAY;
 
   return (
     <section className=" w-full bg-secondary">
@@ -59,7 +59,7 @@ export default function Question() {
           className="md:w-[500px] w-[343px] relative mx-auto z-10 bg-beige"
           initial={{ opacity: 0 }}
           animate={{ opacity: inView ? 1 : 0 }}
-          transition={{ duration: CONTAINER_FADE_DURATION, ease: [0.22, 1, 0.36, 1] as const }}
+          transition={{ duration: CONTAINER_FADE_DURATION, ease: [0.22, 0.36, 0.8, 1] as const }}
         >
           {/* dots 4  */}
           <div className="absolute top-0 left-0 size-8 -translate-y-1/2 -translate-x-1/2 bg-secondary rounded-full" />
