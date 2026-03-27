@@ -7,11 +7,12 @@ const SLIDE_DURATION = 1.5;
 const ease = [0.22, 1, 0.36, 1] as const;
 
 type Testimonial = {
-  name: string
-  age: number
-  quote: string
-  align: "left" | "right"
-}
+  name: string;
+  age: number;
+  img: string;
+  quote: string;
+  align: "left" | "right";
+};
 
 const testimonials: Testimonial[] = [
   {
@@ -20,6 +21,7 @@ const testimonials: Testimonial[] = [
     align: "left",
     quote:
       "Mình từng rất sợ. Không biết lần đầu sẽ như thế nào. Nhưng sau khi học xong, mình cảm thấy như được ai đó cầm tay dẫn đi. Lần đầu của mình gần như không đau.",
+    img: "/images/avt-feedback/S-avt.png",
   },
   {
     name: "Lan",
@@ -27,6 +29,7 @@ const testimonials: Testimonial[] = [
     align: "right",
     quote:
       "Mình từng rất sợ. Không biết lần đầu sẽ như thế nào. Nhưng sau khi học xong, mình cảm thấy như được ai đó cầm tay dẫn đi. Lần đầu của mình gần như không đau.",
+    img: "/images/avt-feedback/M-avt.png",
   },
   {
     name: "Hồng",
@@ -34,6 +37,7 @@ const testimonials: Testimonial[] = [
     align: "left",
     quote:
       "Mình từng rất sợ. Không biết lần đầu sẽ như thế nào. Nhưng sau khi học xong, mình cảm thấy như được ai đó cầm tay dẫn đi. Lần đầu của mình gần như không đau.",
+    img: "/images/avt-feedback/D-avt.png",
   },
   {
     name: "Sen",
@@ -41,14 +45,16 @@ const testimonials: Testimonial[] = [
     align: "right",
     quote:
       "Mình từng rất sợ. Không biết lần đầu sẽ như thế nào. Nhưng sau khi học xong, mình cảm thấy như được ai đó cầm tay dẫn đi. Lần đầu của mình gần như không đau.",
+    img: "/images/avt-feedback/B-avt.png",
   },
-]
+];
 
-type TestimonialItemProps = Testimonial
+type TestimonialItemProps = Testimonial;
 
 function TestimonialItem({
   name,
   age,
+  img,
   quote,
   align,
 }: TestimonialItemProps) {
@@ -69,7 +75,9 @@ function TestimonialItem({
       <div
         className={[
           "relative w-full h-[160px] md:flex hidden items-center",
-          isLeft ? "xl:pr-[230px] lg:pr-[180px] pr-[100px]" : "xl:pl-[230px] lg:pl-[180px] pl-[100px]",
+          isLeft
+            ? "xl:pr-[230px] lg:pr-[180px] pr-[100px]"
+            : "xl:pl-[230px] lg:pl-[180px] pl-[100px]",
         ].join(" ")}
       >
         {/* CIRCLE */}
@@ -82,9 +90,10 @@ function TestimonialItem({
             isLeft ? "left-0" : "right-0",
           ].join(" ")}
         >
-          <p className="px-2 font-gilroy text-beige font-semibold leading-tight text-[15px]">
+          <img src={img} alt="avt-feedback" />
+          {/* <p className="px-2 font-gilroy text-beige font-semibold leading-tight text-[15px]">
             {name} - {age} tuổi
-          </p>
+          </p> */}
         </div>
         {/* BOX */}
         <div
@@ -93,13 +102,13 @@ function TestimonialItem({
             "py-[26px]",
             isLeft
               ? [
-                "ml-[80px] border-t border-b border-r",
-                "pr-[14px] pl-[102px]",
-              ].join(" ")
+                  "ml-[80px] border-t border-b border-r",
+                  "pr-[14px] pl-[102px]",
+                ].join(" ")
               : [
-                "mr-[80px] border-t border-l border-b",
-                "pr-[102px] pl-[14px]",
-              ].join(" "),
+                  "mr-[80px] border-t border-l border-b",
+                  "pr-[102px] pl-[14px]",
+                ].join(" "),
           ].join(" ")}
         >
           <p className="font-gilroy text-beige italic text-[16px] leading-none">
@@ -108,7 +117,12 @@ function TestimonialItem({
         </div>
       </div>
       {/* mobile */}
-      <div className={cn("w-full relative pt-[14px] md:hidden block", isLeft ? "pl-[40px]" : "pr-[40px]")}>
+      <div
+        className={cn(
+          "w-full relative pt-[14px] md:hidden block",
+          isLeft ? "pl-[40px]" : "pr-[40px]",
+        )}
+      >
         <div
           className={[
             "absolute z-10 bg-secondary rounded-full border border-beige",
@@ -118,11 +132,17 @@ function TestimonialItem({
             isLeft ? "left-0" : "right-0",
           ].join(" ")}
         >
-          <p className="px-2 font-gilroy text-beige font-semibold leading-tight text-[10px]">
+          <img src={img} alt="avt-feedback" />
+          {/* <p className="px-2 font-gilroy text-beige font-semibold leading-tight text-[10px]">
             {name} - {age} tuổi
-          </p>
+          </p> */}
         </div>
-        <div className={cn("w-full min-h-[128px] flex items-center border border-beige py-[12px]", isLeft ? "pl-[50px] pr-[8px]" : "pr-[50px] pl-[8px]")}>
+        <div
+          className={cn(
+            "w-full min-h-[128px] flex items-center border border-beige py-[12px]",
+            isLeft ? "pl-[50px] pr-[8px]" : "pr-[50px] pl-[8px]",
+          )}
+        >
           <p className="font-gilroy text-beige italic text-[16px] leading-none">
             “ {quote} ”
           </p>
@@ -137,7 +157,11 @@ export default function Pricing() {
     <section className="relative w-full bg-secondary">
       {/* paper decor */}
       <div className="absolute top-0 left-0 w-full -translate-y-[99%]">
-        <img src="images/decor/paper-top.svg" alt="paper-top" className="w-full h-auto object-contain" />
+        <img
+          src="images/decor/paper-top.svg"
+          alt="paper-top"
+          className="w-full h-auto object-contain"
+        />
       </div>
       <div className="flex flex-col items-center xl:gap-[32px] gap-[24px] py-[12px]">
         {/* title */}
@@ -157,13 +181,18 @@ export default function Pricing() {
               key={`${item.name}-${index}`}
               name={item.name}
               age={item.age}
+              img={item.img}
               quote={item.quote}
               align={item.align}
             />
           ))}
         </div>
       </div>
-      <img src="images/decor/paper-bottom-light.svg" alt="paper-bottom" className="w-full h-auto object-contain" />
+      <img
+        src="images/decor/paper-bottom-light.svg"
+        alt="paper-bottom"
+        className="w-full h-auto object-contain"
+      />
     </section>
-  )
+  );
 }
