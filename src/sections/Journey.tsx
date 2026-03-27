@@ -55,13 +55,13 @@ const lessonList = [
 
 const NUM_SLIDE_X = 64;
 const CONTENT_SLIDE_X = 64;
-const ROW_STAGGER = 0.1;
-const DURATION = 0.5;
-const CONTENT_DELAY_AFTER_NUM = 0.06;
+const ROW_STAGGER = 0.25;
+const DURATION = 2;
+const CONTENT_DELAY_AFTER_NUM = 0.1;
 
 export default function Journey() {
   const boardRef = useRef<HTMLDivElement>(null);
-  const inView = useInView(boardRef, { once: true, amount: 0.12 });
+  const inView = useInView(boardRef, { once: true, amount: 0.2 });
   const ease = [0.22, 1, 0.36, 1] as const;
 
   return (

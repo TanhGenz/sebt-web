@@ -26,15 +26,15 @@ const faqList = [
     }
 ];
 
-const IMG_DURATION = 0.8;
-const GAP_AFTER_IMAGE = 0.1;
-const ITEM_STAGGER = 0.25;
-const ITEM_DURATION = 0.8;
+const IMG_DURATION = 1.5;
+const GAP_AFTER_IMAGE = 0.8;
+const ITEM_STAGGER = 0.3;
+const ITEM_DURATION = 1.5;
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Faq() {
     const blockRef = useRef<HTMLDivElement>(null);
-    const inView = useInView(blockRef, { once: true, amount: 0.15 });
+    const inView = useInView(blockRef, { once: true, amount: 0.25 });
     const [isMd, setIsMd] = useState(false);
 
     useEffect(() => {
@@ -45,7 +45,7 @@ export default function Faq() {
         return () => mq.removeEventListener("change", onChange);
     }, []);
 
-    const firstItemDelay = isMd ? IMG_DURATION + GAP_AFTER_IMAGE : 0.08;
+    const firstItemDelay = isMd ? GAP_AFTER_IMAGE : 0.1;
 
     return (
         <section className="relative translate-y-[-1px] w-full bg-secondary flex flex-col">

@@ -14,13 +14,13 @@ export default function Intro() {
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  const contentDelay = isMd ? 1 : 0;
+  const contentDelay = isMd ? 1.5 : 0;
 
   const contentFade = {
     initial: { opacity: 0 },
     animate: inView ? { opacity: 1 } : { opacity: 0 },
     transition: {
-      duration: 2,
+      duration: 4,
       delay: contentDelay,
       ease: [0.22, 1, 0.36, 1] as const,
     },
@@ -46,8 +46,8 @@ export default function Intro() {
           alt="banner-hero-section"
           className="md:block hidden w-[710px] h-auto object-contain"
           initial={{ y: 96, opacity: 0 }}
-          animate={inView ? { y: 0, opacity: 1 } : { y: 96, opacity: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as const }}
+          animate={inView ? { y: 0, opacity: 1 } : { y: 296, opacity: 0 }}
+          transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] as const }}
         />
         {/* Content — fade in after 0.5s (desktop); mobile: fade when in view */}
         <motion.div

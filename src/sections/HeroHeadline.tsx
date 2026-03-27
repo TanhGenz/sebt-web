@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const CHAR_STAGGER = 0.045;
+const CHAR_STAGGER = 0.05;
 
 function CharSpan({
     char,
@@ -44,7 +44,7 @@ const segments = [
 
 export default function HeroHeadline() {
     const ref = useRef<HTMLDivElement>(null);
-    const inView = useInView(ref, { once: true, amount: 0.5 });
+    const inView = useInView(ref, { once: true, amount: 0.7 });
 
     let charOffset = 0;
     const rows = segments.map((seg) => {
