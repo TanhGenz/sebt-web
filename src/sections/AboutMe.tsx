@@ -22,7 +22,11 @@ export default function AboutMe() {
       {/* decor paper */}
       <div className="relative z-1">
         <div className="absolute top-0 right-0 hidden md:block">
-          <img src="images/decor/aboutDecor/about-line-right.png" alt="right decor" className="w-full h-auto object-contain" />
+          <img
+            src="images/decor/aboutDecor/about-line-right.png"
+            alt="right decor"
+            className="w-full h-auto object-contain"
+          />
         </div>
       </div>
 
@@ -52,9 +56,7 @@ export default function AboutMe() {
               className="h-full w-full overflow-hidden rounded-full border-[0.5dvw] border-white bg-white"
               initial={{ opacity: 0, scale: 0.88 }}
               animate={
-                inView
-                  ? { opacity: 1, scale: 1 }
-                  : { opacity: 0, scale: 0.88 }
+                inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.88 }
               }
               transition={{
                 duration: AVATAR_DURATION,
@@ -81,8 +83,8 @@ export default function AboutMe() {
                   ease,
                 }}
               >
-                Minh Trang là nhà hoạt động giới tính và khoái cảm, người sáng lập
-                SexEdu by Trang (SEBT) từ năm 2019.
+                Minh Trang là nhà hoạt động giới tính và khoái cảm, người sáng
+                lập SexEdu by Trang (SEBT) từ năm 2019.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
@@ -94,8 +96,9 @@ export default function AboutMe() {
                 }}
               >
                 Trang không phải bác sĩ. Không phải chuyên gia tâm lý. Trang là
-                một người từng không có ai để hỏi về những điều "khó nói" — và đã
-                dành nhiều năm tự học, nghiên cứu, để bây giờ có thể chia sẻ lại.
+                một người từng không có ai để hỏi về những điều "khó nói" — và
+                đã dành nhiều năm tự học, nghiên cứu, để bây giờ có thể chia sẻ
+                lại.
               </motion.p>
               <motion.p
                 className="text-center text-[#FFFFFF]/50 font-semibold italic mx-auto"
@@ -189,7 +192,11 @@ export default function AboutMe() {
       {/* left decor */}
       <div className="relative z-1">
         <div className="absolute bottom-0 left-0 hidden md:block">
-          <img src="images/decor/aboutDecor/about-line-left.png" alt="left decor" className="w-full h-auto object-contain" />
+          <img
+            src="images/decor/aboutDecor/about-line-left.png"
+            alt="left decor"
+            className="w-full h-auto object-contain"
+          />
         </div>
       </div>
     </section>
