@@ -15,10 +15,10 @@ import Question from "./sections/Question";
 import Outcome from "./sections/Outcome";
 import Journey from "./sections/Journey";
 import AboutMe from "./sections/AboutMe";
-import Feedback from "./sections/Feedback"
+import Feedback from "./sections/Feedback";
 import Pricing from "./sections/Pricing";
 import Faq from "./sections/Faq";
-import Final from "./sections/Final"
+import Final from "./sections/Final";
 export default function App() {
   return (
     <MainLayout>
