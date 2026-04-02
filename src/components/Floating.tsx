@@ -30,33 +30,39 @@ export default function Floating() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -100, opacity: 0 }} // đóng: trượt lên trên ✅
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="sm:block hidden relative"
+              className="relative sm:w-auto w-[330px] sm:h-[92dvh] h-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src="/letter-floating.png"
                 alt="letter float"
-                className="w-auto h-[92dvh] block"
+                className="w-full h-full absolute inset-0 object-fill sm:static"
               />
+
+              {/* X button */}
               <motion.div
                 onClick={() => setOpen(false)}
                 whileHover={{ scale: 1.15 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="absolute -top-[3dvh] -right-[3dvh] cursor-pointer w-[8dvh] aspect-square p-[0.5dvh] rounded-full bg-secondary z-20"
+                className="absolute sm:-top-[3dvh] -top-[15px] sm:-right-[3dvh] -right-[15px] cursor-pointer sm:w-[8dvh] w-[38px] aspect-square sm:p-[0.5dvh] p-[2.5px] rounded-full bg-secondary z-20"
               >
                 <div className="flex items-center justify-center rounded-full aspect-square bg-[#D8CCBF]">
-                  <p className="font-lamoric text-[3dvh] text-secondary">X</p>
+                  <p className="font-lamoric sm:text-[3dvh] text-[23px] text-secondary">
+                    X
+                  </p>
                 </div>
               </motion.div>
-              <div className="absolute inset-0 w-full z-10 top-0 px-[5dvh] ">
-                <div className="font-lamoric text-[4.4dvh] font-bold text-secondary tex-start">
+
+              {/* text-letter */}
+              <div className="sm:absolute relative inset-0 w-full z-10 top-0 px-[5dvh] ">
+                <div className="font-lamoric sm:text-[4.4dvh] text-[18px] font-bold text-secondary tex-start">
                   <h1>"Học cho mình,</h1>
                   <h1>trao cho em."</h1>
                 </div>
-                <h1 className="font-kamilla text-[11.6dvh] font-bold text-secondary text-end">
+                <h1 className="font-kamilla sm:text-[11.6dvh] text-[48px] font-bold text-secondary text-end">
                   Gửi bạn,
                 </h1>
-                <div className="flex flex-col gap-[1dvh] font-gilroy text-[1.5dvh] text-secondary text-start">
+                <div className="flex flex-col sm:gap-[1dvh] gap-1 font-gilroy sm:text-[1.5dvh] text-[8px] text-secondary text-start">
                   <p>
                     Ở nhiều nhà tình thương, trại mồ côi và vùng sâu vùng xa,
                     các em nhỏ lớn lên mà chưa từng được ai nói cho nghe: "Cơ
@@ -89,11 +95,11 @@ export default function Floating() {
                   <p>Bạn học để hiểu mình — Các em học để được an toàn.</p>
                   <p>Cảm ơn bạn đã tin tưởng và đồng hành cùng chúng mình.</p>
                 </div>
-                <div className="pt-[2dvh] font-gilroy text-[1.5dvh] text-secondary text-start">
+                <div className="sm:pt-[2dvh] pt-[5px] font-gilroy sm:text-[1.5dvh] text-[8px] text-secondary text-start">
                   <p>Thương mến,</p>
                   <p>Trang — SexEdu by Trang</p>
                 </div>
-                <h1 className="font-kamilla text-[8dvh] text-secondary text-end ">
+                <h1 className="font-kamilla sm:text-[8dvh] text-[48px] text-secondary text-end ">
                   Trang
                 </h1>
               </div>
@@ -101,52 +107,6 @@ export default function Floating() {
           </div>
         )}
       </AnimatePresence>
-      ;
     </>
   );
-}
-
-{
-  /* <AnimatePresence>
-  {open && (
-    <div
-      className="fixed z-10 inset-0 bg-black/50 flex items-center justify-center "
-      onClick={() => setOpen(false)}
-    >
-      <motion.div
-        initial={{ y: -100, opacity: 0 }} // mở: từ trên xuống
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: -100, opacity: 0 }} // đóng: trượt lên trên ✅
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <img
-          src="/letter-floating.png"
-          alt="letter-floating"
-          className="h-auto w-full object-contain"
-        />
-
-        <motion.div
-          onClick={() => setOpen(false)}
-          whileHover={{ scale: 1.15 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          style={{ translateX: "20px", translateY: "-20px" }} // thay vì Tailwind translate
-          className="cursor-pointer w-[58px] aspect-square p-[3px] rounded-full absolute top-0 right-0 bg-secondary"
-        >
-          <div className="flex items-center justify-center rounded-full aspect-square bg-[#D8CCBF]">
-            <p className="font-lamoric text-[36px] text-secondary">X</p>
-          </div>
-        </motion.div>
-
-        <div className="absolute z-10 top-0">
-          <div className="font-lamoric text-[28px] text-secondary">
-            <h1>"Học cho mình,</h1>
-            <h1>trao cho em."</h1>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  )}
-</AnimatePresence>; */
 }
