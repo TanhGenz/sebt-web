@@ -68,9 +68,13 @@ export default function Final() {
             />
             <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
               <div className="flex flex-col items-center gap-[0.5dvw]">
-                <p className="font-lamoric font-normal text-[2.2dvw] text-primaryText leading-none ">
+                <a
+                  href="https://69era.com/thanh-toan/?add-to-cart=1267"
+                  target="_blank"
+                  className="font-lamoric font-normal text-[2.2dvw] text-primaryText leading-none hover:opacity-80 cursor-pointer"
+                >
                   BẮT ĐẦU HÀNH TRÌNH
-                </p>
+                </a>
                 <img
                   src="/icons/line-red.svg"
                   alt="content-section-line"
@@ -91,9 +95,13 @@ export default function Final() {
               className="w-full h-auto"
             />
             <div className="w-max flex flex-col items-center absolute top-[41%] left-[50.5%] -translate-x-1/2">
-              <p className="font-lamoric font-normal text-[5dvw] text-primaryText leading-none ">
+              <a
+                href="https://69era.com/thanh-toan/?add-to-cart=1267"
+                target="_blank"
+                className="font-lamoric font-normal text-[5dvw] text-primaryText leading-none "
+              >
                 BẮT ĐẦU HÀNH TRÌNH
-              </p>
+              </a>
             </div>
           </motion.div>
         </div>
