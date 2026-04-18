@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Floating() {
   const [open, setOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <>
+      {/* left */}
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -18,6 +20,70 @@ export default function Floating() {
           onClick={() => setOpen(true)}
         />
       </motion.div>
+
+      {/* right */}
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="fixed z-10 right-1 bottom-1 -translate-y-1/2 drop-shadow-2xl"
+      >
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={`absolute  flex items-center justify-center w-8 h-8 bg-secondary rounded-full z-10 shadow-md ${
+            isOpen ? "top-2 right-2" : "bottom-0 right-0"
+          }`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={`text-beige transition-transform duration-300 ${
+              isOpen ? "rotate-0" : "rotate-180"
+            }`}
+          >
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+
+        <div
+          className={`overflow-hidden transition-all duration-500 ease-in-out ${
+            isOpen ? "w-[320px] opacity-100" : "w-0 opacity-0"
+          }`}
+        >
+          <div className="w-[320px] flex items-center gap-[4px]  bg-beige border-[2px] border-dashed border-primaryText rounded-tl-full rounded-bl-full px-[8px] py-[10px]">
+            <img
+              src="/icons/icon-smile.png"
+              alt="icon-smile"
+              className="w-auto h-auto"
+            />
+            <div className="flex flex-col  gap-2">
+              <p className="font-lamoric text-secondary text-[17px] text-center">
+                TỐT !
+              </p>
+              <p className="font-gilroy text-secondary text-[12px] text-center">
+                Bạn không muốn đợi lâu thêm nữa ?{" "}
+              </p>
+              <div className="rounded-full bg-secondary text-center py-[7px] hover:bg-primaryText transition-opacity duration-200">
+                <a
+                  href="https://69era.com/thanh-toan/?add-to-cart=1267"
+                  target="_blank"
+                  className="font-lamoric text-beige text-[15px] font-normal "
+                >
+                  BẮT ĐẦU HÀNH TRÌNH
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
       {/* Modal */}
       <AnimatePresence>
         {open && (
